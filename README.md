@@ -65,10 +65,10 @@ Simpler Update Befehl:
 # UPDATE `test_table` SET `column` = "value", `clm` = "val" LIMIT 4, 15;
 $update = $db->update(`test_table`);
 
-$resultArray = $update->column('column')->value('value')
-					  ->column('clm')->value('val')
-					  ->limit('4', '15')
-					  ->execute();
+$update->column('column')->value('value')
+	   ->column('clm')->value('val')
+	   ->limit('4', '15')
+	   ->execute();
 ```
 
 Simpler Insert Befehl:
@@ -76,10 +76,10 @@ Simpler Insert Befehl:
 # INSERT INTO `test_table` (`column`, `clm`) VALUES ("val", "value"), ("any_value", "this_value");
 $insert = $db->insert(`test_table`);
 
-$resultArray = $insert->columns(array('column', 'clm'))
-					  ->values(array('val', 'value'))
-					  ->values(array('any_value', 'this_value'))
-					  ->execute();
+$insert->columns(array('column', 'clm'))
+	   ->values(array('val', 'value'))
+	   ->values(array('any_value', 'this_value'))
+	   ->execute();
 ```
 
 Simpler Delete Befehl:
@@ -87,7 +87,7 @@ Simpler Delete Befehl:
 # DELETE FROM `test_table` ORDER BY `column` ASC LIMIT 0, 5;
 $delete = $db->delete(`test_table`);
 
-$resultArray = $delete->columns(array('column', 'clm'))
-					  ->orderBy('column')
-					  ->limit('0', '5');
+$delete->columns(array('column', 'clm'))
+	   ->orderBy('column')
+	   ->limit('0', '5');
 ```

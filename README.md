@@ -87,8 +87,7 @@ Simpler Delete Befehl:
 # DELETE FROM `test_table` ORDER BY `column` ASC LIMIT 0, 5;
 $delete = $db->delete(`test_table`);
 
-$delete->columns(array('column', 'clm'))
-       ->orderBy('column')
+$delete->orderBy('column')
        ->limit('0', '5')
        ->execute();
 ```

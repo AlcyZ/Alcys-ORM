@@ -17,7 +17,7 @@ spl_autoload_register(
 
 Autoloader::register('src/');
 ```
-Eine etwas genauere Beschreibung folgt wenn ich die Zeit dafür finde :) Außerdem bietet sie aktuell 
+Eine etwas genauere Beschreibung folgt wenn ich die Zeit dafür finde. Außerdem bietet sie aktuell 
 (in der ersten Stabilen Version) noch nicht viel Extra-Funktionalitäten. Trotzdem sollte der Funkionsumfang
 schon für die meisten Projekte reichen, sofern nicht zu komplexe MySql-Querys benötigt werden.
 

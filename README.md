@@ -66,9 +66,9 @@ Simpler Update Befehl:
 $update = $db->update(`test_table`);
 
 $update->column('column')->value('value')
-	   ->column('clm')->value('val')
-	   ->limit('4', '15')
-	   ->execute();
+       ->column('clm')->value('val')
+       ->limit('4', '15')
+       ->execute();
 ```
 
 Simpler Insert Befehl:
@@ -77,9 +77,9 @@ Simpler Insert Befehl:
 $insert = $db->insert(`test_table`);
 
 $insert->columns(array('column', 'clm'))
-	   ->values(array('val', 'value'))
-	   ->values(array('any_value', 'this_value'))
-	   ->execute();
+       ->values(array('val', 'value'))
+       ->values(array('any_value', 'this_value'))
+       ->execute();
 ```
 
 Simpler Delete Befehl:
@@ -88,6 +88,7 @@ Simpler Delete Befehl:
 $delete = $db->delete(`test_table`);
 
 $delete->columns(array('column', 'clm'))
-	   ->orderBy('column')
-	   ->limit('0', '5');
+       ->orderBy('column')
+       ->limit('0', '5')
+       ->execute();
 ```

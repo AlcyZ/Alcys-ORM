@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Todo</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
+	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Overview</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+<span>Namespace</span>						</li>
+						<li>
+							<a href="class-Alcys.Core.Types.TypesInterface.html" title="Summary of Alcys\Core\Types\TypesInterface"><span>Class</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li class="active">
+<span>Todo</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="API-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li>
+						<a href="namespace-Alcys.html">
+							Alcys<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.html">
+							Core<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.html">
+							Db<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Expression.html">
+							Expression<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Expression.Builder.html">
+							Builder						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Facade.html">
+							Facade						</a>
+							</li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Factory.html">
+							Factory						</a>
+							</li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.QueryBuilder.html">
+							QueryBuilder<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.QueryBuilder.MySql.html">
+							MySql						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.References.html">
+							References<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.References.MySql.html">
+							MySql						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Service.html">
+							Service						</a>
+							</li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Statement.html">
+							Statement						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Alcys.Core.Types.html">
+							Types						</a>
+							</li>
+								</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Alcys.Core.Types.Enum.html">Alcys\Core\Types\Enum</a></li>
+				<li><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li class="active"><a href="class-Alcys.Core.Types.TypesInterface.html">Alcys\Core\Types\TypesInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content">
+	<h1>Todo</h1>
+
+
+		<h2>Classes summary</h2>
+		<table class="summary table table-bordered table-striped" id="classes">
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Expression.Condition.html">Alcys\Core\Db\Expression\Condition</a>
+				</td>
+				<td>
+						Add comparison "isNull".
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a>
+				</td>
+				<td>
+						Join expression could implement also for delete and update statement<hr>
+						Implement cross join and logic operators in on condition.
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Facade.SelectFacade.html">Alcys\Core\Db\Facade\SelectFacade</a>
+				</td>
+				<td>
+						Implement functionality that where and join method can handle arrays.
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Facade.UpdateFacade.html">Alcys\Core\Db\Facade\UpdateFacade</a>
+				</td>
+				<td>
+						Type in value method as sec arg, default is value, e.g.: $update->value('column_name', 'column')
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Factory.DbFactory.html">Alcys\Core\Db\Factory\DbFactory</a>
+				</td>
+				<td>
+						Specify db type (actually only mysql, but should be more).
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Factory.ExpressionBuilderFactory.html">Alcys\Core\Db\Factory\ExpressionBuilderFactory</a>
+				</td>
+				<td>
+						Outsource create code when the become bigger.
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.QueryBuilder.MySql.SelectBuilder.html">Alcys\Core\Db\QueryBuilder\MySql\SelectBuilder</a>
+				</td>
+				<td>
+						<p>Implement having logic. The HAVING clause can refer to aggregate functions, which the WHERE clause cannot:
+       HAVING MAX(salary) > 10;</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.References.MySql.Column.html">Alcys\Core\Db\References\MySql\Column</a>
+				</td>
+				<td>
+						Method getNumericCompareValue should validates dates. Implementation later.<hr>
+						<p>Construct should have the format: new Column(String $columnName, TableInterface $table = null, String
+         $alias)</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Statement.Insert.html">Alcys\Core\Db\Statement\Insert</a>
+				</td>
+				<td>
+						on duplicate key update, refactor this class to be compatible with the facade.
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Statement.Select.html">Alcys\Core\Db\Statement\Select</a>
+				</td>
+				<td>
+						for where and having method condition interface
+				</td>
+			</tr>
+		</table>
+
+		<h2>Interfaces summary</h2>
+		<table class="summary table table-bordered table-striped" id="interfaces">
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a>
+				</td>
+				<td>
+						rename the logic operator methods and put them in an interface like ConditionLogicOperatorInterface
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Expression.ExpressionInterface.html">Alcys\Core\Db\Expression\ExpressionInterface</a>
+				</td>
+				<td>
+						Maybe split expression classes for different db types like mySql and mongoDb.
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Statement.DeleteInterface.html">Alcys\Core\Db\Statement\DeleteInterface</a>
+				</td>
+				<td>
+						Add PHPDocs.
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Statement.UpdateInterface.html">Alcys\Core\Db\Statement\UpdateInterface</a>
+				</td>
+				<td>
+						Update Docs.
+				</td>
+			</tr>
+		</table>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js?d4e06cca5ea8eae447730bb4b9703e31ee671b18"></script>
+<script src="elementlist.js?0019197bfba704f812be879a0895b65d9bd501be"></script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+Alcys\Core\Db\Expression\Builder\ConditionBuilder
+ [x] Builder throw exception when constructor argument is not type of condition
+ [x] Build method return expected string
+ [x] Build method throw exception when join array is invalid
+
+Alcys\Core\Db\Expression\Builder\JoinBuilder
+ [x] Builder throw exception when constructor argument is not type of join
+ [x] Build method throw exception when join array is invalid
+ [x] Exception thrown when join array is in default state
+ [x] Build simple joins
+ [x] Build multiple joins
+
+Alcys\Core\Db\Expression\Builder\NullBuilder
+ [x] N build method return null
+
+Alcys\Core\Db\Expression\Condition
+ [x] Condition has equal method
+ [x] Equal method throw invalid argument exception when first argument is not type of column parameter
+ [x] Equal method throw invalid argument exception when second argument is not type of parameter interface
+ [x] Equal method return object of type condition when all passed arguments are legal
+ [x] Equal with two columns
+ [x] Condition has not equal method
+ [x] Not equal method throw invalid argument exception when first argument is not type of column parameter
+ [x] Not equal method throw invalid argument exception when second argument is not type of parameter interface
+ [x] Not equal method return object of type condition when all passed arguments are legal
+ [x] Condition has greater method
+ [x] Greater method throw invalid argument exception when first argument is not type of column parameter
+ [x] Greater method throw invalid argument exception when second argument is not type of parameter interface
+ [x] Greater method return object of type condition when all passed arguments are legal
+ [x] Condition has greater equal method
+ [x] Greater equal method throw invalid argument exception when first argument is not type of column parameter
+ [x] Greater equal method throw invalid argument exception when second argument is not type of parameter interface
+ [x] Greater equal method return object of type condition when all passed arguments are legal
+ [x] Condition has lower method
+ [x] Lower method throw invalid argument exception when first argument is not type of column parameter
+ [x] Lower method throw invalid argument exception when second argument is not type of parameter interface
+ [x] Lower method return object of type condition when all passed arguments are legal
+ [x] Condition has lower equal method
+ [x] Lower equal method throw invalid argument exception when first argument is not type of column parameter
+ [x] Lower equal method throw invalid argument exception when second argument is not type of parameter interface
+ [x] Lower equal method return object of type condition when all passed arguments are legal
+ [x] Condition has between method
+ [x] Between method throw invalid argument exception when first argument is not type of parameter interface
+ [x] Between method throw invalid argument exception when second argument is not type of parameter interface
+ [x] Between method throw invalid argument exception when third argument is not type of parameter interface
+ [x] Between method return correct value with valid arguments
+ [x] Condition has not between method
+ [x] Not between method throw invalid argument exception when first argument is not type of parameter interface
+ [x] Not between method throw invalid argument exception when second argument is not type of parameter interface
+ [x] Not between method throw invalid argument exception when third argument is not type of parameter interface
+ [x] Not between method return correct value with valid arguments
+ [x] Condition has like method
+ [x] Like method throw invalid argument exception when first argument is not type of column parameter
+ [x] Like method throw invalid argument exception when second argument is not type of parameter interface
+ [x] Like method return object of type condition when all passed arguments are legal
+ [x] Get conditions array return correct values when equal method is invoked
+ [x] Get conditions array return correct values when invoked methods are not equal and greater
+ [x] Get conditions array return the correct values when invoked methods are greaterequal and lower or lowerequal
+ [x] Get conditions array return the correct values when invoked methods are between or notbetween and like
+ [x] Like condition have different levels for the percent sign and they work correctly with values
+ [x] Like condition have different levels for the percent sign and they work correctly with integers
+ [x] Get condition array return correct values when column alias is set
+ [x] Condition throw exception when two condition methods are invoked without and method or or method
+ [x] Like method throw exception when level argument is invalid
+ [x] Get expression array is equal to get condition array
+
+Alcys\Core\Db\Expression\Join
+ [x] Initial join array have the expected value
+ [x] Get expression array is equal to get join array
+ [x] Inner return same instance
+ [x] Inner throw exception when no table reference is passed
+ [x] Inner set join array value correct
+ [x] Multiple inner calls override old join arrays value
+ [x] Inner with multiple tables will set correct in join array
+ [x] Inner throw exception when arguments are not table interface objects
+ [x] Left return same instance
+ [x] Left throw exception when no table reference is passed
+ [x] Left set join array value correct
+ [x] Multiple left calls override old join arrays value
+ [x] Left with multiple tables will set correct in join array
+ [x] Left throw exception when arguments are not table interface objects
+ [x] Right return same instance
+ [x] Right throw exception when no table reference is passed
+ [x] Right set join array value correct
+ [x] Multiple right calls override old join arrays value
+ [x] Right with multiple tables will set correct in join array
+ [x] Right throw exception when arguments are not table interface objects
+ [x] Left outer return same instance
+ [x] Left outer throw exception when no table reference is passed
+ [x] Left outer set join array value correct
+ [x] Multiple left outer calls override old join arrays value
+ [x] Left outer with multiple tables will set correct in join array
+ [x] Left outer throw exception when arguments are not table interface objects
+ [x] Right outer return same instance
+ [x] Right outer throw exception when no table reference is passed
+ [x] Right outer set join array value correct
+ [x] Multiple right outer calls override old join arrays value
+ [x] Right outer with multiple tables will set correct in join array
+ [x] Right outer throw exception when arguments are not table interface objects
+ [x] Natural return same instance
+ [x] Natural throw exception when invalid first argument is passed
+ [x] Natural set join array correct without way argument
+ [x] Natural set join array correct with way argument
+ [x] Natural throw exception when way argument value is unexpected
+ [x] On condition throw exception when no way isset before
+ [x] On condition return same instance
+ [x] On condition throw exception when first argument is not a column
+ [x] On condition throw exception when second argument is not a column
+ [x] On throw exception when first column arg does not have table values
+ [x] On throw exception when second column arg does not have table values
+ [x] On throw exception when column arguments does not have table values
+ [x] On throw exception when column args does not have the same name
+ [x] On set join arrays condition type and condition values
+ [x] On call correct methods from first argument
+ [x] On call correct methods from second argument
+ [x] Using throw exception when invalid argument is passed
+ [x] Using return same instance
+ [x] Using set join arrays condition type and condition value
+
+Alcys\Core\Db\Facade\DeleteFacade
+ [x] Where return same instance
+ [x] Where call correct method
+ [x] Order by return same instance
+ [x] Order by call correct reference methods
+ [x] Order by call correct statement method
+ [x] Limit return the same instance
+ [x] Limit call correct statement method
+ [x] Condition builder call correct factory method
+ [x] Condition builder return correct instance
+ [x] Get columns return anonymous function
+ [x] Get values return anonymous function
+
+Alcys\Core\Db\Facade\InsertFacade
+ [x] Facade instantiation factory calls
+ [x] Columns calls correct factory methods
+ [x] Columns calls correct statement method
+ [x] Columns return same instance
+ [x] Values calls correct factories methods
+ [x] Values calls correct statement methods
+ [x] Values return same instance
+
+Alcys\Core\Db\Facade\SelectFacade
+ [x] Table method return same instance
+ [x] Table invoke correct method of statement
+ [x] Table invoke correct method of factory
+ [x] Column method return same instance
+ [x] Column invoke correct statement method
+ [x] Column invoke correct factory method
+ [x] Order by return same instance
+ [x] Order by invoke correct statement method
+ [x] Order by invoke correct factory method
+ [x] Limit return same instance
+ [x] Limit invoke correct statement method
+ [x] Group by return same instance
+ [x] Group by invoke correct factory methods with ordermode
+ [x] Group by invoke correct factory methods with out ordermode
+ [x] Group by invoke correct statement method with ordermode
+ [x] Group by invoke correct statement method with out ordermode
+ [x] Distinct return same instance
+ [x] Distinct invoke correct statement method
+ [x] Having return same instance
+ [x] Where method return same instance
+ [x] Condition builder return correct instance
+ [x] Condition builder invoke correct factory method
+ [x] Where invoke correct statement method with passed obj
+ [x] Join return same instance
+ [x] Join invoke correct statement method
+ [x] Join builder return correct instance
+ [x] Join builder invoke correct factory method
+ [x] Get columns work correct
+ [x] Get values work correct
+ [x] Fetch invoke correct statement method
+ [x] Fetch invoke correct factory methods
+
+Alcys\Core\Db\Facade\UpdateFacade
+ [x] Update facade instantiation method calls
+ [x] Column return same instance
+ [x] Column invoke correct factories method
+ [x] Column invoke correct statement method
+ [x] Value return same instance
+ [x] Value invoke correct factories method
+ [x] Value invoke correct statement method
+ [x] Columns return same instance
+ [x] Values throw exception when column was not invoked before
+ [x] Values invoke correct factories methods
+ [x] Values invoke correct statement methods
+ [x] Values return same instance
+ [x] Where return same instance
+ [x] Where call correct method
+ [x] Order by return same instance
+ [x] Order by call correct reference methods
+ [x] Order by call correct statement method
+ [x] Limit return the same instance
+ [x] Limit call correct statement method
+ [x] Condition builder call correct factory method
+ [x] Condition builder return correct instance
+ [x] Get columns return anonymous function
+ [x] Get values return anonymous function
+
+Alcys\Core\Db\Factory\DbFactory
+ [ ] Db factory trow exception while initialization when invalid driver name is passed as constructor argument
+ [x] Factories expression method return instance of condition
+ [x] Factories expression method return instance of join
+ [x] Factories expression method return instance of expression builder factory
+ [x] Factories condition method throw exception when class name was not found
+ [x] Reference method return instance of column
+ [x] Reference method return instance of order mode enum
+ [x] Reference method return instance of sql function
+ [x] Reference method return instance of table
+ [x] Reference method return instance of value
+ [x] Factories builder method return correct builder when select statement is passed as argument
+ [x] Factories builder method return correct builder when insert statement is passed as argument
+ [x] Factories builder method return correct builder when update statement is passed as argument
+ [x] Factories builder method return correct builder when delete statement is passed as argument
+ [x] Factories statement method return instance of select statement
+ [x] Factories statement method return instance of insert statement
+ [x] Factories statement method return instance of update statement
+ [x] Factories statement method return instance of delete statement
+ [x] Exception thrown at sql function creation with null as second argument
+ [x] Exception thrown at sql function creation with invalid third argument
+ [x] Factories facade method return select facade
+ [x] Factories facade method return update facade
+ [x] Factories facade method return insert facade
+ [x] Factories facade method return delete facade
+ [x] Factories facade method throw exception when facade object not exist
+
+Alcys\Core\Db\Factory\ExpressionBuilderFactory
+ [x] Create return instance of condition builder
+ [x] Create return instance of join builder
+ [x] Create return null when null is passed
+ [x] Create throw exception when argument is invalid
+
+Alcys\Core\Db\Factory\ExpressionFactory
+ [x] Join method return correct expression instance
+ [x] Condition method return correct expression instance
+
+Alcys\Core\Db\Factory\ReferenceFactory
+ [x] Column return correct value
+ [x] Order mode enum return correct value
+ [x] Sql function return correct value
+ [x] Table return correct value
+ [x] Value return correct value
+ [x] Numeric return correct value
+
+Alcys\Core\Db\QueryBuilder\MySql\DeleteBuilder
+ [x] Builder throw exception when statements table method was not invoked
+ [x] Builder return correct query when only statements table method was invoked
+ [x] Builder return correct query when condition exists
+ [x] Builder return correct query when order by without order mode exists
+ [x] Builder return correct query when order by with order mode exist
+ [x] Builder return correct statement when limit exist
+ [x] Builder return correct query when all expressions are set with order mode
+ [x] Builder return correct query when all expressions are set without order mode
+ [x] Expression builder factory method calls
+
+Alcys\Core\Db\QueryBuilder\MySql\InsertBuilder
+ [x] Builder throw exception when statement columns method was not invoked before
+ [x] Builder throw exception when statements value method was not invoked
+ [x] Builder throw exception when statement table method was not invoked before
+ [x] Builder return the correct query with a simple insert statement
+ [x] Builder return the correct query for multiple inserted values
+ [x] Builder invoke correct getter methods of the statement
+
+Alcys\Core\Db\QueryBuilder\MySql\SelectBuilder
+ [x] Builder throw exception when table method from the statement was not invoked
+ [x] Builder throw exception when columns method from the statement was not invoked
+ [x] Builder return the correct query for a simple select statement
+ [x] Builder return the correct query with order by expression
+ [x] Builder return the correct query with order by expression without order mode
+ [x] Builder return the correct query with distinct expression
+ [x] Builder return the correct query with group by and order mode expression
+ [x] Builder return the correct query with group by and without order mode expression
+ [x] Builder return the correct query with a simple condition
+ [x] Builder return the correct query with a more complex condition
+ [x] Builder return the correct query when a lot of expressions are invoked
+ [x] Builder throw exception when second constructor argument is not expression factory
+ [x] Builder can build queries with a join expression
+ [x] Builder can build queries with multiple join expressions
+ [x] Builder query with join and condition
+
+Alcys\Core\Db\QueryBuilder\MySql\UpdateBuilder
+ [x] Builder process method throw exception when statements table method was not invoked
+ [x] Builder return the correct query with simple expressions
+ [x] Builder return the correct query with multiple columns
+ [x] Builder return the correct query with a simple condition
+ [x] Builder return the correct query with a complex condition
+ [x] Builder return correct query with order by expression with order mode
+ [x] Builder return correct query with order by expression without order mode
+ [x] Builder return the correct query with a limit expression
+ [x] Builder return the correct query when all expressions are invoked with order mode
+ [x] Builder return the correct query when all expressions are invoked with out order mode
+ [x] Builder invoke all required getter methods from statement
+
+Alcys\Core\Db\References\MySql\Column
+ [x] Get value return correct value
+ [x] Get column method return correct value
+ [x] Get column return correct value if all columns should set
+ [x] Get alias method return correct value
+ [x] Get table name method return correct value
+ [x] Get alias method return null when value is not set
+ [x] Get table name method return null when value is not set
+ [x] Get expression return correct value with only column
+ [x] Get expression return correct value with optional alias
+ [x] Get expression return correct value with optional table name
+ [x] Get expression return correct value with all
+ [x] Get compare value without alias
+ [x] Get compare value with alias
+ [x] Get numeric compare value is equivalent to get compare value
+ [x] Column param throw invalid argument exception when first argument is not correctly
+ [x] Column param throw invalid argument exception when second argument is not correctly
+ [x] Column param throw invalid argument exception when third argument is not correctly
+
+Alcys\Core\Db\References\MySql\OrderModeEnum
+ [x] Get value return correct value
+ [x] Order mode enum throw exception when argument is not correctly
+ [x] Order mode enum throw exception when no string is passed
+ [x] Order mode enum validate correctly asc argument
+ [x] Order mode enum validate correctly desc argument
+
+Alcys\Core\Db\References\MySql\SqlFunction
+ [x] Get value return correct value
+ [x] Get function name return correct value
+ [x] Get arguments return correct value
+ [x] Get expression return correct value
+
+Alcys\Core\Db\References\MySql\Table
+ [x] Get value return correct value
+ [x] Get table name method return correct value
+ [x] Get alias method return correct value
+ [x] Get expression return correct value with alias
+ [x] Get expression return correct value without alias
+ [x] Table param throw invalid argument exception when first argument is illegal
+ [x] Table param throw invalid argument exception when second argument is illegal
+
+Alcys\Core\Db\References\MySql\Value
+ [x] Value param validate string correctly
+ [x] Value param validate integer value object correctly
+ [x] Value param validate int correctly
+ [x] Value param validate column correctly
+ [x] Get compare value method
+ [x] Get numeric compare value is equivalent to get value
+ [x] Value parameter throw exception when incorrect type is passed as argument
+
+Alcys\Core\Db\Statement\Delete
+ [x] Table return object of same instance
+ [x] Table throw exception when argument is invalid
+ [x] Get table return correct values
+ [x] Where return object of same instance
+ [x] Where throw exception when argument is invalid
+ [x] Get condition return correct values
+ [x] Order by return object of same instance
+ [x] Order by throw exception when argument is invalid
+ [x] Get order by return correct values
+ [x] Get order by return correct values by multiple invokes
+ [x] Get order by return correct value without ordermode argument
+ [x] Limit return object of same instance
+ [x] Limit throw exception when argument is invalid
+ [x] Get limit return correct values
+ [x] Get limit return correct values with begin and amount argument
+
+Alcys\Core\Db\Statement\Insert
+ [x] Table return the same instance
+ [x] Table set property correctly
+ [x] Column method return same instance
+ [x] Column method set property correctly
+ [x] Column throw exception when passed array is invalid
+ [x] Values method return the same instance
+ [x] Values method set property correctly
+ [x] Values method set property correctly with multiple columns
+ [x] Value throw exception when column was not invoked
+ [x] Value throw exception when arrays not have same length
+ [x] Value throw exception when passed array is invalid
+
+Alcys\Core\Db\Statement\Select
+ [x] Table return object of same instance
+ [x] Table throw exception when argument is invalid
+ [x] Get tables return correct values
+ [x] Column return object of same instance
+ [x] Column throw exception when argument is invalid
+ [x] Get columns return correct values
+ [x] Order by return object of same instance
+ [x] Order by throw exception when argument is invalid
+ [x] Get order by return correct values
+ [x] Get order by return correct values by multiple invokes
+ [x] Get order by return correct value without ordermode argument
+ [x] Limit return object of same instance
+ [x] Limit throw exception when argument is invalid
+ [x] Get limit return correct values
+ [x] Get limit return correct values with begin and amount argument
+ [x] Group by return object of same instance
+ [x] Group by throw exception when argument is invalid
+ [x] Get group by return correct values
+ [x] Get group by return correct values without ordermode
+ [x] Distinct return object of same instance
+ [x] Is distinct return false when distinct method was not invoked
+ [x] Is distinct return true when distinct method was invoked
+ [x] Having return object of same instance
+ [x] Having throw exception when argument is invalid
+ [x] Get having return correct value
+ [x] Where return object of same instance
+ [x] Where throw exception when argument is invalid
+ [x] Get condition return correct values
+ [x] Join return object of same instance
+ [x] Join throw exception when argument is invalid
+ [x] Get join return correct values
+ [x] Get join return correct value by multiple join calls
+
+Alcys\Core\Db\Statement\Update
+ [x] Value throw exception when column method was not invoked before
+ [x] Column and value method set values correctly
+ [x] Column and value method set values correctly at multiple calls
+ [x] Table return object of same instance
+ [x] Table throw exception when argument is invalid
+ [x] Get table return correct values
+ [x] Where return object of same instance
+ [x] Where throw exception when argument is invalid
+ [x] Get condition return correct values
+ [x] Order by return object of same instance
+ [x] Order by throw exception when argument is invalid
+ [x] Get order by return correct values
+ [x] Get order by return correct values by multiple invokes
+ [x] Get order by return correct value without ordermode argument
+ [x] Limit return object of same instance
+ [x] Limit throw exception when argument is invalid
+ [x] Get limit return correct values
+ [x] Get limit return correct values with begin and amount argument
+
+Alcys\Core\Types\Numeric
+ [x] Integer throw exception when string is passed as argument
+ [x] Integer throw exception when float is passed as argument
+ [x] Integer throw exception when float is passed as argument and string
+ [x] Integer throw exception when bool is passed as argument
+ [x] Integer type validate int correctly when passed as int
+ [x] Integer type validate int correctly when passed as string
+ [x] Integer type can be higher than 255 as int
+ [x] Integer type can be higher than 255 as string
+ [x] Integer type validate correctly when zero is passed as argument
+

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Alcys\Core\Db\Statement\Update</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
+	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Overview</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-Alcys.Core.Db.Statement.html" title="Summary of Alcys\Core\Db\Statement"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="API-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Alcys.html">
+							Alcys<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-Alcys.Core.html">
+							Core<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-Alcys.Core.Db.html">
+							Db<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Expression.html">
+							Expression<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Expression.Builder.html">
+							Builder						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Facade.html">
+							Facade						</a>
+							</li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Factory.html">
+							Factory						</a>
+							</li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.QueryBuilder.html">
+							QueryBuilder<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.QueryBuilder.MySql.html">
+							MySql						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.References.html">
+							References<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.References.MySql.html">
+							MySql						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Service.html">
+							Service						</a>
+							</li>
+					<li class="active">
+						<a href="namespace-Alcys.Core.Db.Statement.html">
+							Statement						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Alcys.Core.Types.html">
+							Types						</a>
+							</li>
+								</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Alcys.Core.Db.Statement.Delete.html">Delete</a></li>
+				<li><a href="class-Alcys.Core.Db.Statement.Insert.html">Insert</a></li>
+				<li><a href="class-Alcys.Core.Db.Statement.Select.html">Select</a></li>
+				<li class="active"><a href="class-Alcys.Core.Db.Statement.Update.html">Update</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Alcys.Core.Db.Statement.ConditionStatementInterface.html">ConditionStatementInterface</a></li>
+				<li><a href="class-Alcys.Core.Db.Statement.DeleteInterface.html">DeleteInterface</a></li>
+				<li><a href="class-Alcys.Core.Db.Statement.InsertInterface.html">InsertInterface</a></li>
+				<li><a href="class-Alcys.Core.Db.Statement.SelectInterface.html">SelectInterface</a></li>
+				<li><a href="class-Alcys.Core.Db.Statement.StatementInterface.html">StatementInterface</a></li>
+				<li><a href="class-Alcys.Core.Db.Statement.UpdateInterface.html">UpdateInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Update</h1>
+
+
+	<div class="description">
+	<p>Class Update</p>
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+<b><span>Alcys\Core\Db\Statement\Update</span></b>			
+			 implements 
+				<a href="class-Alcys.Core.Db.Statement.StatementInterface.html"><span>Alcys\Core\Db\Statement\StatementInterface</span></a>, 
+			
+				<a href="class-Alcys.Core.Db.Statement.UpdateInterface.html"><span>Alcys\Core\Db\Statement\UpdateInterface</span></a>, 
+			
+				<a href="class-Alcys.Core.Db.Statement.ConditionStatementInterface.html"><span>Alcys\Core\Db\Statement\ConditionStatementInterface</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Alcys.html">Alcys</a>\<a href="namespace-Alcys.Core.html">Core</a>\<a href="namespace-Alcys.Core.Db.html">Db</a>\<a href="namespace-Alcys.Core.Db.Statement.html">Statement</a><br>
+		<b>Package:</b> Alcys\Core\Db\Statement<br>
+
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.Update.html#33-222" title="Go to source code">Core/Db/Statement/Update.php</a>
+		<br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="table" id="_table">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_table">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Update.html#67-81" title="Go to source code">table</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
+
+			<div class="description short">
+				<p>Add a table object to the statement.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add a table object to the statement.</p>
+
+<p>The method fill the table property and multiple calls override the old value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$table</var></dt>
+						<dd>The validated table value.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Statement.StatementInterface.html#_table">Alcys\Core\Db\Statement\StatementInterface::table()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="column" id="_column">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_column">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Update.html#84-97" title="Go to source code">column</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span> )</code>
+
+			<div class="description short">
+				<p>Add a column that should updated to the query.
+Afterwards, you should call the value method.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add a column that should updated to the query.
+Afterwards, you should call the value method.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$column</var></dt>
+						<dd>Object of type ColumnInterface.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Statement.UpdateInterface.html#_column">Alcys\Core\Db\Statement\UpdateInterface::column()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="value" id="_value">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_value">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Update.html#100-118" title="Go to source code">value</a>( <span><code><a href="class-Alcys.Core.Db.References.MySql.ReferencesInterface.html">Alcys\Core\Db\References\MySql\ReferencesInterface</a></code> <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Add a value to the column which was set before.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add a value to the column which was set before.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd>The expected value as object of type ReferenceInterface.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						Exception<br>When column method was not invoked before.
+					</div>
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Statement.UpdateInterface.html#_value">Alcys\Core\Db\Statement\UpdateInterface::value()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="where" id="_where">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_where">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Update.html#121-137" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code> <var>$condition</var></span> )</code>
+
+			<div class="description short">
+				<p>Add a where expression to the statement.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add a where expression to the statement.</p>
+
+<p>The query builder have the functionality to build a valid
+formatted condition, but at least one condition method must
+be invoked. Otherwise, no condition will added.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$condition</var></dt>
+						<dd>Condition value object in which the condition expressions are buffered.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Statement.ConditionStatementInterface.html#_where">Alcys\Core\Db\Statement\ConditionStatementInterface::where()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="orderBy" id="_orderBy">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_orderBy">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Update.html#140-157" title="Go to source code">orderBy</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span>, <span><code><a href="class-Alcys.Core.Db.References.OrderModeEnumInterface.html">Alcys\Core\Db\References\OrderModeEnumInterface</a></code> <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Add an order by expression to the statement.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add an order by expression to the statement.</p>
+
+<p>The method will fill the array in the correct way to be valid for the query builder.
+To avoid errors, the method should only invoked one time! (working at a solution)</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$column</var></dt>
+						<dd>The column which should sorted.</dd>
+						<dt><var>$orderMode</var></dt>
+						<dd>The expected mode. Whether 'ASC' or 'DESC'.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Statement.ConditionStatementInterface.html#_orderBy">Alcys\Core\Db\Statement\ConditionStatementInterface::orderBy()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="limit" id="_limit">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_limit">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Update.html#160-176" title="Go to source code">limit</a>( <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$beginAmount</var></span>, <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Add a limit expression to the statement.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add a limit expression to the statement.</p>
+
+<p>The method will fill the array in the correct way to be valid for the query builder.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$beginAmount</var></dt>
+						<dd><p>The first entry that get selected or the amount of
+                            returned entries, when the second argument is null.</p></dd>
+						<dt><var>$amount</var></dt>
+						<dd>The amount of entries that should returned.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Statement.ConditionStatementInterface.html#_limit">Alcys\Core\Db\Statement\ConditionStatementInterface::limit()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getTable" id="_getTable">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getTable">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Update.html#179-185" title="Go to source code">getTable</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code>
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Statement.StatementInterface.html#_getTable">Alcys\Core\Db\Statement\StatementInterface::getTable()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getValues" id="_getValues">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getValues">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Update.html#188-194" title="Go to source code">getValues</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Statement.UpdateInterface.html#_getValues">Alcys\Core\Db\Statement\UpdateInterface::getValues()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getCondition" id="_getCondition">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code>|null
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getCondition">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Update.html#197-203" title="Go to source code">getCondition</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code>|null
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Statement.ConditionStatementInterface.html#_getCondition">Alcys\Core\Db\Statement\ConditionStatementInterface::getCondition()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getOrderBy" id="_getOrderBy">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getOrderBy">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Update.html#206-212" title="Go to source code">getOrderBy</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Statement.ConditionStatementInterface.html#_getOrderBy">Alcys\Core\Db\Statement\ConditionStatementInterface::getOrderBy()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getLimit" id="_getLimit">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getLimit">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Update.html#215-221" title="Go to source code">getLimit</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Statement.ConditionStatementInterface.html#_getLimit">Alcys\Core\Db\Statement\ConditionStatementInterface::getLimit()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

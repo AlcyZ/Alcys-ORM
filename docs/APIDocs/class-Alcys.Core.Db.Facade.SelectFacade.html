@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Alcys\Core\Db\Facade\SelectFacade</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
+	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Overview</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-Alcys.Core.Db.Facade.html" title="Summary of Alcys\Core\Db\Facade"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="API-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Alcys.html">
+							Alcys<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-Alcys.Core.html">
+							Core<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-Alcys.Core.Db.html">
+							Db<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Expression.html">
+							Expression<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Expression.Builder.html">
+							Builder						</a>
+							</li>
+								</ul></li>
+					<li class="active">
+						<a href="namespace-Alcys.Core.Db.Facade.html">
+							Facade						</a>
+							</li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Factory.html">
+							Factory						</a>
+							</li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.QueryBuilder.html">
+							QueryBuilder<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.QueryBuilder.MySql.html">
+							MySql						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.References.html">
+							References<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Alcys.Core.Db.References.MySql.html">
+							MySql						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Service.html">
+							Service						</a>
+							</li>
+					<li>
+						<a href="namespace-Alcys.Core.Db.Statement.html">
+							Statement						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Alcys.Core.Types.html">
+							Types						</a>
+							</li>
+								</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Alcys.Core.Db.Facade.DeleteFacade.html">DeleteFacade</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.InsertFacade.html">InsertFacade</a></li>
+				<li class="active"><a href="class-Alcys.Core.Db.Facade.SelectFacade.html">SelectFacade</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.UpdateFacade.html">UpdateFacade</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Alcys.Core.Db.Facade.DeleteFacadeInterface.html">DeleteFacadeInterface</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.InsertFacadeInterface.html">InsertFacadeInterface</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.SelectFacadeInterface.html">SelectFacadeInterface</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.UpdateFacadeInterface.html">UpdateFacadeInterface</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html">WhereConditionFacadeInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class SelectFacade</h1>
+
+
+	<div class="description">
+	<p>Class SelectFacade</p>
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+<b><span>Alcys\Core\Db\Facade\SelectFacade</span></b>			
+			 implements 
+				<a href="class-Alcys.Core.Db.Facade.SelectFacadeInterface.html"><span>Alcys\Core\Db\Facade\SelectFacadeInterface</span></a>, 
+			
+				<a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html"><span>Alcys\Core\Db\Facade\WhereConditionFacadeInterface</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Alcys.html">Alcys</a>\<a href="namespace-Alcys.Core.html">Core</a>\<a href="namespace-Alcys.Core.Db.html">Db</a>\<a href="namespace-Alcys.Core.Db.Facade.html">Facade</a><br>
+		<b>Package:</b> Alcys\Core\Db\Facade<br>
+
+				<b>Todo:</b>
+				Implement functionality that where and join method can handle arrays.<br>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#36-321" title="Go to source code">Core/Db/Facade/SelectFacade.php</a>
+		<br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#61-81" title="Go to source code">__construct</a>( <span>PDO <var>$pdo</var></span>, <span><code><a href="class-Alcys.Core.Db.Statement.SelectInterface.html">Alcys\Core\Db\Statement\SelectInterface</a></code> <var>$select</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$factory</var></span>, <span>string <var>$tableName</var></span>, <span>string|null <var>$tableAlias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Initialize the select facade.
+Set all required properties to fetch entries from the database.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Initialize the select facade.
+Set all required properties to fetch entries from the database.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$pdo</var></dt>
+						<dd>PDO connection.</dd>
+						<dt><var>$select</var></dt>
+						<dd>Select statement.</dd>
+						<dt><var>$factory</var></dt>
+						<dd>Factory to create several objects.</dd>
+						<dt><var>$tableName</var></dt>
+						<dd>Name of the table from which should select (tables can get extended).</dd>
+						<dt><var>$tableAlias</var></dt>
+						<dd>(Optional) Name of the table alias</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fetch" id="_fetch">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_fetch">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#84-109" title="Go to source code">fetch</a>( )</code>
+
+			<div class="description short">
+				<p>Fetch data from the database.
+The facade methods configure the query and use it. If no columns method
+is invoked before, a wildcard (*) will set for the columns.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Fetch data from the database.
+The facade methods configure the query and use it. If no columns method
+is invoked before, a wildcard (*) will set for the columns.</p>
+
+<p>The entries will returned in an associative array.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getColumns" id="_getColumns">
+
+			<td class="attributes"><code>
+				 public 
+				callable
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getColumns">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#112-128" title="Go to source code">getColumns</a>( )</code>
+
+			<div class="description short">
+				<p>Return an anonymous function which is able to create column reference objects.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return an anonymous function which is able to create column reference objects.</p>
+
+<p>Example usage:
+$column = $select->getColumns();
+$obj = $column('column_name'[, 'table_ref', 'alias']);
+$obj is an object of type Alcys\Core\Db\References\MySql\Column</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						callable<br>Store the anonymous function in a variable.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_getColumns">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::getColumns()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getValues" id="_getValues">
+
+			<td class="attributes"><code>
+				 public 
+				callable
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getValues">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#131-147" title="Go to source code">getValues</a>( )</code>
+
+			<div class="description short">
+				<p>Return an anonymous function which is able to create column reference objects.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return an anonymous function which is able to create column reference objects.</p>
+
+<p>Example usage:
+$column = $select->getValues();
+$obj = $value('name');
+$obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						callable<br>Store the anonymous function in a variable.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_getValues">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::getValues()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="table" id="_table">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_table">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#150-164" title="Go to source code">table</a>( <span>string <var>$tableName</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Add a table to the query.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add a table to the query.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$tableName</var></dt>
+						<dd>The name of the table.</dd>
+						<dt><var>$alias</var></dt>
+						<dd>(Optional) An alias name, if exists.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#_table">Alcys\Core\Db\Facade\SelectFacadeInterface::table()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="column" id="_column">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_column">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#167-182" title="Go to source code">column</a>( <span>string <var>$name</var></span>, <span>string|null <var>$tableRef</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Add a column to the query. When this method would not called, a * wildcard will set.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add a column to the query. When this method would not called, a * wildcard will set.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>Name of the column.</dd>
+						<dt><var>$tableRef</var></dt>
+						<dd>(Optional) Name of the referred table, if exists.</dd>
+						<dt><var>$alias</var></dt>
+						<dd>(Optional) An alias name, if exists.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#_column">Alcys\Core\Db\Facade\SelectFacadeInterface::column()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="orderBy" id="_orderBy">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_orderBy">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#185-200" title="Go to source code">orderBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Add an order by expression to the query.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add an order by expression to the query.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$column</var></dt>
+						<dd>Column Name.</dd>
+						<dt><var>$orderMode</var></dt>
+						<dd>Order mode, whether desc or asc.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_orderBy">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::orderBy()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="limit" id="_limit">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_limit">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#203-219" title="Go to source code">limit</a>( <span>integer <var>$beginAmount</var></span>, <span>integer|null <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Add a limit expression to the query.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add a limit expression to the query.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$beginAmount</var></dt>
+						<dd>Amount if only one arg isset, if two, the first entry which will used.</dd>
+						<dt><var>$amount</var></dt>
+						<dd>(Optional) Amount of entries which.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_limit">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::limit()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="groupBy" id="_groupBy">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_groupBy">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#222-237" title="Go to source code">groupBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Add a group by expression to the query.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add a group by expression to the query.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$column</var></dt>
+						<dd></dd>
+						<dt><var>$orderMode</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#_groupBy">Alcys\Core\Db\Facade\SelectFacadeInterface::groupBy()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="distinct" id="_distinct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_distinct">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#240-250" title="Go to source code">distinct</a>( )</code>
+
+			<div class="description short">
+				<p>Add a distinct expression to the query.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add a distinct expression to the query.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#_distinct">Alcys\Core\Db\Facade\SelectFacadeInterface::distinct()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="having" id="_having">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_having">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#253-259" title="Go to source code">having</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+					<h4>Throws</h4>
+					<div class="list">
+						Exception<br>This function will implemented in a future version.
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="where" id="_where">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_where">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#262-274" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code> <var>$condition</var></span> )</code>
+
+			<div class="description short">
+				<p>Add a where expression to the query.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add a where expression to the query.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$condition</var></dt>
+						<dd>The configured condition object, get by conditionBuilder method.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_where">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::where()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="join" id="_join">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_join">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#277-289" title="Go to source code">join</a>( <span><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code> <var>$join</var></span> )</code>
+
+			<div class="description short">
+				<p>Add a join expression to the query.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add a join expression to the query.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$join</var></dt>
+						<dd>The configured join object, get by joinBuilder method.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#_join">Alcys\Core\Db\Facade\SelectFacadeInterface::join()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="conditionBuilder" id="_conditionBuilder">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_conditionBuilder">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#292-300" title="Go to source code">conditionBuilder</a>( )</code>
+
+			<div class="description short">
+				<p>Return a condition object which could passed through the where method.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return a condition object which could passed through the where method.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code>
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_conditionBuilder">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::conditionBuilder()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="joinBuilder" id="_joinBuilder">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_joinBuilder">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#303-311" title="Go to source code">joinBuilder</a>( )</code>
+
+			<div class="description short">
+				<p>Return a join object which could passed through the join method.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return a join object which could passed through the join method.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code>
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#_joinBuilder">Alcys\Core\Db\Facade\SelectFacadeInterface::joinBuilder()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

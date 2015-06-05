@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Alcys-orm by AlcyZ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Alcys-orm</h1>
+      <h2 class="project-tagline">Ein PHP-ORM System, Test Driven Entwickelt, 96% Code-Coverage und inklusive API Dokumentation.</h2>
+      <a href="https://github.com/AlcyZ/Alcys-ORM" class="btn">View on GitHub</a>
+      <a href="https://github.com/AlcyZ/Alcys-ORM/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/AlcyZ/Alcys-ORM/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="alcys-orm" class="anchor" href="#alcys-orm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alcys-ORM</h1>
+
+<p>Ein PHP-ORM System, Test Driven Entwickelt, 96% Code-Coverage und inklusive API Dokumentation.
+Momentant wird nur MySql unterstützt!</p>
+
+<h2>
+<a id="einbindung" class="anchor" href="#einbindung" aria-hidden="true"><span class="octicon octicon-link"></span></a>Einbindung</h2>
+
+<p>Man kann einfach den Autoloader bzw. jeden anderen PSR-0 kompatiblen Autoloader benutzen und ihn registrieren.</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">require_once</span> <span class="pl-s"><span class="pl-pds">'</span>Autoloader.php<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">spl_autoload_register</span>(</span>
+<span class="pl-s1">    <span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>Autoloader<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>load<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">Autoloader</span><span class="pl-k">::</span>register(<span class="pl-s"><span class="pl-pds">'</span>src/<span class="pl-pds">'</span></span>);</span></pre></div>
+
+<p>Eine etwas genauere Beschreibung folgt wenn ich die Zeit dafür finde. Außerdem bietet sie aktuell 
+(in der ersten Stabilen Version) noch nicht viel Extra-Funktionalitäten. Trotzdem sollte der Funkionsumfang
+schon für die meisten Projekte reichen, sofern nicht zu komplexe MySql-Querys benötigt werden.</p>
+
+<h2>
+<a id="benutzung" class="anchor" href="#benutzung" aria-hidden="true"><span class="octicon octicon-link"></span></a>Benutzung</h2>
+
+<p>Man kann sich einfach ein Objekt der Klasse Alcys\Core\Db\Service\AlcysDb instantiieren. Es verfügt über Methoden,
+die Objekte zur Ausführung von SELECT, UPDATE, INSERT und DELETE Statements zurückgeben.</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-smi">$db</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Alcys\Core\Db\Service\</span><span class="pl-c1">AlcysDb</span>(<span class="pl-s"><span class="pl-pds">'</span>mysql:host=localhost;dbname=db_name<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>db_user<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>db_password<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$select</span> <span class="pl-k">=</span> <span class="pl-smi">$db</span><span class="pl-k">-&gt;</span>select(<span class="pl-s"><span class="pl-pds">'</span>table_name<span class="pl-pds">'</span></span>); <span class="pl-c"># Object for select statements</span></span>
+<span class="pl-s1"><span class="pl-smi">$update</span> <span class="pl-k">=</span> <span class="pl-smi">$db</span><span class="pl-k">-&gt;</span>update(<span class="pl-s"><span class="pl-pds">'</span>table_name<span class="pl-pds">'</span></span>); <span class="pl-c"># Object for update statements</span></span>
+<span class="pl-s1"><span class="pl-smi">$insert</span> <span class="pl-k">=</span> <span class="pl-smi">$db</span><span class="pl-k">-&gt;</span>insert(<span class="pl-s"><span class="pl-pds">'</span>table_name<span class="pl-pds">'</span></span>); <span class="pl-c"># Object for insert statements</span></span>
+<span class="pl-s1"><span class="pl-smi">$delete</span> <span class="pl-k">=</span> <span class="pl-smi">$db</span><span class="pl-k">-&gt;</span>delete(<span class="pl-s"><span class="pl-pds">'</span>table_name<span class="pl-pds">'</span></span>); <span class="pl-c"># Object for delete statements</span></span></pre></div>
+
+<p>Jedes dieser Objekte verfügt über Methoden um den Query Objekt-Orientiert zu erzeugen. Um den Befehl auszuführen, stehen
+folgende Methoden zur Verfügung:</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-smi">$select</span><span class="pl-k">-&gt;</span>fetch();</span>
+<span class="pl-s1"><span class="pl-smi">$update</span><span class="pl-k">-&gt;</span>execute();</span>
+<span class="pl-s1"><span class="pl-smi">$insert</span><span class="pl-k">-&gt;</span>execute();</span>
+<span class="pl-s1"><span class="pl-smi">$delete</span><span class="pl-k">-&gt;</span>execute();</span></pre></div>
+
+<p>Es wird immer der Tabellenname genommen, der im Constructor übergeben worden ist. Zusätzliche Tabellen können mithilfe 
+der table() Methode gesetzt werden.
+Bei einem Select Befehl sind, falls nicht anders mit Hilfe der column() Methode gesetzt, alle Spalten (*) gewählt.</p>
+
+<h2>
+<a id="beispiele" class="anchor" href="#beispiele" aria-hidden="true"><span class="octicon octicon-link"></span></a>Beispiele</h2>
+
+<p>Simpler Select Befehl:</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c"># SELECT `test_column`, `column` AS `clm` FROM `test_table` AS `my_table` ORDER BY `clm` DESC;</span></span>
+<span class="pl-s1"><span class="pl-smi">$select</span> <span class="pl-k">=</span> <span class="pl-smi">$db</span><span class="pl-k">-&gt;</span>select(<span class="pl-s"><span class="pl-pds">`</span>test_table<span class="pl-pds">`</span></span>, <span class="pl-s"><span class="pl-pds">`</span>my_table<span class="pl-pds">`</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$resultArray</span> <span class="pl-k">=</span> <span class="pl-smi">$select</span><span class="pl-k">-&gt;</span>column(<span class="pl-s"><span class="pl-pds">'</span>test_column<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">                      <span class="pl-k">-&gt;</span>column(<span class="pl-s"><span class="pl-pds">'</span>column<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>clm<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">                      <span class="pl-k">-&gt;</span>orderBy(<span class="pl-s"><span class="pl-pds">'</span>clm<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>desc<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">                      <span class="pl-k">-&gt;</span>fetch();</span></pre></div>
+
+<p>Simpler Update Befehl:</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c"># UPDATE `test_table` SET `column` = "value", `clm` = "val" LIMIT 4, 15;</span></span>
+<span class="pl-s1"><span class="pl-smi">$update</span> <span class="pl-k">=</span> <span class="pl-smi">$db</span><span class="pl-k">-&gt;</span>update(<span class="pl-s"><span class="pl-pds">`</span>test_table<span class="pl-pds">`</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$update</span><span class="pl-k">-&gt;</span>column(<span class="pl-s"><span class="pl-pds">'</span>column<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>value(<span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">       <span class="pl-k">-&gt;</span>column(<span class="pl-s"><span class="pl-pds">'</span>clm<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>value(<span class="pl-s"><span class="pl-pds">'</span>val<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">       <span class="pl-k">-&gt;</span>limit(<span class="pl-s"><span class="pl-pds">'</span>4<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>15<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">       <span class="pl-k">-&gt;</span>execute();</span></pre></div>
+
+<p>Simpler Insert Befehl:</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c"># INSERT INTO `test_table` (`column`, `clm`) VALUES ("val", "value"), ("any_value", "this_value");</span></span>
+<span class="pl-s1"><span class="pl-smi">$insert</span> <span class="pl-k">=</span> <span class="pl-smi">$db</span><span class="pl-k">-&gt;</span>insert(<span class="pl-s"><span class="pl-pds">`</span>test_table<span class="pl-pds">`</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$insert</span><span class="pl-k">-&gt;</span>columns(<span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>column<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>clm<span class="pl-pds">'</span></span>))</span>
+<span class="pl-s1">       <span class="pl-k">-&gt;</span>values(<span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>val<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>))</span>
+<span class="pl-s1">       <span class="pl-k">-&gt;</span>values(<span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>any_value<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>this_value<span class="pl-pds">'</span></span>))</span>
+<span class="pl-s1">       <span class="pl-k">-&gt;</span>execute();</span></pre></div>
+
+<p>Simpler Delete Befehl:</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c"># DELETE FROM `test_table` ORDER BY `column` ASC LIMIT 0, 5;</span></span>
+<span class="pl-s1"><span class="pl-smi">$delete</span> <span class="pl-k">=</span> <span class="pl-smi">$db</span><span class="pl-k">-&gt;</span>delete(<span class="pl-s"><span class="pl-pds">`</span>test_table<span class="pl-pds">`</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$delete</span><span class="pl-k">-&gt;</span>orderBy(<span class="pl-s"><span class="pl-pds">'</span>column<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">       <span class="pl-k">-&gt;</span>limit(<span class="pl-s"><span class="pl-pds">'</span>0<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>5<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">       <span class="pl-k">-&gt;</span>execute();</span></pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/AlcyZ/Alcys-ORM">Alcys-orm</a> is maintained by <a href="https://github.com/AlcyZ">AlcyZ</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+

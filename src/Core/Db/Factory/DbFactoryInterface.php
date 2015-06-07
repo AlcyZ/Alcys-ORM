@@ -24,6 +24,11 @@
 
 namespace Alcys\Core\Db\Factory;
 
+use Alcys\Core\Db\Facade\ConditionFacade;
+use Alcys\Core\Db\Facade\DeleteFacadeInterface;
+use Alcys\Core\Db\Facade\InsertFacadeInterface;
+use Alcys\Core\Db\Facade\SelectFacadeInterface;
+use Alcys\Core\Db\Facade\UpdateFacadeInterface;
 use Alcys\Core\Db\Statement\StatementInterface;
 use Alcys\Core\Db\QueryBuilder\MySql\DeleteBuilder;
 use Alcys\Core\Db\QueryBuilder\MySql\InsertBuilder;
@@ -80,4 +85,35 @@ interface DbFactoryInterface
 	 *                                                                    switched by the passed argument.
 	 */
 	public function builder(StatementInterface $statement);
+
+
+	/**
+	 * Create instance of facade objects.
+	 * There are four types of facade objects that could created:
+	 * 1.SelectFacade, 2. UpdateFacade, 3. InsertFacade and 4. DeleteFacade.
+	 * Usage: $factory->facade('select', $pdo, $tableName); or similar variants.
+	 *
+	 * @param string      $name       Whether 'select', 'update', 'insert' or 'delete'.
+	 * @param \PDO        $connection An instance of a PDO connection.
+	 * @param string      $tableName  Name of the 'main'-table for the query.
+	 * @param string|null $tableAlias (Optional) If exists, an alias name can also set.
+	 *
+	 * @return DeleteFacadeInterface|InsertFacadeInterface|SelectFacadeInterface|UpdateFacadeInterface
+	 * @throws \Exception
+	 */
+	public function facade($name, \PDO $connection, $tableName, $tableAlias = null);
+
+
+	/**
+	 * Create instance of expression facade objects.
+	 * The difference between this and the facade method
+	 * is, that the other one is for statements and this
+	 * method for expression facade objects.
+	 *
+	 * @param string $name Name of the facade object.
+	 *
+	 * @return ConditionFacade
+	 * @throws \Exception
+	 */
+	public function expressionFacade($name);
 }

@@ -129,8 +129,10 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
+				<li><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">ConditionFacade</a></li>
 				<li class="active"><a href="class-Alcys.Core.Db.Facade.DeleteFacade.html">DeleteFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.InsertFacade.html">InsertFacade</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.JoinFacade.html">JoinFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.SelectFacade.html">SelectFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.UpdateFacade.html">UpdateFacade</a></li>
 			</ul>
@@ -188,7 +190,7 @@
 		<b>Namespace:</b> <a href="namespace-Alcys.html">Alcys</a>\<a href="namespace-Alcys.Core.html">Core</a>\<a href="namespace-Alcys.Core.Db.html">Db</a>\<a href="namespace-Alcys.Core.Db.Facade.html">Facade</a><br>
 		<b>Package:</b> Alcys\Core\Db\Facade<br>
 
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#34-186" title="Go to source code">Core/Db/Facade/DeleteFacade.php</a>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#33-158" title="Go to source code">Core/Db/Facade/DeleteFacade.php</a>
 		<br>
 	</div>
 
@@ -207,7 +209,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#56-74" title="Go to source code">__construct</a>( <span>PDO <var>$pdo</var></span>, <span><code><a href="class-Alcys.Core.Db.Statement.DeleteInterface.html">Alcys\Core\Db\Statement\DeleteInterface</a></code> <var>$delete</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$factory</var></span>, <span>string <var>$table</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#55-73" title="Go to source code">__construct</a>( <span>PDO <var>$pdo</var></span>, <span><code><a href="class-Alcys.Core.Db.Statement.DeleteInterface.html">Alcys\Core\Db\Statement\DeleteInterface</a></code> <var>$delete</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$factory</var></span>, <span>string <var>$table</var></span> )</code>
 
 			<div class="description short">
 				<p>Initialize the update facade.
@@ -249,7 +251,7 @@ Set all required properties to update entries in the database.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_execute">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#77-90" title="Go to source code">execute</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#76-89" title="Go to source code">execute</a>( )</code>
 
 			<div class="description short">
 				<p>Execute the query and delete the expected entries from database.</p>
@@ -282,7 +284,7 @@ Set all required properties to update entries in the database.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_where">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#93-105" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code> <var>$condition</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#92-104" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code> <var>$condition</var></span> )</code>
 
 			<div class="description short">
 				<p>Add a where expression to the query.</p>
@@ -322,7 +324,7 @@ Set all required properties to update entries in the database.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_orderBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#108-126" title="Go to source code">orderBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#107-125" title="Go to source code">orderBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add an order by expression to the query.</p>
@@ -364,7 +366,7 @@ Set all required properties to update entries in the database.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_limit">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#129-145" title="Go to source code">limit</a>( <span>integer <var>$beginAmount</var></span>, <span>integer|null <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#128-144" title="Go to source code">limit</a>( <span>integer <var>$beginAmount</var></span>, <span>integer|null <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a limit expression to the query.</p>
@@ -395,110 +397,38 @@ Set all required properties to update entries in the database.</p>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="conditionBuilder" id="_conditionBuilder">
+		<tr data-order="condition" id="_condition">
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code>
+				<code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_conditionBuilder">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#148-157" title="Go to source code">conditionBuilder</a>( )</code>
+			<a class="anchor" href="#_condition">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#147-157" title="Go to source code">condition</a>( )</code>
 
 			<div class="description short">
-				<p>Return a condition object.
-This will configured and then passed through the where method.</p>
+				<p>Return an condition facade to create where conditions for the query.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Return a condition object.
-This will configured and then passed through the where method.</p>
+				<p>Return an condition facade to create where conditions for the query.</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code><br>A condition object.
+						<code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code><br>Instance of conditionFacade.
 					</div>
 
 
 
 
 					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_conditionBuilder">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::conditionBuilder()</a></code></div>
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="getColumns" id="_getColumns">
-
-			<td class="attributes"><code>
-				 public 
-				callable
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getColumns">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#160-171" title="Go to source code">getColumns</a>( )</code>
-
-			<div class="description short">
-				<p>Return an anonymous function which should used to create column arguments for the condition.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Return an anonymous function which should used to create column arguments for the condition.</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						callable<br>Closure to create column arguments for the condition.
-					</div>
-
-
-
-
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_getColumns">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::getColumns()</a></code></div>
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="getValues" id="_getValues">
-
-			<td class="attributes"><code>
-				 public 
-				callable
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getValues">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.DeleteFacade.html#174-185" title="Go to source code">getValues</a>( )</code>
-
-			<div class="description short">
-				<p>Return an anonymous function which should used to create value arguments for the condition.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Return an anonymous function which should used to create value arguments for the condition.</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						callable<br>Closure to create value arguments for the condition.
-					</div>
-
-
-
-
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_getValues">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::getValues()</a></code></div>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_condition">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::condition()</a></code></div>
 			</div>
 			</div></td>
 		</tr>

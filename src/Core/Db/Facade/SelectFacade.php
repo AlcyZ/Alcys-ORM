@@ -23,7 +23,6 @@
 
 namespace Alcys\Core\Db\Facade;
 
-use Alcys\Core\Db\Expression\ConditionInterface;
 use Alcys\Core\Db\Expression\JoinInterface;
 use Alcys\Core\Db\Factory\DbFactoryInterface;
 use Alcys\Core\Db\References\MySql\Column;
@@ -36,6 +35,7 @@ use Alcys\Core\Types\Numeric;
 /**
  * Class SelectFacade
  * @Todo    Implement functionality that where and join method can handle arrays.
+ * @Todo    Use interface at where method as type hint!
  * @package Alcys\Core\Db\Facade
  */
 class SelectFacade implements SelectFacadeInterface, WhereConditionFacadeInterface
@@ -106,44 +106,6 @@ class SelectFacade implements SelectFacadeInterface, WhereConditionFacadeInterfa
 		}
 
 		return array();
-	}
-
-
-	/**
-	 * Return an anonymous function which is able to create column reference objects.
-	 *
-	 * Example usage:
-	 * $column = $select->getColumns();
-	 * $obj = $column('column_name'[, 'table_ref', 'alias']);
-	 * $obj is an object of type Alcys\Core\Db\References\MySql\Column
-	 *
-	 * @return callable Store the anonymous function in a variable.
-	 */
-	public function getColumns()
-	{
-		return function ($name, $tableRef = null, $alias = null)
-		{
-			return $this->factory->references('Column', $name, $tableRef, $alias);
-		};
-	}
-
-
-	/**
-	 * Return an anonymous function which is able to create column reference objects.
-	 *
-	 * Example usage:
-	 * $column = $select->getValues();
-	 * $obj = $value('name');
-	 * $obj is an object of type Alcys\Core\Db\References\MySql\Value
-	 *
-	 * @return callable Store the anonymous function in a variable.
-	 */
-	public function getValues()
-	{
-		return function ($value)
-		{
-			return $this->factory->references('Value', $value);
-		};
 	}
 
 
@@ -262,13 +224,13 @@ class SelectFacade implements SelectFacadeInterface, WhereConditionFacadeInterfa
 	/**
 	 * Add a where expression to the query.
 	 *
-	 * @param ConditionInterface $condition The configured condition object, get by conditionBuilder method.
+	 * @param ConditionFacade $condition The configured condition object, get by conditionBuilder method.
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function where(ConditionInterface $condition)
+	public function where(ConditionFacade $condition)
 	{
-		$this->select->where($condition);
+		$this->select->where($condition->getCondition());
 
 		return $this;
 	}
@@ -290,13 +252,15 @@ class SelectFacade implements SelectFacadeInterface, WhereConditionFacadeInterfa
 
 
 	/**
-	 * Return a condition object which could passed through the where method.
+	 * Return an condition facade to create where conditions for the query.
 	 *
-	 * @return ConditionInterface
+	 * @return ConditionFacade Instance of conditionFacade.
 	 */
-	public function conditionBuilder()
+	public function condition()
 	{
-		return $this->factory->expression('Condition');
+		$condition = $this->factory->expression('Condition');
+
+		return $this->factory->expressionFacade('Condition', $condition);
 	}
 
 

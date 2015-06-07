@@ -23,8 +23,6 @@
 
 namespace Alcys\Core\Db\Facade;
 
-use Alcys\Core\Db\Expression\ConditionInterface;
-
 /**
  * Interface WhereConditionFacadeInterface
  * @package Alcys\Core\Db\Facade
@@ -56,34 +54,17 @@ interface WhereConditionFacadeInterface
 	/**
 	 * Add a where expression to the query.
 	 *
-	 * @param ConditionInterface $condition The configured condition object, get by conditionBuilder method.
+	 * @param ConditionFacade $condition The configured condition object, get by conditionBuilder method.
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function where(ConditionInterface $condition);
+	public function where(ConditionFacade $condition);
 
 
 	/**
-	 * Return a condition object.
-	 * This will configured and then passed through the where method.
+	 * Return an condition facade to create where conditions for the query.
 	 *
-	 * @return ConditionInterface A condition object.
+	 * @return ConditionFacade Instance of conditionFacade.
 	 */
-	public function conditionBuilder();
-
-
-	/**
-	 * Return an anonymous function which should used to create column arguments for the condition.
-	 *
-	 * @return callable Closure to create column arguments for the condition.
-	 */
-	public function getColumns();
-
-
-	/**
-	 * Return an anonymous function which should used to create value arguments for the condition.
-	 *
-	 * @return callable Closure to create value arguments for the condition.
-	 */
-	public function getValues();
+	public function condition();
 }

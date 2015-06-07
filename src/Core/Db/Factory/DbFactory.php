@@ -27,10 +27,15 @@ namespace Alcys\Core\Db\Factory;
 use Alcys\Core\Db\Expression\Condition;
 use Alcys\Core\Db\Expression\ExpressionInterface;
 use Alcys\Core\Db\Expression\Join;
+use Alcys\Core\Db\Facade\ConditionFacade;
 use Alcys\Core\Db\Facade\DeleteFacade;
+use Alcys\Core\Db\Facade\DeleteFacadeInterface;
 use Alcys\Core\Db\Facade\InsertFacade;
+use Alcys\Core\Db\Facade\InsertFacadeInterface;
 use Alcys\Core\Db\Facade\SelectFacade;
+use Alcys\Core\Db\Facade\SelectFacadeInterface;
 use Alcys\Core\Db\Facade\UpdateFacade;
+use Alcys\Core\Db\Facade\UpdateFacadeInterface;
 use Alcys\Core\Db\QueryBuilder\MySql\DeleteBuilder;
 use Alcys\Core\Db\QueryBuilder\MySql\InsertBuilder;
 use Alcys\Core\Db\QueryBuilder\MySql\SelectBuilder;
@@ -170,6 +175,41 @@ class DbFactory implements DbFactoryInterface
 			return new DeleteFacade($connection, $this->statement('Delete'), $this, $tableName, $tableAlias);
 		}
 		throw new \Exception('No facade object with the name "' . ucfirst($name) . 'Facade" was found');
+	}
+
+
+	/**
+	 * Create instance of expression facade objects.
+	 * The difference between this and the facade method
+	 * is, that the other one is for statements and this
+	 * method for expression facade objects.
+	 *
+	 * @param string $name Name of the facade object.
+	 *
+	 * @return ConditionFacade
+	 * @throws \Exception
+	 */
+	public function expressionFacade($name)
+	{
+		return $this->_invokeCreateMethod(ucfirst(explode('::', __METHOD__)[1]), $name, func_get_args());
+	}
+
+
+	/**
+	 * Create an instance of a condition facade.
+	 *
+	 * @param array $args Get from func_get_arguments
+	 *
+	 * @return ConditionFacade
+	 */
+	public function _createExpressionFacadeCondition($args)
+	{
+		if(!$args[1] instanceof Condition)
+		{
+			throw new \InvalidArgumentException('The second argument must be of type Expression\Condition');
+		}
+
+		return new ConditionFacade($args[1], $this);
 	}
 
 

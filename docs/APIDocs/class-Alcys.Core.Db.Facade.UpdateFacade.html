@@ -129,8 +129,10 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
+				<li><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">ConditionFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.DeleteFacade.html">DeleteFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.InsertFacade.html">InsertFacade</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.JoinFacade.html">JoinFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.SelectFacade.html">SelectFacade</a></li>
 				<li class="active"><a href="class-Alcys.Core.Db.Facade.UpdateFacade.html">UpdateFacade</a></li>
 			</ul>
@@ -190,7 +192,9 @@
 
 				<b>Todo:</b>
 				Type in value method as sec arg, default is value, e.g.: $update->value('column_name', 'column')<br>
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#34-276" title="Go to source code">Core/Db/Facade/UpdateFacade.php</a>
+				<b>Todo:</b>
+				Use interface at where method as type hint!<br>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#35-251" title="Go to source code">Core/Db/Facade/UpdateFacade.php</a>
 		<br>
 	</div>
 
@@ -209,7 +213,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#62-80" title="Go to source code">__construct</a>( <span>PDO <var>$pdo</var></span>, <span><code><a href="class-Alcys.Core.Db.Statement.UpdateInterface.html">Alcys\Core\Db\Statement\UpdateInterface</a></code> <var>$update</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$factory</var></span>, <span>string <var>$table</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#64-82" title="Go to source code">__construct</a>( <span>PDO <var>$pdo</var></span>, <span><code><a href="class-Alcys.Core.Db.Statement.UpdateInterface.html">Alcys\Core\Db\Statement\UpdateInterface</a></code> <var>$update</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$factory</var></span>, <span>string <var>$table</var></span> )</code>
 
 			<div class="description short">
 				<p>Initialize the update facade.
@@ -251,7 +255,7 @@ Set all required properties to update entries in the database.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_execute">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#83-96" title="Go to source code">execute</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#85-98" title="Go to source code">execute</a>( )</code>
 
 			<div class="description short">
 				<p>Execute the query and update the expected entries in the database.</p>
@@ -284,7 +288,7 @@ Set all required properties to update entries in the database.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_column">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#99-115" title="Go to source code">column</a>( <span>string <var>$column</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#101-117" title="Go to source code">column</a>( <span>string <var>$column</var></span> )</code>
 
 			<div class="description short">
 				<p>Set a single column to the query which should get an update.
@@ -328,7 +332,7 @@ This process can done multiple times to update more then one column.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_value">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#118-134" title="Go to source code">value</a>( <span>string <var>$value</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#120-136" title="Go to source code">value</a>( <span>string <var>$value</var></span> )</code>
 
 			<div class="description short">
 				<p>Set the value for the column, which is passed as argument in the UpdateFacade::column() method.
@@ -376,7 +380,7 @@ Before calling this method again, the column() has to be invoked.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_columns">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#137-150" title="Go to source code">columns</a>( <span>array <var>$columns</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#139-152" title="Go to source code">columns</a>( <span>array <var>$columns</var></span> )</code>
 
 			<div class="description short">
 				<p>Set multiple columns to the query which should get an update.
@@ -418,7 +422,7 @@ Afterwards, you have to call the UpdateFacade::values() method!!!</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_values">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#153-179" title="Go to source code">values</a>( <span>array <var>$values</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#155-181" title="Go to source code">values</a>( <span>array <var>$values</var></span> )</code>
 
 			<div class="description short">
 				<p>Set values for the columns, which are passed as array argument in the UpdateFacade::columns() method.
@@ -466,7 +470,7 @@ Before calling this method again, the columns() has to be invoked.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_where">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#182-194" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code> <var>$condition</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#184-196" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code> <var>$condition</var></span> )</code>
 
 			<div class="description short">
 				<p>Add a where expression to the query.</p>
@@ -506,7 +510,7 @@ Before calling this method again, the columns() has to be invoked.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_orderBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#197-216" title="Go to source code">orderBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#199-218" title="Go to source code">orderBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add an order by expression to the query.</p>
@@ -548,7 +552,7 @@ Before calling this method again, the columns() has to be invoked.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_limit">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#219-235" title="Go to source code">limit</a>( <span>integer <var>$beginAmount</var></span>, <span>integer|null <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#221-237" title="Go to source code">limit</a>( <span>integer <var>$beginAmount</var></span>, <span>integer|null <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a limit expression to the query.</p>
@@ -579,110 +583,38 @@ Before calling this method again, the columns() has to be invoked.</p>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="conditionBuilder" id="_conditionBuilder">
+		<tr data-order="condition" id="_condition">
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code>
+				<code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_conditionBuilder">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#238-247" title="Go to source code">conditionBuilder</a>( )</code>
+			<a class="anchor" href="#_condition">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#240-250" title="Go to source code">condition</a>( )</code>
 
 			<div class="description short">
-				<p>Return a condition object.
-This will configured and then passed through the where method.</p>
+				<p>Return an condition facade to create where conditions for the query.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Return a condition object.
-This will configured and then passed through the where method.</p>
+				<p>Return an condition facade to create where conditions for the query.</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code><br>A condition object.
+						<code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code><br>Instance of conditionFacade.
 					</div>
 
 
 
 
 					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_conditionBuilder">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::conditionBuilder()</a></code></div>
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="getColumns" id="_getColumns">
-
-			<td class="attributes"><code>
-				 public 
-				callable
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getColumns">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#250-261" title="Go to source code">getColumns</a>( )</code>
-
-			<div class="description short">
-				<p>Return an anonymous function which should used to create column arguments for the condition.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Return an anonymous function which should used to create column arguments for the condition.</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						callable<br>Closure to create column arguments for the condition.
-					</div>
-
-
-
-
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_getColumns">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::getColumns()</a></code></div>
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="getValues" id="_getValues">
-
-			<td class="attributes"><code>
-				 public 
-				callable
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getValues">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#264-275" title="Go to source code">getValues</a>( )</code>
-
-			<div class="description short">
-				<p>Return an anonymous function which should used to create value arguments for the condition.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Return an anonymous function which should used to create value arguments for the condition.</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						callable<br>Closure to create value arguments for the condition.
-					</div>
-
-
-
-
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_getValues">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::getValues()</a></code></div>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_condition">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::condition()</a></code></div>
 			</div>
 			</div></td>
 		</tr>

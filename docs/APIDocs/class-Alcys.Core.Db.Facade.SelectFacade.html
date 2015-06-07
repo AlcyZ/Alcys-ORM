@@ -129,8 +129,10 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
+				<li><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">ConditionFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.DeleteFacade.html">DeleteFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.InsertFacade.html">InsertFacade</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.JoinFacade.html">JoinFacade</a></li>
 				<li class="active"><a href="class-Alcys.Core.Db.Facade.SelectFacade.html">SelectFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.UpdateFacade.html">UpdateFacade</a></li>
 			</ul>
@@ -190,7 +192,9 @@
 
 				<b>Todo:</b>
 				Implement functionality that where and join method can handle arrays.<br>
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#36-321" title="Go to source code">Core/Db/Facade/SelectFacade.php</a>
+				<b>Todo:</b>
+				Use interface at where method as type hint!<br>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#35-285" title="Go to source code">Core/Db/Facade/SelectFacade.php</a>
 		<br>
 	</div>
 
@@ -281,86 +285,6 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="getColumns" id="_getColumns">
-
-			<td class="attributes"><code>
-				 public 
-				callable
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getColumns">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#112-128" title="Go to source code">getColumns</a>( )</code>
-
-			<div class="description short">
-				<p>Return an anonymous function which is able to create column reference objects.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Return an anonymous function which is able to create column reference objects.</p>
-
-<p>Example usage:
-$column = $select->getColumns();
-$obj = $column('column_name'[, 'table_ref', 'alias']);
-$obj is an object of type Alcys\Core\Db\References\MySql\Column</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						callable<br>Store the anonymous function in a variable.
-					</div>
-
-
-
-
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_getColumns">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::getColumns()</a></code></div>
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="getValues" id="_getValues">
-
-			<td class="attributes"><code>
-				 public 
-				callable
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getValues">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#131-147" title="Go to source code">getValues</a>( )</code>
-
-			<div class="description short">
-				<p>Return an anonymous function which is able to create column reference objects.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Return an anonymous function which is able to create column reference objects.</p>
-
-<p>Example usage:
-$column = $select->getValues();
-$obj = $value('name');
-$obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						callable<br>Store the anonymous function in a variable.
-					</div>
-
-
-
-
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_getValues">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::getValues()</a></code></div>
-			</div>
-			</div></td>
-		</tr>
 		<tr data-order="table" id="_table">
 
 			<td class="attributes"><code>
@@ -372,7 +296,7 @@ $obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_table">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#150-164" title="Go to source code">table</a>( <span>string <var>$tableName</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#112-126" title="Go to source code">table</a>( <span>string <var>$tableName</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a table to the query.</p>
@@ -414,7 +338,7 @@ $obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_column">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#167-182" title="Go to source code">column</a>( <span>string <var>$name</var></span>, <span>string|null <var>$tableRef</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#129-144" title="Go to source code">column</a>( <span>string <var>$name</var></span>, <span>string|null <var>$tableRef</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a column to the query. When this method would not called, a * wildcard will set.</p>
@@ -458,7 +382,7 @@ $obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_orderBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#185-200" title="Go to source code">orderBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#147-162" title="Go to source code">orderBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add an order by expression to the query.</p>
@@ -500,7 +424,7 @@ $obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_limit">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#203-219" title="Go to source code">limit</a>( <span>integer <var>$beginAmount</var></span>, <span>integer|null <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#165-181" title="Go to source code">limit</a>( <span>integer <var>$beginAmount</var></span>, <span>integer|null <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a limit expression to the query.</p>
@@ -542,7 +466,7 @@ $obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_groupBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#222-237" title="Go to source code">groupBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#184-199" title="Go to source code">groupBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a group by expression to the query.</p>
@@ -584,7 +508,7 @@ $obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_distinct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#240-250" title="Go to source code">distinct</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#202-212" title="Go to source code">distinct</a>( )</code>
 
 			<div class="description short">
 				<p>Add a distinct expression to the query.</p>
@@ -619,7 +543,7 @@ $obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_having">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#253-259" title="Go to source code">having</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#215-221" title="Go to source code">having</a>( )</code>
 
 			<div class="description short">
 				
@@ -652,7 +576,7 @@ $obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_where">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#262-274" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code> <var>$condition</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#224-236" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code> <var>$condition</var></span> )</code>
 
 			<div class="description short">
 				<p>Add a where expression to the query.</p>
@@ -692,7 +616,7 @@ $obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_join">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#277-289" title="Go to source code">join</a>( <span><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code> <var>$join</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#239-251" title="Go to source code">join</a>( <span><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code> <var>$join</var></span> )</code>
 
 			<div class="description short">
 				<p>Add a join expression to the query.</p>
@@ -721,38 +645,38 @@ $obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="conditionBuilder" id="_conditionBuilder">
+		<tr data-order="condition" id="_condition">
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code>
+				<code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_conditionBuilder">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#292-300" title="Go to source code">conditionBuilder</a>( )</code>
+			<a class="anchor" href="#_condition">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#254-264" title="Go to source code">condition</a>( )</code>
 
 			<div class="description short">
-				<p>Return a condition object which could passed through the where method.</p>
+				<p>Return an condition facade to create where conditions for the query.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Return a condition object which could passed through the where method.</p>
+				<p>Return an condition facade to create where conditions for the query.</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code>
+						<code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code><br>Instance of conditionFacade.
 					</div>
 
 
 
 
 					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_conditionBuilder">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::conditionBuilder()</a></code></div>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html#_condition">Alcys\Core\Db\Facade\WhereConditionFacadeInterface::condition()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -767,7 +691,7 @@ $obj is an object of type Alcys\Core\Db\References\MySql\Value</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_joinBuilder">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#303-311" title="Go to source code">joinBuilder</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#267-275" title="Go to source code">joinBuilder</a>( )</code>
 
 			<div class="description short">
 				<p>Return a join object which could passed through the join method.</p>

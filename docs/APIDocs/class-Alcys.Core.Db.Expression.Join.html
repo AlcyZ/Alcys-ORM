@@ -190,10 +190,14 @@
 		<b>Package:</b> Alcys\Core\Db\Expression<br>
 
 				<b>Todo:</b>
+				Require in condition the same column name? I don't think so .. check documentation!!!<br>
+				<b>Todo:</b>
+				Multiple tables with natural join.<br>
+				<b>Todo:</b>
 				Join expression could implement also for delete and update statement<br>
 				<b>Todo:</b>
 				Implement cross join and logic operators in on condition.<br>
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Expression.Join.html#29-291" title="Go to source code">Core/Db/Expression/Join.php</a>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Expression.Join.html#29-295" title="Go to source code">Core/Db/Expression/Join.php</a>
 		<br>
 	</div>
 
@@ -205,14 +209,14 @@
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a></code>
+				
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_inner">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#43-57" title="Go to source code">inner</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#45-60" title="Go to source code">inner</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Set the join array value with key way to inner and create a tables array.
@@ -228,11 +232,13 @@ Each argument, which has to be of type table interface, will passed to the creat
 					<div class="list"><dl>
 						<dt><var>$table</var></dt>
 						<dd>Table in which should joined.</dd>
+						<dt><var>$optionalTables</var></dt>
+						<dd>(Optional) Array with table objects.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a></code><br>The same instance to concatenate methods.
+						<br>$this The same instance to concatenate methods.
 					</div>
 
 					<h4>Throws</h4>
@@ -246,6 +252,8 @@ Each argument, which has to be of type table interface, will passed to the creat
 					</div>
 
 
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html#_inner">Alcys\Core\Db\Expression\JoinInterface::inner()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -253,14 +261,14 @@ Each argument, which has to be of type table interface, will passed to the creat
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a></code>
+				
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_left">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#60-74" title="Go to source code">left</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#63-78" title="Go to source code">left</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Set the join array value with key way to left and create a tables array.
@@ -276,11 +284,13 @@ Each argument, which has to be of type table interface, will passed to the creat
 					<div class="list"><dl>
 						<dt><var>$table</var></dt>
 						<dd>Table in which should joined.</dd>
+						<dt><var>$optionalTables</var></dt>
+						<dd>(Optional) Array with table objects.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a></code><br>The same instance to concatenate methods.
+						<br>$this The same instance to concatenate methods.
 					</div>
 
 					<h4>Throws</h4>
@@ -294,6 +304,8 @@ Each argument, which has to be of type table interface, will passed to the creat
 					</div>
 
 
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html#_left">Alcys\Core\Db\Expression\JoinInterface::left()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -301,14 +313,14 @@ Each argument, which has to be of type table interface, will passed to the creat
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a></code>
+				
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_right">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#77-91" title="Go to source code">right</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#81-96" title="Go to source code">right</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Set the join array value with key way to right and create a tables array.
@@ -324,11 +336,13 @@ Each argument, which has to be of type table interface, will passed to the creat
 					<div class="list"><dl>
 						<dt><var>$table</var></dt>
 						<dd>Table in which should joined.</dd>
+						<dt><var>$optionalTables</var></dt>
+						<dd>(Optional) Array with table objects.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a></code><br>The same instance to concatenate methods.
+						<br>$this The same instance to concatenate methods.
 					</div>
 
 					<h4>Throws</h4>
@@ -342,6 +356,8 @@ Each argument, which has to be of type table interface, will passed to the creat
 					</div>
 
 
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html#_right">Alcys\Core\Db\Expression\JoinInterface::right()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -349,14 +365,14 @@ Each argument, which has to be of type table interface, will passed to the creat
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a></code>
+				
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_leftOuter">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#94-108" title="Go to source code">leftOuter</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#99-114" title="Go to source code">leftOuter</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Set the join array value with key way to left:outer and create a tables array.
@@ -372,11 +388,13 @@ Each argument, which has to be of type table interface, will passed to the creat
 					<div class="list"><dl>
 						<dt><var>$table</var></dt>
 						<dd>Table in which should joined.</dd>
+						<dt><var>$optionalTables</var></dt>
+						<dd>(Optional) Array with table objects.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a></code><br>The same instance to concatenate methods.
+						<br>$this The same instance to concatenate methods.
 					</div>
 
 					<h4>Throws</h4>
@@ -390,6 +408,8 @@ Each argument, which has to be of type table interface, will passed to the creat
 					</div>
 
 
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html#_leftOuter">Alcys\Core\Db\Expression\JoinInterface::leftOuter()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -397,14 +417,14 @@ Each argument, which has to be of type table interface, will passed to the creat
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a></code>
+				
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_rightOuter">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#111-125" title="Go to source code">rightOuter</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#117-132" title="Go to source code">rightOuter</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Set the join array value with key way to right:outer and create a tables array.
@@ -420,11 +440,13 @@ Each argument, which has to be of type table interface, will passed to the creat
 					<div class="list"><dl>
 						<dt><var>$table</var></dt>
 						<dd>Table in which should joined.</dd>
+						<dt><var>$optionalTables</var></dt>
+						<dd>(Optional) Array with table objects.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a></code><br>The same instance to concatenate methods.
+						<br>$this The same instance to concatenate methods.
 					</div>
 
 					<h4>Throws</h4>
@@ -438,6 +460,8 @@ Each argument, which has to be of type table interface, will passed to the creat
 					</div>
 
 
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html#_rightOuter">Alcys\Core\Db\Expression\JoinInterface::rightOuter()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -445,14 +469,14 @@ Each argument, which has to be of type table interface, will passed to the creat
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a></code>
+				
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_natural">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#128-148" title="Go to source code">natural</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span>, <span>string|null <var>$way</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#135-155" title="Go to source code">natural</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span>, <span>string|null <var>$way</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Set the join array value with key way to natural and create a tables array.
@@ -476,7 +500,7 @@ The natural join is like a using condition which automatic selection of all equi
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a></code><br>The same instance to concatenate methods.
+						<br>$this The same instance to concatenate methods.
 					</div>
 
 					<h4>Throws</h4>
@@ -490,6 +514,8 @@ The natural join is like a using condition which automatic selection of all equi
 					</div>
 
 
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html#_natural">Alcys\Core\Db\Expression\JoinInterface::natural()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -504,7 +530,7 @@ The natural join is like a using condition which automatic selection of all equi
 
 			<td class="name"><div>
 			<a class="anchor" href="#_on">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#151-172" title="Go to source code">on</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$firstColumn</var></span>, <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$secondColumn</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#158-179" title="Go to source code">on</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$firstColumn</var></span>, <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$secondColumn</var></span> )</code>
 
 			<div class="description short">
 				<p>Set the join array value with key conditionType to on and with key condition to an validated condition.
@@ -542,6 +568,8 @@ not have table references or no of the way methods(left(), right(), inner(), ...
 					</div>
 
 
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html#_on">Alcys\Core\Db\Expression\JoinInterface::on()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -556,7 +584,7 @@ not have table references or no of the way methods(left(), right(), inner(), ...
 
 			<td class="name"><div>
 			<a class="anchor" href="#_using">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#175-188" title="Go to source code">using</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#182-195" title="Go to source code">using</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span> )</code>
 
 			<div class="description short">
 				<p>Set the join array value with key conditionType to using and with key condition to an validated condition.</p>
@@ -580,6 +608,8 @@ not have table references or no of the way methods(left(), right(), inner(), ...
 
 
 
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html#_using">Alcys\Core\Db\Expression\JoinInterface::using()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -594,7 +624,7 @@ not have table references or no of the way methods(left(), right(), inner(), ...
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getJoinArray">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#191-197" title="Go to source code">getJoinArray</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#198-204" title="Go to source code">getJoinArray</a>( )</code>
 
 			<div class="description short">
 				
@@ -629,7 +659,7 @@ not have table references or no of the way methods(left(), right(), inner(), ...
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getExpressionArray">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#200-209" title="Go to source code">getExpressionArray</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Expression.Join.html#207-216" title="Go to source code">getExpressionArray</a>( )</code>
 
 			<div class="description short">
 				<p>Equivalent to Join::getJoinArray method.

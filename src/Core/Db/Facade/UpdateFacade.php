@@ -23,17 +23,19 @@
 
 namespace Alcys\Core\Db\Facade;
 
-use Alcys\Core\Db\Expression\ConditionInterface;
 use Alcys\Core\Db\Factory\DbFactoryInterface;
 use Alcys\Core\Db\References\ColumnInterface;
 use Alcys\Core\Db\References\OrderModeEnumInterface;
 use Alcys\Core\Db\References\TableInterface;
+use Alcys\Core\Db\Statement\ConditionStatementInterface;
+use Alcys\Core\Db\Statement\StatementInterface;
 use Alcys\Core\Db\Statement\UpdateInterface;
 use Alcys\Core\Types\Numeric;
 
 /**
  * Class UpdateFacade
  * @Todo    Type in value method as sec arg, default is value, e.g.: $update->value('column_name', 'column')
+ * @Todo    Use interface at where method as type hint!
  * @package Alcys\Core\Db\Facade
  */
 class UpdateFacade implements UpdateFacadeInterface, WhereConditionFacadeInterface
@@ -44,7 +46,7 @@ class UpdateFacade implements UpdateFacadeInterface, WhereConditionFacadeInterfa
 	private $pdo;
 
 	/**
-	 * @var UpdateInterface
+	 * @var UpdateInterface|StatementInterface|ConditionStatementInterface
 	 */
 	private $update;
 
@@ -182,13 +184,13 @@ class UpdateFacade implements UpdateFacadeInterface, WhereConditionFacadeInterfa
 	/**
 	 * Add a where expression to the query.
 	 *
-	 * @param ConditionInterface $condition The configured condition object, get by conditionBuilder method.
+	 * @param ConditionFacade $condition The configured condition object, get by conditionBuilder method.
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function where(ConditionInterface $condition)
+	public function where(ConditionFacade $condition)
 	{
-		$this->update->where($condition);
+		$this->update->where($condition->getCondition());
 
 		return $this;
 	}
@@ -236,41 +238,14 @@ class UpdateFacade implements UpdateFacadeInterface, WhereConditionFacadeInterfa
 
 
 	/**
-	 * Return a condition object.
-	 * This will configured and then passed through the where method.
+	 * Return an condition facade to create where conditions for the query.
 	 *
-	 * @return ConditionInterface A condition object.
+	 * @return ConditionFacade Instance of conditionFacade.
 	 */
-	public function conditionBuilder()
+	public function condition()
 	{
-		return $this->factory->expression('Condition');
-	}
+		$condition = $this->factory->expression('Condition');
 
-
-	/**
-	 * Return an anonymous function which should used to create column arguments for the condition.
-	 *
-	 * @return callable Closure to create column arguments for the condition.
-	 */
-	public function getColumns()
-	{
-		return function ($columnName, $tableRef = null, $alias = null)
-		{
-			return $this->factory->references('Column', $columnName, $tableRef, $alias);
-		};
-	}
-
-
-	/**
-	 * Return an anonymous function which should used to create value arguments for the condition.
-	 *
-	 * @return callable Closure to create value arguments for the condition.
-	 */
-	public function getValues()
-	{
-		return function ($name)
-		{
-			return $this->factory->references('Value', $name);
-		};
+		return $this->factory->expressionFacade('Condition', $condition);
 	}
 }

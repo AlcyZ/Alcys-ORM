@@ -23,7 +23,6 @@
 
 namespace Alcys\Core\Db\Facade;
 
-use Alcys\Core\Db\Expression\ConditionInterface;
 use Alcys\Core\Db\Factory\DbFactoryInterface;
 use Alcys\Core\Db\References\ColumnInterface;
 use Alcys\Core\Db\References\OrderModeEnumInterface;
@@ -93,13 +92,13 @@ class DeleteFacade implements DeleteFacadeInterface, WhereConditionFacadeInterfa
 	/**
 	 * Add a where expression to the query.
 	 *
-	 * @param ConditionInterface $condition The configured condition object, get by conditionBuilder method.
+	 * @param ConditionFacade $condition The configured condition object, get by conditionBuilder method.
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function where(ConditionInterface $condition)
+	public function where(ConditionFacade $condition)
 	{
-		$this->statement->where($condition);
+		$this->statement->where($condition->getCondition());
 
 		return $this;
 	}
@@ -146,41 +145,14 @@ class DeleteFacade implements DeleteFacadeInterface, WhereConditionFacadeInterfa
 
 
 	/**
-	 * Return a condition object.
-	 * This will configured and then passed through the where method.
+	 * Return an condition facade to create where conditions for the query.
 	 *
-	 * @return ConditionInterface A condition object.
+	 * @return ConditionFacade Instance of conditionFacade.
 	 */
-	public function conditionBuilder()
+	public function condition()
 	{
-		return $this->factory->expression('Condition');
-	}
+		$condition = $this->factory->expression('Condition');
 
-
-	/**
-	 * Return an anonymous function which should used to create column arguments for the condition.
-	 *
-	 * @return callable Closure to create column arguments for the condition.
-	 */
-	public function getColumns()
-	{
-		return function ($name, $tableRef = null, $alias = null)
-		{
-			return $this->factory->references('Column', $name, $tableRef, $alias);
-		};
-	}
-
-
-	/**
-	 * Return an anonymous function which should used to create value arguments for the condition.
-	 *
-	 * @return callable Closure to create value arguments for the condition.
-	 */
-	public function getValues()
-	{
-		return function ($name)
-		{
-			return $this->factory->references('Value', $name);
-		};
+		return $this->factory->expressionFacade('Condition', $condition);
 	}
 }

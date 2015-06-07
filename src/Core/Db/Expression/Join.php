@@ -28,6 +28,8 @@ use Alcys\Core\Db\References\TableInterface;
 
 /**
  * Class Join
+ * @Todo    Require in condition the same column name? I don't think so .. check documentation!!!
+ * @Todo    Multiple tables with natural join.
  * @Todo    Join expression could implement also for delete and update statement
  * @Todo    Implement cross join and logic operators in on condition.
  * @package Alcys\Core\Db\Expression
@@ -44,16 +46,17 @@ class Join implements ExpressionInterface, JoinInterface, ReBuildableExpressionI
 	 * Set the join array value with key way to inner and create a tables array.
 	 * Each argument, which has to be of type table interface, will passed to the created tables array.
 	 *
-	 * @param TableInterface $table Table in which should joined.
+	 * @param TableInterface   $table          Table in which should joined.
+	 * @param TableInterface[] $optionalTables (Optional) Array with table objects.
 	 *
 	 * @see Join::_setWayValue
 	 *
-	 * @return Join The same instance to concatenate methods.
+	 * @return $this The same instance to concatenate methods.
 	 * @throws \Exception
 	 */
-	public function inner(TableInterface $table)
+	public function inner(TableInterface $table, array $optionalTables = array())
 	{
-		return $this->_setWayValue('inner', $table, func_get_args());
+		return $this->_setWayValue('inner', $table, $optionalTables);
 	}
 
 
@@ -61,16 +64,17 @@ class Join implements ExpressionInterface, JoinInterface, ReBuildableExpressionI
 	 * Set the join array value with key way to left and create a tables array.
 	 * Each argument, which has to be of type table interface, will passed to the created tables array.
 	 *
-	 * @param TableInterface $table Table in which should joined.
+	 * @param TableInterface   $table          Table in which should joined.
+	 * @param TableInterface[] $optionalTables (Optional) Array with table objects.
 	 *
 	 * @see Join::_setWayValue
 	 *
-	 * @return Join The same instance to concatenate methods.
+	 * @return $this The same instance to concatenate methods.
 	 * @throws \Exception
 	 */
-	public function left(TableInterface $table)
+	public function left(TableInterface $table, array $optionalTables = array())
 	{
-		return $this->_setWayValue('left', $table, func_get_args());
+		return $this->_setWayValue('left', $table, $optionalTables);
 	}
 
 
@@ -78,16 +82,17 @@ class Join implements ExpressionInterface, JoinInterface, ReBuildableExpressionI
 	 * Set the join array value with key way to right and create a tables array.
 	 * Each argument, which has to be of type table interface, will passed to the created tables array.
 	 *
-	 * @param TableInterface $table Table in which should joined.
+	 * @param TableInterface   $table          Table in which should joined.
+	 * @param TableInterface[] $optionalTables (Optional) Array with table objects.
 	 *
 	 * @see Join::_setWayValue
 	 *
-	 * @return Join The same instance to concatenate methods.
+	 * @return $this The same instance to concatenate methods.
 	 * @throws \Exception
 	 */
-	public function right(TableInterface $table)
+	public function right(TableInterface $table, array $optionalTables = array())
 	{
-		return $this->_setWayValue('right', $table, func_get_args());
+		return $this->_setWayValue('right', $table, $optionalTables);
 	}
 
 
@@ -95,16 +100,17 @@ class Join implements ExpressionInterface, JoinInterface, ReBuildableExpressionI
 	 * Set the join array value with key way to left:outer and create a tables array.
 	 * Each argument, which has to be of type table interface, will passed to the created tables array.
 	 *
-	 * @param TableInterface $table Table in which should joined.
+	 * @param TableInterface   $table          Table in which should joined.
+	 * @param TableInterface[] $optionalTables (Optional) Array with table objects.
 	 *
 	 * @see Join::_setWayValue
 	 *
-	 * @return Join The same instance to concatenate methods.
+	 * @return $this The same instance to concatenate methods.
 	 * @throws \Exception
 	 */
-	public function leftOuter(TableInterface $table)
+	public function leftOuter(TableInterface $table, array $optionalTables = array())
 	{
-		return $this->_setWayValue('left:outer', $table, func_get_args());
+		return $this->_setWayValue('left:outer', $table, $optionalTables);
 	}
 
 
@@ -112,16 +118,17 @@ class Join implements ExpressionInterface, JoinInterface, ReBuildableExpressionI
 	 * Set the join array value with key way to right:outer and create a tables array.
 	 * Each argument, which has to be of type table interface, will passed to the created tables array.
 	 *
-	 * @param TableInterface $table Table in which should joined.
+	 * @param TableInterface   $table          Table in which should joined.
+	 * @param TableInterface[] $optionalTables (Optional) Array with table objects.
 	 *
 	 * @see Join::_setWayValue
 	 *
-	 * @return Join The same instance to concatenate methods.
+	 * @return $this The same instance to concatenate methods.
 	 * @throws \Exception
 	 */
-	public function rightOuter(TableInterface $table)
+	public function rightOuter(TableInterface $table, array $optionalTables = array())
 	{
-		return $this->_setWayValue('right:outer', $table, func_get_args());
+		return $this->_setWayValue('right:outer', $table, $optionalTables);
 	}
 
 
@@ -135,7 +142,7 @@ class Join implements ExpressionInterface, JoinInterface, ReBuildableExpressionI
 	 *
 	 * @see Join::_validateNaturalWayArgument
 	 *
-	 * @return Join The same instance to concatenate methods.
+	 * @return $this The same instance to concatenate methods.
 	 * @throws \Exception
 	 */
 	public function natural(TableInterface $table, $way = null)
@@ -213,27 +220,24 @@ class Join implements ExpressionInterface, JoinInterface, ReBuildableExpressionI
 	 * Set the join array value with key way and tables.
 	 * Throw an exception if not each element of args is of type table interface.
 	 *
-	 * @param string           $way   The way in which the table(s) should joined.
-	 * @param TableInterface   $table The table in which should joined.
-	 * @param TableInterface[] $args  Optional else tables for cross joins.
+	 * @param string           $way            The way in which the table(s) should joined.
+	 * @param TableInterface   $table          The table in which should joined.
+	 * @param TableInterface[] $optionalTables (Optional) Array with table objects.
 	 *
 	 * @return $this
 	 * @throws \Exception
 	 */
-	private function _setWayValue($way, TableInterface $table, array $args = array())
+	private function _setWayValue($way, TableInterface $table, array $optionalTables = array())
 	{
 		$this->joinArray['way']    = $way;
 		$this->joinArray['tables'] = array($table);
-		foreach($args as $index => $arg)
+		foreach($optionalTables as $arg)
 		{
-			if($index !== 0)
+			if(!$arg instanceof TableInterface)
 			{
-				if(!$arg instanceof TableInterface)
-				{
-					throw new \Exception('arguments has to be of type table interface');
-				}
-				$this->joinArray['tables'][] = $arg;
+				throw new \InvalidArgumentException('arguments has to be of type table interface');
 			}
+			$this->joinArray['tables'][] = $arg;
 		}
 
 		return $this;

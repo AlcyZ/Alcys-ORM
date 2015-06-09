@@ -99,14 +99,20 @@ dass Methoden zur Erstellung einer Bedingung beinhaltet. Das Objekt übergibt ma
 ```php
 # WHERE `column_name` != 'value'
 
-$delete->where($delete->condition()->notEqual('column_name', 'value'));
+$delete->where(
+   $delete->condition()
+	  ->notEqual('column_name', 'value')
+);
 ```
 
 Falls man zwei Spalten mit einander vergleichen möchte, übergibt man als dritten Parameter einfach 'column'.
 ```php
 # WHERE `first_column` >= `second_column`
 
-$update->where($update->condition()->greaterEqual('first_column, 'second_column', 'column');
+$update->where(
+   $update->condition()
+	  ->greaterEqual('first_column, 'second_column', 'column')
+);
 ```
 
 Wenn man mehrere Bedingungen setzen möchte, dann kann man einfach zur Verknüpfung die Methoden 'logicAnd' und 'logicOr' aufrufen.
@@ -115,9 +121,14 @@ Sie müssen zwischen jeder Bedingung stehen, sonst wird eine Exception geworfen.
 # WHERE `first_column` = 'a' AND `cl` != `clm` OR `column` < 5
 
 $condition = $select->condition();
-$condition->equal('first_column', 'a')->logicAnd()->notEqual('cl', 'clm', 'column')->logicOr()->lower('column', 5);
+$condition->equal('first_column', 'a')
+	  ->logicAnd()
+	  ->notEqual('cl', 'clm', 'column')
+	  ->logicOr()
+	  ->lower('column', 5);
 
-$select->where($condition)->fetch();
+$select->where($condition)
+       ->fetch();
 ```
 
 Bedingungen mit like folgt ..
@@ -133,7 +144,11 @@ Das Select Statement verfügt über die Methode 'joinBuilder', die ein Objekt zu
 ```php
 # LEFT JOIN `table_name` USING `column`
 
-$select->join($select->joinBuilder()->left('table_name')->using('column'));
+$select->join(
+   $select->joinBuilder()
+	  ->left('table_name')
+	  ->using('column')
+);
 ```
 
 Bei der 'on' Methode müssen als Parameter zwei Assoc-Arrays übergeben werden, in denen der key 'table' und 'column' existiert,
@@ -141,10 +156,14 @@ sonst wird eine Exception geworfen.
 ```php
 # INNER JOIN `table` ON (`tbl`.`cl`, `table`.`clm`);
 
-$firstColumn = array('table' => 'tbl', 'column' => 'cl');
-$secondColumn = array('table' => 'table', 'column' => 'clm');
+$firstColumn = ['table' => 'tbl', 'column' => 'cl'];
+$secondColumn = ['table' => 'table', 'column' => 'clm'];
 
-$select->join($select->joinBuilder()->inner('table')->on($firstColumn, $secondColumn));
+$select->join(
+   $select->joinBuilder()
+          ->inner('table')
+          ->on($firstColumn, $secondColumn)
+);
 
 ```
 
@@ -156,8 +175,14 @@ Wenn man eine Tabelle mit allen equivalenten Spaltennamen joinen möchte, kann m
 Als ersten Parameter gibt man den Tabellennamen an, als zweiten kann Optional entweder 'inner', 'left[Outer]' oder 'right[Outer]' gesetzt werden.
 ```php
 # NATURAL JOIN `table`
-$select->join($select->joinBuilder()->natural('table'));
+$select->join(
+   $select->joinBuilder()
+	  ->natural('table')
+);
 
 # NATURAL RIGHT JOIN `table`
-$select->join($select->joinBuilder()->natural('table', 'right'));
+$select->join(
+   $select->joinBuilder()
+	  ->natural('table', 'right')
+);
 ```

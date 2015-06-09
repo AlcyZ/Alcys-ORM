@@ -22,7 +22,7 @@
       <h1>
 <a id="alcys-orm" class="anchor" href="#alcys-orm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alcys-ORM</h1>
 
-<p>Ein PHP-ORM System, Test Driven Entwickelt, 96% Code-Coverage und inklusive API Dokumentation.
+<p>Ein PHP-ORM System, Test Driven Entwickelt, 100% Code-Coverage und inklusive API Dokumentation.
 Momentant wird nur MySql unterstützt!</p>
 
 <h2>
@@ -109,6 +109,94 @@ Bei einem Select Befehl sind, falls nicht anders mit Hilfe der column() Methode 
 <span class="pl-s1"><span class="pl-smi">$delete</span><span class="pl-k">-&gt;</span>orderBy(<span class="pl-s"><span class="pl-pds">'</span>column<span class="pl-pds">'</span></span>)</span>
 <span class="pl-s1">       <span class="pl-k">-&gt;</span>limit(<span class="pl-s"><span class="pl-pds">'</span>0<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>5<span class="pl-pds">'</span></span>)</span>
 <span class="pl-s1">       <span class="pl-k">-&gt;</span>execute();</span></pre></div>
+
+<h2>
+<a id="where-bedingungen" class="anchor" href="#where-bedingungen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Where Bedingungen</h2>
+
+<p>Alle Statement Objekte, außer das InsertStatement, verfügen über die 'condition' Methode. Sie gibt ein Objekt zurück,
+dass Methoden zur Erstellung einer Bedingung beinhaltet. Das Objekt übergibt man anschließend einfach der 'where' Methode.</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c"># WHERE `column_name` != 'value'</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$delete</span><span class="pl-k">-&gt;</span>where(</span>
+<span class="pl-s1">   <span class="pl-smi">$delete</span><span class="pl-k">-&gt;</span>condition()</span>
+<span class="pl-s1">      <span class="pl-k">-&gt;</span>notEqual(<span class="pl-s"><span class="pl-pds">'</span>column_name<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">);</span></pre></div>
+
+<p>Falls man zwei Spalten mit einander vergleichen möchte, übergibt man als dritten Parameter einfach 'column'.</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c"># WHERE `first_column` &gt;= `second_column`</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$update</span><span class="pl-k">-&gt;</span>where(</span>
+<span class="pl-s1">   <span class="pl-smi">$update</span><span class="pl-k">-&gt;</span>condition()</span>
+<span class="pl-s1">      <span class="pl-k">-&gt;</span>greaterEqual(<span class="pl-s"><span class="pl-pds">'</span>first_column, <span class="pl-pds">'</span></span><span class="pl-c1">second_column</span><span class="pl-s"><span class="pl-pds">'</span>, <span class="pl-pds">'</span></span><span class="pl-c1">column</span><span class="pl-s"><span class="pl-pds">'</span>)</span></span>
+<span class="pl-s1"><span class="pl-s">);</span></span></pre></div>
+
+<p>Wenn man mehrere Bedingungen setzen möchte, dann kann man einfach zur Verknüpfung die Methoden 'logicAnd' und 'logicOr' aufrufen.
+Sie müssen zwischen jeder Bedingung stehen, sonst wird eine Exception geworfen.</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c"># WHERE `first_column` = 'a' AND `cl` != `clm` OR `column` &lt; 5</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$condition</span> <span class="pl-k">=</span> <span class="pl-smi">$select</span><span class="pl-k">-&gt;</span>condition();</span>
+<span class="pl-s1"><span class="pl-smi">$condition</span><span class="pl-k">-&gt;</span>equal(<span class="pl-s"><span class="pl-pds">'</span>first_column<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>a<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">      <span class="pl-k">-&gt;</span>logicAnd()</span>
+<span class="pl-s1">      <span class="pl-k">-&gt;</span>notEqual(<span class="pl-s"><span class="pl-pds">'</span>cl<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>clm<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>column<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">      <span class="pl-k">-&gt;</span>logicOr()</span>
+<span class="pl-s1">      <span class="pl-k">-&gt;</span>lower(<span class="pl-s"><span class="pl-pds">'</span>column<span class="pl-pds">'</span></span>, <span class="pl-c1">5</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$select</span><span class="pl-k">-&gt;</span>where(<span class="pl-smi">$condition</span>)</span>
+<span class="pl-s1">       <span class="pl-k">-&gt;</span>fetch();</span></pre></div>
+
+<p>Bedingungen mit like folgt ..</p>
+
+<h2>
+<a id="joins" class="anchor" href="#joins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Joins</h2>
+
+<p>In der aktuellen Version funktionieren Joins nur bei Select Statement. Die funktionalität für weitere Statements wird aber noch kommen.</p>
+
+<p>Das Select Statement verfügt über die Methode 'joinBuilder', die ein Objekt zur Erstellung des Joins zurückgibt, was der 'join' Methoden
+übergeben wird.</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c"># LEFT JOIN `table_name` USING `column`</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$select</span><span class="pl-k">-&gt;</span>join(</span>
+<span class="pl-s1">   <span class="pl-smi">$select</span><span class="pl-k">-&gt;</span>joinBuilder()</span>
+<span class="pl-s1">      <span class="pl-k">-&gt;</span>left(<span class="pl-s"><span class="pl-pds">'</span>table_name<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">      <span class="pl-k">-&gt;</span>using(<span class="pl-s"><span class="pl-pds">'</span>column<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">);</span></pre></div>
+
+<p>Bei der 'on' Methode müssen als Parameter zwei Assoc-Arrays übergeben werden, in denen der key 'table' und 'column' existiert,
+sonst wird eine Exception geworfen.</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c"># INNER JOIN `table` ON (`tbl`.`cl`, `table`.`clm`);</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$firstColumn</span> <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">'</span>table<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>tbl<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>column<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>cl<span class="pl-pds">'</span></span>];</span>
+<span class="pl-s1"><span class="pl-smi">$secondColumn</span> <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">'</span>table<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>table<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>column<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>clm<span class="pl-pds">'</span></span>];</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$select</span><span class="pl-k">-&gt;</span>join(</span>
+<span class="pl-s1">   <span class="pl-smi">$select</span><span class="pl-k">-&gt;</span>joinBuilder()</span>
+<span class="pl-s1">          <span class="pl-k">-&gt;</span>inner(<span class="pl-s"><span class="pl-pds">'</span>table<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">          <span class="pl-k">-&gt;</span>on(<span class="pl-smi">$firstColumn</span>, <span class="pl-smi">$secondColumn</span>)</span>
+<span class="pl-s1">);</span>
+<span class="pl-s1"></span></pre></div>
+
+<p>Bevor man die Methode 'on' oder 'using' aufruft, muss entweder 'inner', 'left[Outer]' oder 'right[Outer]' aufgerufen
+werden, ansonsten wird eine Exception geworfen!</p>
+
+<p>Wenn man eine Tabelle mit allen equivalenten Spaltennamen joinen möchte, kann man die 'natural' Methode benutzen.
+Als ersten Parameter gibt man den Tabellennamen an, als zweiten kann Optional entweder 'inner', 'left[Outer]' oder 'right[Outer]' gesetzt werden.</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c"># NATURAL JOIN `table`</span></span>
+<span class="pl-s1"><span class="pl-smi">$select</span><span class="pl-k">-&gt;</span>join(</span>
+<span class="pl-s1">   <span class="pl-smi">$select</span><span class="pl-k">-&gt;</span>joinBuilder()</span>
+<span class="pl-s1">      <span class="pl-k">-&gt;</span>natural(<span class="pl-s"><span class="pl-pds">'</span>table<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c"># NATURAL RIGHT JOIN `table`</span></span>
+<span class="pl-s1"><span class="pl-smi">$select</span><span class="pl-k">-&gt;</span>join(</span>
+<span class="pl-s1">   <span class="pl-smi">$select</span><span class="pl-k">-&gt;</span>joinBuilder()</span>
+<span class="pl-s1">      <span class="pl-k">-&gt;</span>natural(<span class="pl-s"><span class="pl-pds">'</span>table<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>right<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">);</span></pre></div>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/AlcyZ/Alcys-ORM">Alcys-orm</a> is maintained by <a href="https://github.com/AlcyZ">AlcyZ</a>.</span>

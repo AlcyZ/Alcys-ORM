@@ -133,8 +133,11 @@ class Join implements ExpressionInterface, JoinInterface, ReBuildableExpressionI
 
 
 	/**
-	 * Set the join array value with key way to natural and create a tables array.
-	 * Each argument, which has to be of type table interface, will passed to the created tables array.
+	 * Use a natural join.
+	 *
+	 * Set the key 'way' of the join array to the validated $way argument, the key 'tables' to
+	 * array($table) and the key 'conditionType' to natural.
+	 *
 	 * The natural join is like a using condition which automatic selection of all equivalent columns.
 	 *
 	 * @param TableInterface $table Table in which should joined.

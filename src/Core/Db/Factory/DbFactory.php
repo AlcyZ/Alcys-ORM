@@ -32,6 +32,7 @@ use Alcys\Core\Db\Facade\DeleteFacade;
 use Alcys\Core\Db\Facade\DeleteFacadeInterface;
 use Alcys\Core\Db\Facade\InsertFacade;
 use Alcys\Core\Db\Facade\InsertFacadeInterface;
+use Alcys\Core\Db\Facade\JoinFacade;
 use Alcys\Core\Db\Facade\SelectFacade;
 use Alcys\Core\Db\Facade\SelectFacadeInterface;
 use Alcys\Core\Db\Facade\UpdateFacade;
@@ -192,24 +193,6 @@ class DbFactory implements DbFactoryInterface
 	public function expressionFacade($name)
 	{
 		return $this->_invokeCreateMethod(ucfirst(explode('::', __METHOD__)[1]), $name, func_get_args());
-	}
-
-
-	/**
-	 * Create an instance of a condition facade.
-	 *
-	 * @param array $args Get from func_get_arguments
-	 *
-	 * @return ConditionFacade
-	 */
-	public function _createExpressionFacadeCondition($args)
-	{
-		if(!$args[1] instanceof Condition)
-		{
-			throw new \InvalidArgumentException('The second argument must be of type Expression\Condition');
-		}
-
-		return new ConditionFacade($args[1], $this);
 	}
 
 
@@ -397,6 +380,42 @@ class DbFactory implements DbFactoryInterface
 		$this->_checkSecondArgument($args);
 
 		return new Value($args[1]);
+	}
+
+
+	/**
+	 * Create an instance of a condition facade.
+	 *
+	 * @param array $args Get from func_get_arguments
+	 *
+	 * @return ConditionFacade
+	 */
+	private function _createExpressionFacadeCondition($args)
+	{
+		if(!$args[1] instanceof Condition)
+		{
+			throw new \InvalidArgumentException('The second argument must be of type Expression\Condition');
+		}
+
+		return new ConditionFacade($args[1], $this);
+	}
+
+
+	/**
+	 * Create an instance of a condition facade.
+	 *
+	 * @param array $args Get from func_get_arguments
+	 *
+	 * @return ConditionFacade
+	 */
+	private function _createExpressionFacadeJoin($args)
+	{
+		if(!$args[1] instanceof Join)
+		{
+			throw new \InvalidArgumentException('The second argument must be of type Expression\Join');
+		}
+
+		return new JoinFacade($args[1], $this);
 	}
 
 

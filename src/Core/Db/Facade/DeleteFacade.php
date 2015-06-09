@@ -92,11 +92,11 @@ class DeleteFacade implements DeleteFacadeInterface, WhereConditionFacadeInterfa
 	/**
 	 * Add a where expression to the query.
 	 *
-	 * @param ConditionFacade $condition The configured condition object, get by conditionBuilder method.
+	 * @param ConditionFacadeInterface $condition The configured condition object, get by conditionBuilder method.
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function where(ConditionFacade $condition)
+	public function where(ConditionFacadeInterface $condition)
 	{
 		$this->statement->where($condition->getCondition());
 

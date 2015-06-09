@@ -23,45 +23,15 @@
 
 namespace Alcys\Core\Db\Facade;
 
-use Alcys\Core\Db\Expression\ComparisonInterface;
 use Alcys\Core\Db\Expression\Condition;
-use Alcys\Core\Db\Expression\ConditionInterface;
-use Alcys\Core\Db\Expression\LogicConnectorInterface;
-use Alcys\Core\Db\Factory\DbFactoryInterface;
-use Alcys\Core\Db\References\ColumnInterface;
-use Alcys\Core\Db\References\MySql\WhereNumericCompareInterface;
 
 /**
- * Class ConditionFacade
+ * Interface ConditionFacadeInterface
+ * @Todo    Split interface in smaller, more precise interfaces .. maybe.
  * @package Alcys\Core\Db\Facade
  */
-class ConditionFacade implements ConditionFacadeInterface
+interface ConditionFacadeInterface
 {
-	/**
-	 * @var ConditionInterface|ComparisonInterface|LogicConnectorInterface
-	 */
-	private $condition;
-
-	/**
-	 * @var DbFactoryInterface
-	 */
-	private $factory;
-
-
-	/**
-	 * Initialize the facade object.
-	 * The constructor arguments will passed from the method which create the instance.
-	 *
-	 * @param ConditionInterface $condition A clean instance of a condition interface.
-	 * @param DbFactoryInterface $dbFactory The db factory for the creation of reference object.
-	 */
-	public function __construct(ConditionInterface $condition, DbFactoryInterface $dbFactory)
-	{
-		$this->condition = $condition;
-		$this->factory   = $dbFactory;
-	}
-
-
 	/**
 	 * Compare in the following style in the where condition:
 	 * $column = $compareValue.
@@ -74,13 +44,7 @@ class ConditionFacade implements ConditionFacadeInterface
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function equal($column, $compareValue, $type = null)
-	{
-		$preparedObjectsArray = $this->_getPrepareObjectsArray($column, $compareValue, $type);
-		$this->condition->equal($preparedObjectsArray['column'], $preparedObjectsArray['compareValue']);
-
-		return $this;
-	}
+	public function equal($column, $compareValue, $type = null);
 
 
 	/**
@@ -95,13 +59,7 @@ class ConditionFacade implements ConditionFacadeInterface
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function notEqual($column, $compareValue, $type = null)
-	{
-		$preparedObjectsArray = $this->_getPrepareObjectsArray($column, $compareValue, $type);
-		$this->condition->notEqual($preparedObjectsArray['column'], $preparedObjectsArray['compareValue']);
-
-		return $this;
-	}
+	public function notEqual($column, $compareValue, $type = null);
 
 
 	/**
@@ -116,13 +74,7 @@ class ConditionFacade implements ConditionFacadeInterface
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function greater($column, $compareValue, $type = null)
-	{
-		$preparedObjectsArray = $this->_getPrepareObjectsArray($column, $compareValue, $type);
-		$this->condition->greater($preparedObjectsArray['column'], $preparedObjectsArray['compareValue']);
-
-		return $this;
-	}
+	public function greater($column, $compareValue, $type = null);
 
 
 	/**
@@ -137,13 +89,7 @@ class ConditionFacade implements ConditionFacadeInterface
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function greaterEqual($column, $compareValue, $type = null)
-	{
-		$preparedObjectsArray = $this->_getPrepareObjectsArray($column, $compareValue, $type);
-		$this->condition->greaterEqual($preparedObjectsArray['column'], $preparedObjectsArray['compareValue']);
-
-		return $this;
-	}
+	public function greaterEqual($column, $compareValue, $type = null);
 
 
 	/**
@@ -158,13 +104,7 @@ class ConditionFacade implements ConditionFacadeInterface
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function lower($column, $compareValue, $type = null)
-	{
-		$preparedObjectsArray = $this->_getPrepareObjectsArray($column, $compareValue, $type);
-		$this->condition->lower($preparedObjectsArray['column'], $preparedObjectsArray['compareValue']);
-
-		return $this;
-	}
+	public function lower($column, $compareValue, $type = null);
 
 
 	/**
@@ -179,13 +119,7 @@ class ConditionFacade implements ConditionFacadeInterface
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function lowerEqual($column, $compareValue, $type = null)
-	{
-		$preparedObjectsArray = $this->_getPrepareObjectsArray($column, $compareValue, $type);
-		$this->condition->lowerEqual($preparedObjectsArray['column'], $preparedObjectsArray['compareValue']);
-
-		return $this;
-	}
+	public function lowerEqual($column, $compareValue, $type = null);
 
 
 	/**
@@ -201,29 +135,7 @@ class ConditionFacade implements ConditionFacadeInterface
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function between($column, $firstCompareValue, $secondCompareValue, $type = null)
-	{
-		/** @var ColumnInterface $columnObj */
-		/** @var WhereNumericCompareInterface $firstCompareObj */
-		/** @var WhereNumericCompareInterface $secondCompareObj */
-
-		$columnObj = $this->factory->references('Column', $column);
-		if($type === 'column')
-		{
-			$firstCompareObj  = $this->factory->references('Column', $firstCompareValue);
-			$secondCompareObj = $this->factory->references('Column', $secondCompareValue);
-		}
-		else
-		{
-			$firstCompareObj  = $this->factory->references('Value', $firstCompareValue);
-			$secondCompareObj = $this->factory->references('Value', $secondCompareValue);
-		}
-
-
-		$this->condition->between($columnObj, $firstCompareObj, $secondCompareObj);
-
-		return $this;
-	}
+	public function between($column, $firstCompareValue, $secondCompareValue, $type = null);
 
 
 	/**
@@ -239,29 +151,7 @@ class ConditionFacade implements ConditionFacadeInterface
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function notBetween($column, $firstCompareValue, $secondCompareValue, $type = null)
-	{
-		/** @var ColumnInterface $columnObj */
-		/** @var WhereNumericCompareInterface $firstCompareObj */
-		/** @var WhereNumericCompareInterface $secondCompareObj */
-
-		$columnObj = $this->factory->references('Column', $column);
-		if($type === 'column')
-		{
-			$firstCompareObj  = $this->factory->references('Column', $firstCompareValue);
-			$secondCompareObj = $this->factory->references('Column', $secondCompareValue);
-		}
-		else
-		{
-			$firstCompareObj  = $this->factory->references('Value', $firstCompareValue);
-			$secondCompareObj = $this->factory->references('Value', $secondCompareValue);
-		}
-
-
-		$this->condition->notBetween($columnObj, $firstCompareObj, $secondCompareObj);
-
-		return $this;
-	}
+	public function notBetween($column, $firstCompareValue, $secondCompareValue, $type = null);
 
 
 	/**
@@ -269,12 +159,7 @@ class ConditionFacade implements ConditionFacadeInterface
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function logicAnd()
-	{
-		$this->condition->_and();
-
-		return $this;
-	}
+	public function logicAnd();
 
 
 	/**
@@ -282,49 +167,11 @@ class ConditionFacade implements ConditionFacadeInterface
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function logicOr()
-	{
-		$this->condition->_or();
-
-		return $this;
-	}
+	public function logicOr();
 
 
 	/**
 	 * @return Condition
 	 */
-	public function getCondition()
-	{
-		return $this->condition;
-	}
-
-
-	/**
-	 * Build objects from the passed arguments.
-	 * The values will returned as assoc array in the following form:
-	 * array('column' => $column, 'compareValue' = $value).
-	 * $column is of type References\Column. When the type argument is equal to 'column',
-	 * $value is also of type References\Column, otherwise of References\Value.
-	 * The
-	 *
-	 * @param string $column       Name of the column for the comparison.
-	 * @param string $compareValue Compare value.
-	 * @param string $type         Type of the compare value, whether column or usual value.
-	 *
-	 * @return array Array with prepared objects.
-	 */
-	private function _getPrepareObjectsArray($column, $compareValue, $type)
-	{
-		$columnObj = $this->factory->references('Column', $column);
-		if($type === 'column')
-		{
-			$compareObj = $this->factory->references('Column', $compareValue);
-		}
-		else
-		{
-			$compareObj = $this->factory->references('Value', $compareValue);
-		}
-
-		return array('column' => $columnObj, 'compareValue' => $compareObj);
-	}
+	public function getCondition();
 }

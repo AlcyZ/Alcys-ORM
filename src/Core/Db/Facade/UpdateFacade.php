@@ -35,7 +35,6 @@ use Alcys\Core\Types\Numeric;
 /**
  * Class UpdateFacade
  * @Todo    Type in value method as sec arg, default is value, e.g.: $update->value('column_name', 'column')
- * @Todo    Use interface at where method as type hint!
  * @package Alcys\Core\Db\Facade
  */
 class UpdateFacade implements UpdateFacadeInterface, WhereConditionFacadeInterface
@@ -184,11 +183,11 @@ class UpdateFacade implements UpdateFacadeInterface, WhereConditionFacadeInterfa
 	/**
 	 * Add a where expression to the query.
 	 *
-	 * @param ConditionFacade $condition The configured condition object, get by conditionBuilder method.
+	 * @param ConditionFacadeInterface $condition The configured condition object, get by conditionBuilder method.
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function where(ConditionFacade $condition)
+	public function where(ConditionFacadeInterface $condition)
 	{
 		$this->update->where($condition->getCondition());
 

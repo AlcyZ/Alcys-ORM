@@ -23,10 +23,9 @@
 
 namespace Alcys\Core\Db\Facade;
 
-use Alcys\Core\Db\Expression\JoinInterface;
-
 /**
  * Interface SelectFacadeInterface
+ * @Todo    Outsource join stuff, because other statements also could use joins.
  * @package Alcys\Core\Db\Facade
  */
 interface SelectFacadeInterface
@@ -76,17 +75,17 @@ interface SelectFacadeInterface
 	/**
 	 * Add a join expression to the query.
 	 *
-	 * @param JoinInterface $join The configured join object, get by joinBuilder method.
+	 * @param JoinFacadeInterface $join The configured join facade object, get by joinBuilder method.
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function join(JoinInterface $join);
+	public function join(JoinFacadeInterface $join);
 
 
 	/**
 	 * Return a join object which could passed through the join method.
 	 *
-	 * @return JoinInterface
+	 * @return JoinFacadeInterface
 	 */
 	public function joinBuilder();
 }

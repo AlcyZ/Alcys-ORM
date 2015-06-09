@@ -23,7 +23,6 @@
 
 namespace Alcys\Core\Db\Facade;
 
-use Alcys\Core\Db\Expression\JoinInterface;
 use Alcys\Core\Db\Factory\DbFactoryInterface;
 use Alcys\Core\Db\References\MySql\Column;
 use Alcys\Core\Db\References\MySql\Table;
@@ -35,7 +34,6 @@ use Alcys\Core\Types\Numeric;
 /**
  * Class SelectFacade
  * @Todo    Implement functionality that where and join method can handle arrays.
- * @Todo    Use interface at where method as type hint!
  * @package Alcys\Core\Db\Facade
  */
 class SelectFacade implements SelectFacadeInterface, WhereConditionFacadeInterface
@@ -224,11 +222,11 @@ class SelectFacade implements SelectFacadeInterface, WhereConditionFacadeInterfa
 	/**
 	 * Add a where expression to the query.
 	 *
-	 * @param ConditionFacade $condition The configured condition object, get by conditionBuilder method.
+	 * @param ConditionFacadeInterface $condition The configured condition object, get by conditionBuilder method.
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function where(ConditionFacade $condition)
+	public function where(ConditionFacadeInterface $condition)
 	{
 		$this->select->where($condition->getCondition());
 
@@ -239,13 +237,13 @@ class SelectFacade implements SelectFacadeInterface, WhereConditionFacadeInterfa
 	/**
 	 * Add a join expression to the query.
 	 *
-	 * @param JoinInterface $join The configured join object, get by joinBuilder method.
+	 * @param JoinFacadeInterface $join The configured join facade object, get by joinBuilder method.
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
-	public function join(JoinInterface $join)
+	public function join(JoinFacadeInterface $join)
 	{
-		$this->select->join($join);
+		$this->select->join($join->getJoin());
 
 		return $this;
 	}
@@ -265,13 +263,16 @@ class SelectFacade implements SelectFacadeInterface, WhereConditionFacadeInterfa
 
 
 	/**
-	 * Return a join object which could passed through the join method.
+	 * Return a join facade object to create join expression for the query.
+	 * The returned object can pass through the join method.
 	 *
-	 * @return JoinInterface
+	 * @return JoinFacadeInterface Instance of JoinFacade.
 	 */
 	public function joinBuilder()
 	{
-		return $this->factory->expression('Join');
+		$join = $this->factory->expression('Join');
+
+		return $this->factory->expressionFacade('Join', $join);
 	}
 
 //	private function _getConditionFromArray(array $conditionArray)

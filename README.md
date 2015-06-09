@@ -1,6 +1,6 @@
 Alcys-ORM
 =========
-Ein PHP-ORM System, Test Driven Entwickelt, 96% Code-Coverage und inklusive API Dokumentation.
+Ein PHP-ORM System, Test Driven Entwickelt, 100% Code-Coverage und inklusive API Dokumentation.
 Momentant wird nur MySql unterstützt!
 
 Einbindung

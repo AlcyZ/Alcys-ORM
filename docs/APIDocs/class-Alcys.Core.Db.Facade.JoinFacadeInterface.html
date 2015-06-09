@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Alcys\Core\Db\Facade\JoinFacade</title>
+	<title>Interface Alcys\Core\Db\Facade\JoinFacadeInterface</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
 	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
@@ -132,7 +132,7 @@
 				<li><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">ConditionFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.DeleteFacade.html">DeleteFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.InsertFacade.html">InsertFacade</a></li>
-				<li class="active"><a href="class-Alcys.Core.Db.Facade.JoinFacade.html">JoinFacade</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.JoinFacade.html">JoinFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.SelectFacade.html">SelectFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.UpdateFacade.html">UpdateFacade</a></li>
 			</ul>
@@ -142,7 +142,7 @@
 				<li><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html">ConditionFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.DeleteFacadeInterface.html">DeleteFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.InsertFacadeInterface.html">InsertFacadeInterface</a></li>
-				<li><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html">JoinFacadeInterface</a></li>
+				<li class="active"><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html">JoinFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.SelectFacadeInterface.html">SelectFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.UpdateFacadeInterface.html">UpdateFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html">WhereConditionFacadeInterface</a></li>
@@ -160,26 +160,23 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Class JoinFacade</h1>
+	<h1>Interface JoinFacadeInterface</h1>
 
 
 	<div class="description">
-	<p>Class JoinFacade</p>
+	<p>Interface JoinFacadeInterface</p>
 	</div>
 
-	<dl class="tree well">
-		<dd style="padding-left:0px">
-<b><span>Alcys\Core\Db\Facade\JoinFacade</span></b>			
-			 implements 
-				<a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html"><span>Alcys\Core\Db\Facade\JoinFacadeInterface</span></a>
-			
-			
-		</dd>
-	</dl>
 
 
 
 
+	<div>
+		<h3>Direct known implementers</h3>
+		<p class="elementList">
+			<code><a href="class-Alcys.Core.Db.Facade.JoinFacade.html">Alcys\Core\Db\Facade\JoinFacade</a></code>
+		</p>
+	</div>
 
 
 
@@ -191,14 +188,8 @@
 		<b>Package:</b> Alcys\Core\Db\Facade<br>
 
 				<b>Todo:</b>
-				<p>$join->on('firstColumnName', 'firstTableRef', 'secondColumnName', 'secondTableRef') and:
-           $join->on(
-               array('table' => $tableRefOne', 'column' => $columnNameOne),
-               array('table' => $tableRefTwo', 'column' => $columnNameTwo)
-           )</p><br>
-				<b>Todo:</b>
-				Implement functionality to add multiple tables to the join expression.<br>
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#31-265" title="Go to source code">Core/Db/Facade/JoinFacade.php</a>
+				Split interface, separate on and using method!<br>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#28-134" title="Go to source code">Core/Db/Facade/JoinFacadeInterface.php</a>
 		<br>
 	</div>
 
@@ -206,42 +197,6 @@
 
 		<h2>Methods summary</h2>
 		<table class="summary table table-bordered table-striped methods" id="methods">
-		<tr data-order="__construct" id="___construct">
-
-			<td class="attributes"><code>
-				 public 
-				
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#54-64" title="Go to source code">__construct</a>( <span><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code> <var>$join</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$factory</var></span> )</code>
-
-			<div class="description short">
-				<p>Initialize the join facade object and set required properties.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Initialize the join facade object and set required properties.</p>
-
-
-					<h4>Parameters</h4>
-					<div class="list"><dl>
-						<dt><var>$join</var></dt>
-						<dd>Join object to create the query snippet with a join builder object.</dd>
-						<dt><var>$factory</var></dt>
-						<dd>Factory to create reference objects.</dd>
-					</dl></div>
-
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
 		<tr data-order="inner" id="_inner">
 
 			<td class="attributes"><code>
@@ -253,7 +208,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_inner">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#67-82" title="Go to source code">inner</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#35-44" title="Go to source code">inner</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Join the expected table with an inner join.
@@ -281,8 +236,6 @@ In the second argument can pass optional tables for the join operation.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#_inner">Alcys\Core\Db\Facade\JoinFacadeInterface::inner()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -297,7 +250,7 @@ In the second argument can pass optional tables for the join operation.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_left">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#85-100" title="Go to source code">left</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#47-56" title="Go to source code">left</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Join the expected table with a left join.
@@ -325,8 +278,6 @@ In the second argument can pass optional tables for the join operation.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#_left">Alcys\Core\Db\Facade\JoinFacadeInterface::left()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -341,7 +292,7 @@ In the second argument can pass optional tables for the join operation.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_right">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#103-118" title="Go to source code">right</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#59-68" title="Go to source code">right</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Join the expected table with a right join.
@@ -369,8 +320,6 @@ In the second argument can pass optional tables for the join operation.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#_right">Alcys\Core\Db\Facade\JoinFacadeInterface::right()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -385,7 +334,7 @@ In the second argument can pass optional tables for the join operation.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_leftOuter">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#121-136" title="Go to source code">leftOuter</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#71-80" title="Go to source code">leftOuter</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Join the expected table with a left outer join.
@@ -413,8 +362,6 @@ In the second argument can pass optional tables for the join operation.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#_leftOuter">Alcys\Core\Db\Facade\JoinFacadeInterface::leftOuter()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -429,7 +376,7 @@ In the second argument can pass optional tables for the join operation.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_rightOuter">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#139-154" title="Go to source code">rightOuter</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#83-92" title="Go to source code">rightOuter</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Join the expected table with a right outer join.
@@ -457,8 +404,6 @@ In the second argument can pass optional tables for the join operation.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#_rightOuter">Alcys\Core\Db\Facade\JoinFacadeInterface::rightOuter()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -473,7 +418,7 @@ In the second argument can pass optional tables for the join operation.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_natural">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#157-173" title="Go to source code">natural</a>( <span>string <var>$table</var></span>, <span>string|null <var>$way</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#95-104" title="Go to source code">natural</a>( <span>string <var>$table</var></span>, <span>string|null <var>$way</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Join the expected table with a natural join.
@@ -501,8 +446,6 @@ In the second argument can pass the way, which have to be whether 'inner', 'left
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#_natural">Alcys\Core\Db\Facade\JoinFacadeInterface::natural()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -517,7 +460,7 @@ In the second argument can pass the way, which have to be whether 'inner', 'left
 
 			<td class="name"><div>
 			<a class="anchor" href="#_on">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#176-197" title="Go to source code">on</a>( <span>array <var>$firstColumn</var></span>, <span>array <var>$secondColumn</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#107-117" title="Go to source code">on</a>( <span>array <var>$firstColumn</var></span>, <span>array <var>$secondColumn</var></span> )</code>
 
 			<div class="description short">
 				<p>Set the condition how to join the table[s] with the 'on' keyword.
@@ -547,8 +490,6 @@ An invalid argument exception will thrown when the arrays are invalid.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#_on">Alcys\Core\Db\Facade\JoinFacadeInterface::on()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -563,7 +504,7 @@ An invalid argument exception will thrown when the arrays are invalid.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_using">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#200-214" title="Go to source code">using</a>( <span>string <var>$column</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#120-127" title="Go to source code">using</a>( <span>string <var>$column</var></span> )</code>
 
 			<div class="description short">
 				<p>Set the condition how to join the table[s] with the 'using' keyword.</p>
@@ -587,8 +528,6 @@ An invalid argument exception will thrown when the arrays are invalid.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#_using">Alcys\Core\Db\Facade\JoinFacadeInterface::using()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -603,7 +542,7 @@ An invalid argument exception will thrown when the arrays are invalid.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getJoin">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#217-223" title="Go to source code">getJoin</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#130-133" title="Go to source code">getJoin</a>( )</code>
 
 			<div class="description short">
 				
@@ -622,8 +561,6 @@ An invalid argument exception will thrown when the arrays are invalid.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html#_getJoin">Alcys\Core\Db\Facade\JoinFacadeInterface::getJoin()</a></code></div>
 			</div>
 			</div></td>
 		</tr>

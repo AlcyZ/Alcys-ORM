@@ -91,3 +91,73 @@ $delete->orderBy('column')
        ->limit('0', '5')
        ->execute();
 ```
+
+Where Bedingungen
+-----------------
+Alle Statement Objekte, außer das InsertStatement, verfügen über die 'condition' Methode. Sie gibt ein Objekt zurück,
+dass Methoden zur Erstellung einer Bedingung beinhaltet. Das Objekt übergibt man anschließend einfach der 'where' Methode.
+```php
+# WHERE `column_name` != 'value'
+
+$delete->where($delete->condition()->notEqual('column_name', 'value'));
+```
+
+Falls man zwei Spalten mit einander vergleichen möchte, übergibt man als dritten Parameter einfach 'column'.
+```php
+# WHERE `first_column` >= `second_column`
+
+$update->where($update->condition()->greaterEqual('first_column, 'second_column', 'column');
+```
+
+Wenn man mehrere Bedingungen setzen möchte, dann kann man einfach zur Verknüpfung die Methoden 'logicAnd' und 'logicOr' aufrufen.
+Sie müssen zwischen jeder Bedingung stehen, sonst wird eine Exception geworfen.
+```php
+# WHERE `first_column` = 'a' AND `cl` != `clm` OR `column` < 5
+
+$condition = $select->condition();
+$condition->equal('first_column', 'a')->logicAnd()->notEqual('cl', 'clm', 'column')->logicOr()->lower('column', 5);
+
+$select->where($condition)->fetch();
+```
+
+Bedingungen mit like folgt ..
+
+
+Joins
+-----
+In der aktuellen Version funktionieren Joins nur bei Select Statement. Die funktionalität für weitere Statements wird aber noch kommen.
+
+Das Select Statement verfügt über die Methode 'joinBuilder', die ein Objekt zur Erstellung des Joins zurückgibt, was der 'join' Methoden
+übergeben wird.
+
+```php
+# LEFT JOIN `table_name` USING `column`
+
+$select->join($select->joinBuilder()->left('table_name')->using('column'));
+```
+
+Bei der 'on' Methode müssen als Parameter zwei Assoc-Arrays übergeben werden, in denen der key 'table' und 'column' existiert,
+sonst wird eine Exception geworfen.
+```php
+# INNER JOIN `table` ON (`tbl`.`cl`, `table`.`clm`);
+
+$firstColumn = array('table' => 'tbl', 'column' => 'cl');
+$secondColumn = array('table' => 'table', 'column' => 'clm');
+
+$select->join($select->joinBuilder()->inner('table')->on($firstColumn, $secondColumn));
+
+```
+
+
+Bevor man die Methode 'on' oder 'using' aufruft, muss entweder 'inner', 'left[Outer]' oder 'right[Outer]' aufgerufen
+werden, ansonsten wird eine Exception geworfen!
+
+Wenn man eine Tabelle mit allen equivalenten Spaltennamen joinen möchte, kann man die 'natural' Methode benutzen.
+Als ersten Parameter gibt man den Tabellennamen an, als zweiten kann Optional entweder 'inner', 'left[Outer]' oder 'right[Outer]' gesetzt werden.
+```php
+# NATURAL JOIN `table`
+$select->join($select->joinBuilder()->natural('table'));
+
+# NATURAL RIGHT JOIN `table`
+$select->join($select->joinBuilder()->natural('table', 'right'));
+```

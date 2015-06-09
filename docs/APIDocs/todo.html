@@ -183,7 +183,6 @@
                array('table' => $tableRefOne', 'column' => $columnNameOne),
                array('table' => $tableRefTwo', 'column' => $columnNameTwo)
            )</p><hr>
-						Implement interfaces.<hr>
 						Implement functionality to add multiple tables to the join expression.
 				</td>
 			</tr>
@@ -192,8 +191,7 @@
 					<a href="class-Alcys.Core.Db.Facade.SelectFacade.html">Alcys\Core\Db\Facade\SelectFacade</a>
 				</td>
 				<td>
-						Implement functionality that where and join method can handle arrays.<hr>
-						Use interface at where method as type hint!
+						Implement functionality that where and join method can handle arrays.
 				</td>
 			</tr>
 			<tr>
@@ -201,8 +199,7 @@
 					<a href="class-Alcys.Core.Db.Facade.UpdateFacade.html">Alcys\Core\Db\Facade\UpdateFacade</a>
 				</td>
 				<td>
-						Type in value method as sec arg, default is value, e.g.: $update->value('column_name', 'column')<hr>
-						Use interface at where method as type hint!
+						Type in value method as sec arg, default is value, e.g.: $update->value('column_name', 'column')
 				</td>
 			</tr>
 			<tr>
@@ -278,6 +275,30 @@
 			</tr>
 			<tr>
 				<td class="name right">
+					<a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html">Alcys\Core\Db\Facade\ConditionFacadeInterface</a>
+				</td>
+				<td>
+						Split interface in smaller, more precise interfaces .. maybe.
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html">Alcys\Core\Db\Facade\JoinFacadeInterface</a>
+				</td>
+				<td>
+						Split interface, separate on and using method!
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
+					<a href="class-Alcys.Core.Db.Facade.SelectFacadeInterface.html">Alcys\Core\Db\Facade\SelectFacadeInterface</a>
+				</td>
+				<td>
+						Outsource join stuff, because other statements also could use joins.
+				</td>
+			</tr>
+			<tr>
+				<td class="name right">
 					<a href="class-Alcys.Core.Db.Statement.DeleteInterface.html">Alcys\Core\Db\Statement\DeleteInterface</a>
 				</td>
 				<td>
@@ -307,6 +328,6 @@
 	</div>
 </div>
 <script src="resources/combined.js?aeb7c78ed1a93e9948a30512f603e3d14e9c2b20"></script>
-<script src="elementlist.js?d5cf93e819000872c66a5a52af4ba0f0cd1d43dd"></script>
+<script src="elementlist.js?681f8dd7087d853efe45d24f62f7015b920d2edc"></script>
 </body>
 </html>

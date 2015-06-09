@@ -185,7 +185,7 @@
 
 				<b>Todo:</b>
 				Specify db type (actually only mysql, but should be more).<br>
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#55-418" title="Go to source code">Core/Db/Factory/DbFactory.php</a>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#56-437" title="Go to source code">Core/Db/Factory/DbFactory.php</a>
 		<br>
 	</div>
 
@@ -204,7 +204,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_expression">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#62-76" title="Go to source code">expression</a>( <span>string <var>$name</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#63-77" title="Go to source code">expression</a>( <span>string <var>$name</var></span> )</code>
 
 			<div class="description short">
 				<p>Create instances of the type expression.
@@ -254,7 +254,7 @@ When the expected condition class is not found, an exception will thrown.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_references">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#79-93" title="Go to source code">references</a>( <span>string <var>$name</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#80-94" title="Go to source code">references</a>( <span>string <var>$name</var></span> )</code>
 
 			<div class="description short">
 				<p>Create instances of the type references.
@@ -304,7 +304,7 @@ When the expected reference class is not found, an exception will thrown.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_builder">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#96-127" title="Go to source code">builder</a>( <span><code><a href="class-Alcys.Core.Db.Statement.StatementInterface.html">Alcys\Core\Db\Statement\StatementInterface</a></code> <var>$statement</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#97-128" title="Go to source code">builder</a>( <span><code><a href="class-Alcys.Core.Db.Statement.StatementInterface.html">Alcys\Core\Db\Statement\StatementInterface</a></code> <var>$statement</var></span> )</code>
 
 			<div class="description short">
 				<p>Create an instance of a query builder.
@@ -347,7 +347,7 @@ Different between the several statement types and return the correct query build
 
 			<td class="name"><div>
 			<a class="anchor" href="#_statement">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#130-142" title="Go to source code">statement</a>( <span>string <var>$name</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#131-143" title="Go to source code">statement</a>( <span>string <var>$name</var></span> )</code>
 
 			<div class="description short">
 				<p>Create an instance of the expected statement type.
@@ -393,7 +393,7 @@ When no type with the passed name is found, an exception will thrown.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_facade">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#145-178" title="Go to source code">facade</a>( <span>string <var>$name</var></span>, <span>PDO <var>$connection</var></span>, <span>string <var>$tableName</var></span>, <span>string|null <var>$tableAlias</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#146-179" title="Go to source code">facade</a>( <span>string <var>$name</var></span>, <span>PDO <var>$connection</var></span>, <span>string <var>$tableName</var></span>, <span>string|null <var>$tableAlias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Create instance of facade objects.
@@ -449,7 +449,7 @@ Usage: $factory->facade('select', $pdo, $tableName); or similar variants.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_expressionFacade">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#181-195" title="Go to source code">expressionFacade</a>( <span>string <var>$name</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#182-196" title="Go to source code">expressionFacade</a>( <span>string <var>$name</var></span> )</code>
 
 			<div class="description short">
 				<p>Create instance of expression facade objects.
@@ -485,44 +485,6 @@ method for expression facade objects.</p>
 
 					<h4>Implementation of</h4>
 					<div class="list"><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html#_expressionFacade">Alcys\Core\Db\Factory\DbFactoryInterface::expressionFacade()</a></code></div>
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="_createExpressionFacadeCondition" id="__createExpressionFacadeCondition">
-
-			<td class="attributes"><code>
-				 public 
-				<code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code>
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#__createExpressionFacadeCondition">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Factory.DbFactory.html#198-213" title="Go to source code">_createExpressionFacadeCondition</a>( <span>array <var>$args</var></span> )</code>
-
-			<div class="description short">
-				<p>Create an instance of a condition facade.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Create an instance of a condition facade.</p>
-
-
-					<h4>Parameters</h4>
-					<div class="list"><dl>
-						<dt><var>$args</var></dt>
-						<dd>Get from func_get_arguments</dd>
-					</dl></div>
-
-					<h4>Returns</h4>
-					<div class="list">
-						<code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code>
-					</div>
-
-
-
-
 			</div>
 			</div></td>
 		</tr>

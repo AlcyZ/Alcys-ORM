@@ -139,8 +139,10 @@
 
 			<h3>Interfaces</h3>
 			<ul>
+				<li><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html">ConditionFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.DeleteFacadeInterface.html">DeleteFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.InsertFacadeInterface.html">InsertFacadeInterface</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html">JoinFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.SelectFacadeInterface.html">SelectFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.UpdateFacadeInterface.html">UpdateFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html">WhereConditionFacadeInterface</a></li>
@@ -192,9 +194,7 @@
 
 				<b>Todo:</b>
 				Implement functionality that where and join method can handle arrays.<br>
-				<b>Todo:</b>
-				Use interface at where method as type hint!<br>
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#35-285" title="Go to source code">Core/Db/Facade/SelectFacade.php</a>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#34-286" title="Go to source code">Core/Db/Facade/SelectFacade.php</a>
 		<br>
 	</div>
 
@@ -213,7 +213,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#61-81" title="Go to source code">__construct</a>( <span>PDO <var>$pdo</var></span>, <span><code><a href="class-Alcys.Core.Db.Statement.SelectInterface.html">Alcys\Core\Db\Statement\SelectInterface</a></code> <var>$select</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$factory</var></span>, <span>string <var>$tableName</var></span>, <span>string|null <var>$tableAlias</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#59-79" title="Go to source code">__construct</a>( <span>PDO <var>$pdo</var></span>, <span><code><a href="class-Alcys.Core.Db.Statement.SelectInterface.html">Alcys\Core\Db\Statement\SelectInterface</a></code> <var>$select</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$factory</var></span>, <span>string <var>$tableName</var></span>, <span>string|null <var>$tableAlias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Initialize the select facade.
@@ -257,7 +257,7 @@ Set all required properties to fetch entries from the database.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_fetch">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#84-109" title="Go to source code">fetch</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#82-107" title="Go to source code">fetch</a>( )</code>
 
 			<div class="description short">
 				<p>Fetch data from the database.
@@ -296,7 +296,7 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_table">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#112-126" title="Go to source code">table</a>( <span>string <var>$tableName</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#110-124" title="Go to source code">table</a>( <span>string <var>$tableName</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a table to the query.</p>
@@ -338,7 +338,7 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_column">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#129-144" title="Go to source code">column</a>( <span>string <var>$name</var></span>, <span>string|null <var>$tableRef</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#127-142" title="Go to source code">column</a>( <span>string <var>$name</var></span>, <span>string|null <var>$tableRef</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a column to the query. When this method would not called, a * wildcard will set.</p>
@@ -382,7 +382,7 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_orderBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#147-162" title="Go to source code">orderBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#145-160" title="Go to source code">orderBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add an order by expression to the query.</p>
@@ -424,7 +424,7 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_limit">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#165-181" title="Go to source code">limit</a>( <span>integer <var>$beginAmount</var></span>, <span>integer|null <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#163-179" title="Go to source code">limit</a>( <span>integer <var>$beginAmount</var></span>, <span>integer|null <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a limit expression to the query.</p>
@@ -466,7 +466,7 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_groupBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#184-199" title="Go to source code">groupBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#182-197" title="Go to source code">groupBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a group by expression to the query.</p>
@@ -508,7 +508,7 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_distinct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#202-212" title="Go to source code">distinct</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#200-210" title="Go to source code">distinct</a>( )</code>
 
 			<div class="description short">
 				<p>Add a distinct expression to the query.</p>
@@ -543,7 +543,7 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_having">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#215-221" title="Go to source code">having</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#213-219" title="Go to source code">having</a>( )</code>
 
 			<div class="description short">
 				
@@ -576,7 +576,7 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_where">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#224-236" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code> <var>$condition</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#222-234" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html">Alcys\Core\Db\Facade\ConditionFacadeInterface</a></code> <var>$condition</var></span> )</code>
 
 			<div class="description short">
 				<p>Add a where expression to the query.</p>
@@ -616,7 +616,7 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_join">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#239-251" title="Go to source code">join</a>( <span><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code> <var>$join</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#237-249" title="Go to source code">join</a>( <span><code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html">Alcys\Core\Db\Facade\JoinFacadeInterface</a></code> <var>$join</var></span> )</code>
 
 			<div class="description short">
 				<p>Add a join expression to the query.</p>
@@ -629,7 +629,7 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$join</var></dt>
-						<dd>The configured join object, get by joinBuilder method.</dd>
+						<dd>The configured join facade object, get by joinBuilder method.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
@@ -656,7 +656,7 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_condition">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#254-264" title="Go to source code">condition</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#252-262" title="Go to source code">condition</a>( )</code>
 
 			<div class="description short">
 				<p>Return an condition facade to create where conditions for the query.</p>
@@ -684,27 +684,29 @@ is invoked before, a wildcard (*) will set for the columns.</p>
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code>
+				<code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html">Alcys\Core\Db\Facade\JoinFacadeInterface</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_joinBuilder">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#267-275" title="Go to source code">joinBuilder</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacade.html#265-276" title="Go to source code">joinBuilder</a>( )</code>
 
 			<div class="description short">
-				<p>Return a join object which could passed through the join method.</p>
+				<p>Return a join facade object to create join expression for the query.
+The returned object can pass through the join method.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Return a join object which could passed through the join method.</p>
+				<p>Return a join facade object to create join expression for the query.
+The returned object can pass through the join method.</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code>
+						<code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html">Alcys\Core\Db\Facade\JoinFacadeInterface</a></code><br>Instance of JoinFacade.
 					</div>
 
 

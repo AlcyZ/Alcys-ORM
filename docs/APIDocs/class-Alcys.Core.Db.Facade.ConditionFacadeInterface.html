@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Alcys\Core\Db\Facade\ConditionFacade</title>
+	<title>Interface Alcys\Core\Db\Facade\ConditionFacadeInterface</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
 	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
@@ -129,7 +129,7 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">ConditionFacade</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">ConditionFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.DeleteFacade.html">DeleteFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.InsertFacade.html">InsertFacade</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.JoinFacade.html">JoinFacade</a></li>
@@ -139,7 +139,7 @@
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html">ConditionFacadeInterface</a></li>
+				<li class="active"><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html">ConditionFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.DeleteFacadeInterface.html">DeleteFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.InsertFacadeInterface.html">InsertFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html">JoinFacadeInterface</a></li>
@@ -160,26 +160,23 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Class ConditionFacade</h1>
+	<h1>Interface ConditionFacadeInterface</h1>
 
 
 	<div class="description">
-	<p>Class ConditionFacade</p>
+	<p>Interface ConditionFacadeInterface</p>
 	</div>
 
-	<dl class="tree well">
-		<dd style="padding-left:0px">
-<b><span>Alcys\Core\Db\Facade\ConditionFacade</span></b>			
-			 implements 
-				<a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html"><span>Alcys\Core\Db\Facade\ConditionFacadeInterface</span></a>
-			
-			
-		</dd>
-	</dl>
 
 
 
 
+	<div>
+		<h3>Direct known implementers</h3>
+		<p class="elementList">
+			<code><a href="class-Alcys.Core.Db.Facade.ConditionFacade.html">Alcys\Core\Db\Facade\ConditionFacade</a></code>
+		</p>
+	</div>
 
 
 
@@ -190,7 +187,9 @@
 		<b>Namespace:</b> <a href="namespace-Alcys.html">Alcys</a>\<a href="namespace-Alcys.Core.html">Core</a>\<a href="namespace-Alcys.Core.Db.html">Db</a>\<a href="namespace-Alcys.Core.Db.Facade.html">Facade</a><br>
 		<b>Package:</b> Alcys\Core\Db\Facade<br>
 
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#34-330" title="Go to source code">Core/Db/Facade/ConditionFacade.php</a>
+				<b>Todo:</b>
+				Split interface in smaller, more precise interfaces .. maybe.<br>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#28-177" title="Go to source code">Core/Db/Facade/ConditionFacadeInterface.php</a>
 		<br>
 	</div>
 
@@ -198,44 +197,6 @@
 
 		<h2>Methods summary</h2>
 		<table class="summary table table-bordered table-striped methods" id="methods">
-		<tr data-order="__construct" id="___construct">
-
-			<td class="attributes"><code>
-				 public 
-				
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#51-62" title="Go to source code">__construct</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code> <var>$condition</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$dbFactory</var></span> )</code>
-
-			<div class="description short">
-				<p>Initialize the facade object.
-The constructor arguments will passed from the method which create the instance.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Initialize the facade object.
-The constructor arguments will passed from the method which create the instance.</p>
-
-
-					<h4>Parameters</h4>
-					<div class="list"><dl>
-						<dt><var>$condition</var></dt>
-						<dd>A clean instance of a condition interface.</dd>
-						<dt><var>$dbFactory</var></dt>
-						<dd>The db factory for the creation of reference object.</dd>
-					</dl></div>
-
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
 		<tr data-order="equal" id="_equal">
 
 			<td class="attributes"><code>
@@ -247,7 +208,7 @@ The constructor arguments will passed from the method which create the instance.
 
 			<td class="name"><div>
 			<a class="anchor" href="#_equal">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#65-83" title="Go to source code">equal</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#35-47" title="Go to source code">equal</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Compare in the following style in the where condition:
@@ -281,8 +242,6 @@ Otherwise it is like a string or value comparison.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#_equal">Alcys\Core\Db\Facade\ConditionFacadeInterface::equal()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -297,7 +256,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_notEqual">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#86-104" title="Go to source code">notEqual</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#50-62" title="Go to source code">notEqual</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Compare in the following style in the where condition:
@@ -331,8 +290,6 @@ Otherwise it is like a string or value comparison.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#_notEqual">Alcys\Core\Db\Facade\ConditionFacadeInterface::notEqual()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -347,7 +304,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_greater">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#107-125" title="Go to source code">greater</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#65-77" title="Go to source code">greater</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Compare in the following style in the where condition:
@@ -381,8 +338,6 @@ Otherwise it is like a string or value comparison.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#_greater">Alcys\Core\Db\Facade\ConditionFacadeInterface::greater()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -397,7 +352,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_greaterEqual">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#128-146" title="Go to source code">greaterEqual</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#80-92" title="Go to source code">greaterEqual</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Compare in the following style in the where condition:
@@ -431,8 +386,6 @@ Otherwise it is like a string or value comparison.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#_greaterEqual">Alcys\Core\Db\Facade\ConditionFacadeInterface::greaterEqual()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -447,7 +400,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_lower">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#149-167" title="Go to source code">lower</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#95-107" title="Go to source code">lower</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Compare in the following style in the where condition:
@@ -481,8 +434,6 @@ Otherwise it is like a string or value comparison.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#_lower">Alcys\Core\Db\Facade\ConditionFacadeInterface::lower()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -497,7 +448,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_lowerEqual">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#170-188" title="Go to source code">lowerEqual</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#110-122" title="Go to source code">lowerEqual</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Compare in the following style in the where condition:
@@ -531,8 +482,6 @@ Otherwise it is like a string or value comparison.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#_lowerEqual">Alcys\Core\Db\Facade\ConditionFacadeInterface::lowerEqual()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -547,7 +496,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_between">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#191-226" title="Go to source code">between</a>( <span>string <var>$column</var></span>, <span>string <var>$firstCompareValue</var></span>, <span>string <var>$secondCompareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#125-138" title="Go to source code">between</a>( <span>string <var>$column</var></span>, <span>string <var>$firstCompareValue</var></span>, <span>string <var>$secondCompareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Compare in the following style in the where condition:
@@ -583,8 +532,6 @@ Otherwise it is like a string or value comparison.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#_between">Alcys\Core\Db\Facade\ConditionFacadeInterface::between()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -599,7 +546,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_notBetween">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#229-264" title="Go to source code">notBetween</a>( <span>string <var>$column</var></span>, <span>string <var>$firstCompareValue</var></span>, <span>string <var>$secondCompareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#141-154" title="Go to source code">notBetween</a>( <span>string <var>$column</var></span>, <span>string <var>$firstCompareValue</var></span>, <span>string <var>$secondCompareValue</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Compare in the following style in the where condition:
@@ -635,8 +582,6 @@ Otherwise it is like a string or value comparison.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#_notBetween">Alcys\Core\Db\Facade\ConditionFacadeInterface::notBetween()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -651,7 +596,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_logicAnd">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#267-277" title="Go to source code">logicAnd</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#157-162" title="Go to source code">logicAnd</a>( )</code>
 
 			<div class="description short">
 				<p>Use this method to set another comparison in connection with a logical and to the condition.</p>
@@ -670,8 +615,6 @@ Otherwise it is like a string or value comparison.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#_logicAnd">Alcys\Core\Db\Facade\ConditionFacadeInterface::logicAnd()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -686,7 +629,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_logicOr">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#280-290" title="Go to source code">logicOr</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#165-170" title="Go to source code">logicOr</a>( )</code>
 
 			<div class="description short">
 				<p>Use this method to set another comparison in connection with a logical and to the condition.</p>
@@ -705,8 +648,6 @@ Otherwise it is like a string or value comparison.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#_logicOr">Alcys\Core\Db\Facade\ConditionFacadeInterface::logicOr()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -721,7 +662,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getCondition">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#293-299" title="Go to source code">getCondition</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#173-176" title="Go to source code">getCondition</a>( )</code>
 
 			<div class="description short">
 				
@@ -740,8 +681,6 @@ Otherwise it is like a string or value comparison.</p>
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html#_getCondition">Alcys\Core\Db\Facade\ConditionFacadeInterface::getCondition()</a></code></div>
 			</div>
 			</div></td>
 		</tr>

@@ -139,8 +139,10 @@
 
 			<h3>Interfaces</h3>
 			<ul>
+				<li><a href="class-Alcys.Core.Db.Facade.ConditionFacadeInterface.html">ConditionFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.DeleteFacadeInterface.html">DeleteFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.InsertFacadeInterface.html">InsertFacadeInterface</a></li>
+				<li><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html">JoinFacadeInterface</a></li>
 				<li class="active"><a href="class-Alcys.Core.Db.Facade.SelectFacadeInterface.html">SelectFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.UpdateFacadeInterface.html">UpdateFacadeInterface</a></li>
 				<li><a href="class-Alcys.Core.Db.Facade.WhereConditionFacadeInterface.html">WhereConditionFacadeInterface</a></li>
@@ -185,7 +187,9 @@
 		<b>Namespace:</b> <a href="namespace-Alcys.html">Alcys</a>\<a href="namespace-Alcys.Core.html">Core</a>\<a href="namespace-Alcys.Core.Db.html">Db</a>\<a href="namespace-Alcys.Core.Db.Facade.html">Facade</a><br>
 		<b>Package:</b> Alcys\Core\Db\Facade<br>
 
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#28-92" title="Go to source code">Core/Db/Facade/SelectFacadeInterface.php</a>
+				<b>Todo:</b>
+				Outsource join stuff, because other statements also could use joins.<br>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#26-91" title="Go to source code">Core/Db/Facade/SelectFacadeInterface.php</a>
 		<br>
 	</div>
 
@@ -204,7 +208,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_table">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#34-42" title="Go to source code">table</a>( <span>string <var>$tableName</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#33-41" title="Go to source code">table</a>( <span>string <var>$tableName</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a table to the query.</p>
@@ -244,7 +248,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_column">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#45-54" title="Go to source code">column</a>( <span>string <var>$name</var></span>, <span>string|null <var>$tableRef</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#44-53" title="Go to source code">column</a>( <span>string <var>$name</var></span>, <span>string|null <var>$tableRef</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a column to the query. When this method would not called, a * wildcard will set.</p>
@@ -286,7 +290,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_groupBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#57-65" title="Go to source code">groupBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#56-64" title="Go to source code">groupBy</a>( <span>string <var>$column</var></span>, <span>string|null <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add a group by expression to the query.</p>
@@ -326,7 +330,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_distinct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#68-73" title="Go to source code">distinct</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#67-72" title="Go to source code">distinct</a>( )</code>
 
 			<div class="description short">
 				<p>Add a distinct expression to the query.</p>
@@ -359,7 +363,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_join">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#76-83" title="Go to source code">join</a>( <span><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code> <var>$join</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#75-82" title="Go to source code">join</a>( <span><code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html">Alcys\Core\Db\Facade\JoinFacadeInterface</a></code> <var>$join</var></span> )</code>
 
 			<div class="description short">
 				<p>Add a join expression to the query.</p>
@@ -372,7 +376,7 @@
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$join</var></dt>
-						<dd>The configured join object, get by joinBuilder method.</dd>
+						<dd>The configured join facade object, get by joinBuilder method.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
@@ -390,14 +394,14 @@
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code>
+				<code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html">Alcys\Core\Db\Facade\JoinFacadeInterface</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_joinBuilder">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#86-91" title="Go to source code">joinBuilder</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.SelectFacadeInterface.html#85-90" title="Go to source code">joinBuilder</a>( )</code>
 
 			<div class="description short">
 				<p>Return a join object which could passed through the join method.</p>
@@ -410,7 +414,7 @@
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code>
+						<code><a href="class-Alcys.Core.Db.Facade.JoinFacadeInterface.html">Alcys\Core\Db\Facade\JoinFacadeInterface</a></code>
 					</div>
 
 

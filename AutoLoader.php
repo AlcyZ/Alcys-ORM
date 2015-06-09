@@ -23,7 +23,7 @@
  */
 
 /**
- * Class NewAutoLoader
+ * Class AutoLoader
  * @Todo Actually not very flexible, will improved later!
  */
 class AutoLoader

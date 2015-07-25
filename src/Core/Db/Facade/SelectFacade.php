@@ -33,6 +33,7 @@ use Alcys\Core\Types\Numeric;
 
 /**
  * Class SelectFacade
+ * @Todo    Improve fetch method, syntactic false queries actually return an empty array.
  * @Todo    Implement functionality that where and join method can handle arrays.
  * @package Alcys\Core\Db\Facade
  */

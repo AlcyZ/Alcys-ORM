@@ -29,13 +29,15 @@ use Alcys\Core\Db\References\MySql\ReferencesInterface;
 
 /**
  * Interface ColumnInterface
- * @Todo    Update Docs.
  * @package Alcys\Core\Db\Statement
  */
 interface UpdateInterface
 {
 	/**
-	 * @param ColumnInterface $column
+	 * Add a column that should updated to the query.
+	 * Afterwards, you should call the value method.
+	 *
+	 * @param ColumnInterface $column Object of type ColumnInterface.
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
@@ -43,9 +45,12 @@ interface UpdateInterface
 
 
 	/**
-	 * @param ReferencesInterface $value
+	 * Add a value to the column which was set before.
+	 *
+	 * @param ReferencesInterface $value The expected value as object of type ReferenceInterface.
 	 *
 	 * @return $this The same instance to concatenate methods.
+	 * @throws \Exception When column method was not invoked before.
 	 */
 	public function value(ReferencesInterface $value);
 

@@ -156,18 +156,9 @@
 		<table class="summary table table-bordered table-striped" id="classes">
 			<tr>
 				<td class="name right">
-					<a href="class-Alcys.Core.Db.Expression.Condition.html">Alcys\Core\Db\Expression\Condition</a>
-				</td>
-				<td>
-						Add comparison "isNull".
-				</td>
-			</tr>
-			<tr>
-				<td class="name right">
 					<a href="class-Alcys.Core.Db.Expression.Join.html">Alcys\Core\Db\Expression\Join</a>
 				</td>
 				<td>
-						Require in condition the same column name? I don't think so .. check documentation!!!<hr>
 						Multiple tables with natural join.<hr>
 						Join expression could implement also for delete and update statement<hr>
 						Implement cross join and logic operators in on condition.
@@ -178,6 +169,7 @@
 					<a href="class-Alcys.Core.Db.Facade.JoinFacade.html">Alcys\Core\Db\Facade\JoinFacade</a>
 				</td>
 				<td>
+						The USING(column_list) clause names a list of columns that must exist in both tables.<hr>
 						<p>$join->on('firstColumnName', 'firstTableRef', 'secondColumnName', 'secondTableRef') and:
            $join->on(
                array('table' => $tableRefOne', 'column' => $columnNameOne),
@@ -191,15 +183,8 @@
 					<a href="class-Alcys.Core.Db.Facade.SelectFacade.html">Alcys\Core\Db\Facade\SelectFacade</a>
 				</td>
 				<td>
+						Improve fetch method, syntactic false queries actually return an empty array.<hr>
 						Implement functionality that where and join method can handle arrays.
-				</td>
-			</tr>
-			<tr>
-				<td class="name right">
-					<a href="class-Alcys.Core.Db.Facade.UpdateFacade.html">Alcys\Core\Db\Facade\UpdateFacade</a>
-				</td>
-				<td>
-						Type in value method as sec arg, default is value, e.g.: $update->value('column_name', 'column')
 				</td>
 			</tr>
 			<tr>
@@ -207,6 +192,7 @@
 					<a href="class-Alcys.Core.Db.Factory.DbFactory.html">Alcys\Core\Db\Factory\DbFactory</a>
 				</td>
 				<td>
+						Refactor factory, split it down!<hr>
 						Specify db type (actually only mysql, but should be more).
 				</td>
 			</tr>
@@ -243,14 +229,6 @@
 				</td>
 				<td>
 						on duplicate key update, refactor this class to be compatible with the facade.
-				</td>
-			</tr>
-			<tr>
-				<td class="name right">
-					<a href="class-Alcys.Core.Db.Statement.Select.html">Alcys\Core\Db\Statement\Select</a>
-				</td>
-				<td>
-						for where and having method condition interface
 				</td>
 			</tr>
 		</table>
@@ -305,14 +283,6 @@
 						Add PHPDocs.
 				</td>
 			</tr>
-			<tr>
-				<td class="name right">
-					<a href="class-Alcys.Core.Db.Statement.UpdateInterface.html">Alcys\Core\Db\Statement\UpdateInterface</a>
-				</td>
-				<td>
-						Update Docs.
-				</td>
-			</tr>
 		</table>
 
 
@@ -328,6 +298,6 @@
 	</div>
 </div>
 <script src="resources/combined.js?aeb7c78ed1a93e9948a30512f603e3d14e9c2b20"></script>
-<script src="elementlist.js?681f8dd7087d853efe45d24f62f7015b920d2edc"></script>
+<script src="elementlist.js?d3e7be1a6c91f88700344f0c021891ee8dd22f09"></script>
 </body>
 </html>

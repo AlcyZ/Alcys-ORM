@@ -30,6 +30,7 @@ use Alcys\Core\Db\References\TableInterface;
 
 /**
  * Class JoinFacade
+ * @Todo    The USING(column_list) clause names a list of columns that must exist in both tables.
  * @Todo    $join->on('firstColumnName', 'firstTableRef', 'secondColumnName', 'secondTableRef') and:
  *            $join->on(
  *                array('table' => $tableRefOne', 'column' => $columnNameOne),

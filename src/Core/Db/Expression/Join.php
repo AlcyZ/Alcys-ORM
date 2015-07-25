@@ -28,7 +28,6 @@ use Alcys\Core\Db\References\TableInterface;
 
 /**
  * Class Join
- * @Todo    Require in condition the same column name? I don't think so .. check documentation!!!
  * @Todo    Multiple tables with natural join.
  * @Todo    Join expression could implement also for delete and update statement
  * @Todo    Implement cross join and logic operators in on condition.
@@ -228,7 +227,7 @@ class Join implements ExpressionInterface, JoinInterface, ReBuildableExpressionI
 	 * @param TableInterface[] $optionalTables (Optional) Array with table objects.
 	 *
 	 * @return $this
-	 * @throws \Exception
+	 * @throws \InvalidArgumentException
 	 */
 	private function _setWayValue($way, TableInterface $table, array $optionalTables = array())
 	{
@@ -266,10 +265,10 @@ class Join implements ExpressionInterface, JoinInterface, ReBuildableExpressionI
 		{
 			throw new \Exception('column arguments require a referenced table!');
 		}
-		if($firstColumn->getColumnName() !== $secondColumn->getColumnName())
-		{
-			throw new \Exception('column arguments require a equivalent column names!');
-		}
+//		if($firstColumn->getColumnName() !== $secondColumn->getColumnName())
+//		{
+//			throw new \Exception('column arguments require a equivalent column names!');
+//		}
 	}
 
 

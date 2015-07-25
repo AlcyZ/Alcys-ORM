@@ -191,7 +191,7 @@
 
 				<b>Todo:</b>
 				on duplicate key update, refactor this class to be compatible with the facade.<br>
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.Insert.html#31-191" title="Go to source code">Core/Db/Statement/Insert.php</a>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.Insert.html#31-216" title="Go to source code">Core/Db/Statement/Insert.php</a>
 		<br>
 	</div>
 
@@ -210,7 +210,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_table">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#54-66" title="Go to source code">table</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#56-68" title="Go to source code">table</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
 
 			<div class="description short">
 				<p>Add a table object to the statement.</p>
@@ -250,7 +250,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_columns">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#69-89" title="Go to source code">columns</a>( <span>array <var>$columnsArray</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#71-91" title="Go to source code">columns</a>( <span>array <var>$columnsArray</var></span> )</code>
 
 			<div class="description short">
 				<p>Add columns to the insert statement.</p>
@@ -294,7 +294,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_values">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#92-108" title="Go to source code">values</a>( <span>array <var>$valuesArray</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#94-110" title="Go to source code">values</a>( <span>array <var>$valuesArray</var></span> )</code>
 
 			<div class="description short">
 				<p>Validate the passed array and add their values to the insert statement.
@@ -330,6 +330,41 @@ if column method was not invoke or if element of the passed array is not of type
 			</div>
 			</div></td>
 		</tr>
+		<tr data-order="onDuplicateKeyUpdate" id="_onDuplicateKeyUpdate">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_onDuplicateKeyUpdate">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#113-124" title="Go to source code">onDuplicateKeyUpdate</a>( )</code>
+
+			<div class="description short">
+				<p>Add an on duplicate key update expression to the query.
+The internal property will set to true, the builder realize it and build the expression.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add an on duplicate key update expression to the query.
+The internal property will set to true, the builder realize it and build the expression.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this Same instance to concatenate methods.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
 		<tr data-order="getTable" id="_getTable">
 
 			<td class="attributes"><code>
@@ -341,7 +376,7 @@ if column method was not invoke or if element of the passed array is not of type
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getTable">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#166-172" title="Go to source code">getTable</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#182-188" title="Go to source code">getTable</a>( )</code>
 
 			<div class="description short">
 				
@@ -376,7 +411,7 @@ if column method was not invoke or if element of the passed array is not of type
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getColumns">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#175-181" title="Go to source code">getColumns</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#191-197" title="Go to source code">getColumns</a>( )</code>
 
 			<div class="description short">
 				
@@ -411,7 +446,7 @@ if column method was not invoke or if element of the passed array is not of type
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getValues">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#184-190" title="Go to source code">getValues</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#200-206" title="Go to source code">getValues</a>( )</code>
 
 			<div class="description short">
 				
@@ -432,6 +467,39 @@ if column method was not invoke or if element of the passed array is not of type
 
 					<h4>Implementation of</h4>
 					<div class="list"><code><a href="class-Alcys.Core.Db.Statement.InsertInterface.html#_getValues">Alcys\Core\Db\Statement\InsertInterface::getValues()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isOnDuplicateKeyUpdate" id="_isOnDuplicateKeyUpdate">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isOnDuplicateKeyUpdate">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Insert.html#209-215" title="Go to source code">isOnDuplicateKeyUpdate</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
 			</div>
 			</div></td>
 		</tr>

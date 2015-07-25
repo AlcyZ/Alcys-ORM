@@ -33,7 +33,9 @@ use Alcys\Core\Db\References\TableInterface;
 interface StatementInterface
 {
 	/**
-	 * Add a validated table to the statement.
+	 * Add a table object to the statement.
+	 *
+	 * The method fill the table property and multiple calls override the old value.
 	 *
 	 * @param TableInterface $table The validated table value.
 	 *

@@ -23,6 +23,7 @@
  */
 
 namespace Alcys\Core\Db\Expression;
+
 use Alcys\Core\Db\References\ColumnInterface;
 use Alcys\Core\Db\References\MySql\WhereCompareInterface;
 use Alcys\Core\Db\References\MySql\WhereNumericCompareInterface;
@@ -116,9 +117,8 @@ interface ComparisonInterface
 	 * @return $this The current condition instance to concatenate method invokes.
 	 * @throws \Exception
 	 */
-	public function between(ColumnInterface $column,
-	                        WhereNumericCompareInterface $lowerValue,
-	                        WhereNumericCompareInterface $greaterValue);
+	public function between(ColumnInterface $column, WhereNumericCompareInterface $lowerValue,
+							WhereNumericCompareInterface $greaterValue);
 
 
 	/**
@@ -131,9 +131,8 @@ interface ComparisonInterface
 	 * @return $this The current condition instance to concatenate method invokes.
 	 * @throws \Exception
 	 */
-	public function notBetween(ColumnInterface $column,
-	                           WhereNumericCompareInterface $lowerValue,
-	                           WhereNumericCompareInterface $greaterValue);
+	public function notBetween(ColumnInterface $column, WhereNumericCompareInterface $lowerValue,
+							   WhereNumericCompareInterface $greaterValue);
 
 
 	/**
@@ -151,4 +150,28 @@ interface ComparisonInterface
 	 * @throws \Exception
 	 */
 	public function like(ColumnInterface $column, ReferencesInterface $value, $level = 0);
+
+
+	/**
+	 * Add an is null condition to the condition array.
+	 * The order of the method call is important, in which way the condition string will
+	 * concatenate.
+	 *
+	 * @param ColumnInterface $column Name of the column to compare.
+	 *
+	 * @return $this The same instance to concatenate methods.
+	 */
+	public function isNull(ColumnInterface $column);
+
+
+	/**
+	 * Add a not null condition to the condition array.
+	 * The order of the method call is important, in which way the condition string will
+	 * concatenate.
+	 *
+	 * @param ColumnInterface $column Name of the column to compare.
+	 *
+	 * @return $this The same instance to concatenate methods.
+	 */
+	public function notNull(ColumnInterface $column);
 }

@@ -62,46 +62,24 @@ Alcys\Core\Db\Expression\Condition
  [x] Get condition array return correct values when column alias is set
  [x] Condition throw exception when two condition methods are invoked without and method or or method
  [x] Like method throw exception when level argument is invalid
+ [x] Is null add expected value to condition array
+ [x] Is not null add expected value to condition array
  [x] Get expression array is equal to get condition array
 
 Alcys\Core\Db\Expression\Join
  [x] Initial join array have the expected value
- [x] Get expression array is equal to get join array
- [x] Inner return same instance
- [x] Inner throw exception when no table reference is passed
- [x] Inner set join array value correct
- [x] Multiple inner calls override old join arrays value
- [x] Inner with multiple tables will set correct in join array
- [x] Inner throw exception when arguments are not table interface objects
- [x] Left return same instance
- [x] Left throw exception when no table reference is passed
- [x] Left set join array value correct
- [x] Multiple left calls override old join arrays value
- [x] Left with multiple tables will set correct in join array
- [x] Left throw exception when arguments are not table interface objects
- [x] Right return same instance
- [x] Right throw exception when no table reference is passed
- [x] Right set join array value correct
- [x] Multiple right calls override old join arrays value
- [x] Right with multiple tables will set correct in join array
- [x] Right throw exception when arguments are not table interface objects
- [x] Left outer return same instance
- [x] Left outer throw exception when no table reference is passed
- [x] Left outer set join array value correct
- [x] Multiple left outer calls override old join arrays value
- [x] Left outer with multiple tables will set correct in join array
- [x] Left outer throw exception when arguments are not table interface objects
- [x] Right outer return same instance
- [x] Right outer throw exception when no table reference is passed
- [x] Right outer set join array value correct
- [x] Multiple right outer calls override old join arrays value
- [x] Right outer with multiple tables will set correct in join array
- [x] Right outer throw exception when arguments are not table interface objects
- [x] Natural return same instance
- [x] Natural throw exception when invalid first argument is passed
- [x] Natural set join array correct without way argument
- [x] Natural set join array correct with way argument
- [x] Natural throw exception when way argument value is unexpected
+ [x] Inner set correct values to join array
+ [x] Inner set correct values to join array with multiple tables
+ [x] Left set correct values to join array
+ [x] Left set correct values to join array with multiple tables
+ [x] Right set correct values to join array
+ [x] Right set correct values to join array with multiple tables
+ [x] Left outer set correct values to join array
+ [x] Left outer set correct values to join array with multiple tables
+ [x] Right outer set correct values to join array
+ [x] Right outer set correct values to join array with multiple tables
+ [x] Natural set correct values to join array without way argument
+ [x] Natural set correct values to join array with way argument
  [x] On condition throw exception when no way isset before
  [x] On condition return same instance
  [x] On condition throw exception when first argument is not a column
@@ -109,13 +87,50 @@ Alcys\Core\Db\Expression\Join
  [x] On throw exception when first column arg does not have table values
  [x] On throw exception when second column arg does not have table values
  [x] On throw exception when column arguments does not have table values
- [x] On throw exception when column args does not have the same name
  [x] On set join arrays condition type and condition values
- [x] On call correct methods from first argument
- [x] On call correct methods from second argument
  [x] Using throw exception when invalid argument is passed
  [x] Using return same instance
  [x] Using set join arrays condition type and condition value
+ [x] Get expression array return same like get join array
+ [x] Exception will thrown when optional tables have invalid elements
+ [x] Exception will thrown when naturals way argument is invalid
+
+Alcys\Core\Db\Facade\ConditionFacade
+ [x] Equal invoke right factory methods without type
+ [x] Equal invoke right factory methods with column type
+ [x] Equal invoke right condition method without type
+ [x] Equal invoke right condition method with type
+ [x] Not equal invoke right factory methods without type
+ [x] Not equal invoke right factory methods with column type
+ [x] Not equal invoke right condition method without type
+ [x] Not equal invoke right condition method with type
+ [x] Greater invoke correct factory methods without type
+ [x] Greater invoke correct factory methods with type
+ [x] Greater invoke correct condition method
+ [x] Greater equal invoke correct factory methods without type
+ [x] Greater equal invoke correct factory methods with type
+ [x] Greater equal invoke correct condition method
+ [x] Lower invoke correct factory methods without type
+ [x] Lower invoke correct factory methods with type
+ [x] Lower invoke correct condition method
+ [x] Lower equal invoke correct factory methods without type
+ [x] Lower equal invoke correct factory methods with type
+ [x] Lower equal invoke correct condition method
+ [x] Between invoke correct factory methods with type
+ [x] Between invoke correct factory methods without type
+ [x] Between invoke correct condition method
+ [x] Not between invoke correct factory methods with type
+ [x] Not between invoke correct factory methods without type
+ [x] Not between invoke correct condition method
+ [x] Like invoke correct factory methods
+ [x] Like invoke correct condition method
+ [x] Is null invoke right factory methods
+ [x] Is null invoke right condition method
+ [x] Not null invoke right factory methods
+ [x] Not null invoke right condition method
+ [x] Logic and invoke correct condition method
+ [x] Logic or invoke correct condition method
+ [x] Get condition return expected value
 
 Alcys\Core\Db\Facade\DeleteFacade
  [x] Where return same instance
@@ -125,10 +140,10 @@ Alcys\Core\Db\Facade\DeleteFacade
  [x] Order by call correct statement method
  [x] Limit return the same instance
  [x] Limit call correct statement method
- [x] Condition builder call correct factory method
- [x] Condition builder return correct instance
- [x] Get columns return anonymous function
- [x] Get values return anonymous function
+ [x] Condition return the correct instance
+ [x] Execute invoke correct factory methods
+ [x] Execute invoke correct pdo method
+ [x] Execute throw exception when pdo result is false
 
 Alcys\Core\Db\Facade\InsertFacade
  [x] Facade instantiation factory calls
@@ -138,6 +153,39 @@ Alcys\Core\Db\Facade\InsertFacade
  [x] Values calls correct factories methods
  [x] Values calls correct statement methods
  [x] Values return same instance
+ [x] Execute invoke correct factory methods
+ [x] Execute invoke correct pdo method
+ [x] Execute throw exception when pdo result is false
+
+Alcys\Core\Db\Facade\JoinFacade
+ [x] Inner invoke correct factory methods
+ [x] Inner invoke correct factory methods with optional tables
+ [x] Inner invoke correct join methods
+ [x] Inner invoke correct join methods with optional tables
+ [x] Left invoke correct factory methods
+ [x] Left invoke correct factory methods with optional tables
+ [x] Left invoke correct join methods
+ [x] Left invoke correct join methods with optional tables
+ [x] Right invoke correct factory methods
+ [x] Right invoke correct factory methods with optional tables
+ [x] Right invoke correct join methods
+ [x] Right invoke correct join methods with optional tables
+ [x] Left outer invoke correct factory methods
+ [x] Left outer invoke correct factory methods with optional tables
+ [x] Left outer invoke correct join methods
+ [x] Left outer invoke correct join methods with optional tables
+ [x] Right outer invoke correct factory methods
+ [x] Right outer invoke correct factory methods with optional tables
+ [x] Right outer invoke correct join methods
+ [x] Right outer invoke correct join methods with optional tables
+ [x] Natural invoke correct factory method
+ [x] Natural invoke correct join method
+ [x] On invoke correct factory methods
+ [x] On invoke correct join method
+ [x] On throw invalid argument exception when arguments are invalid
+ [x] Get join return join expression object
+ [x] Using invoke correct factory methods
+ [x] Using invoke correct join method
 
 Alcys\Core\Db\Facade\SelectFacade
  [x] Table method return same instance
@@ -160,17 +208,15 @@ Alcys\Core\Db\Facade\SelectFacade
  [x] Distinct invoke correct statement method
  [x] Having return same instance
  [x] Where method return same instance
- [x] Condition builder return correct instance
- [x] Condition builder invoke correct factory method
+ [x] Condition return the correct instance
  [x] Where invoke correct statement method with passed obj
  [x] Join return same instance
  [x] Join invoke correct statement method
- [x] Join builder return correct instance
  [x] Join builder invoke correct factory method
- [x] Get columns work correct
- [x] Get values work correct
+ [x] Join builder return correct instance
  [x] Fetch invoke correct statement method
  [x] Fetch invoke correct factory methods
+ [x] Fetch return empty array when nothing fetched
 
 Alcys\Core\Db\Facade\UpdateFacade
  [x] Update facade instantiation method calls
@@ -180,9 +226,11 @@ Alcys\Core\Db\Facade\UpdateFacade
  [x] Value return same instance
  [x] Value invoke correct factories method
  [x] Value invoke correct statement method
+ [x] Value invoke correct factory method with type argument
  [x] Columns return same instance
  [x] Values throw exception when column was not invoked before
  [x] Values invoke correct factories methods
+ [x] Values invoke correct factory methods with type argument
  [x] Values invoke correct statement methods
  [x] Values return same instance
  [x] Where return same instance
@@ -192,10 +240,10 @@ Alcys\Core\Db\Facade\UpdateFacade
  [x] Order by call correct statement method
  [x] Limit return the same instance
  [x] Limit call correct statement method
- [x] Condition builder call correct factory method
- [x] Condition builder return correct instance
- [x] Get columns return anonymous function
- [x] Get values return anonymous function
+ [x] Condition return the correct instance
+ [x] Execute invoke correct factory methods
+ [x] Execute invoke correct pdo method
+ [x] Execute throw exception when pdo result is false
 
 Alcys\Core\Db\Factory\DbFactory
  [ ] Db factory trow exception while initialization when invalid driver name is passed as constructor argument
@@ -223,24 +271,16 @@ Alcys\Core\Db\Factory\DbFactory
  [x] Factories facade method return insert facade
  [x] Factories facade method return delete facade
  [x] Factories facade method throw exception when facade object not exist
+ [x] Expression facade return condition facade
+ [x] Expression facade with condition as arg throw exception when second arg has false type
+ [x] Expression facade return join facade
+ [x] Expression facade with join as arg throw exception when second arg has false type
 
 Alcys\Core\Db\Factory\ExpressionBuilderFactory
  [x] Create return instance of condition builder
  [x] Create return instance of join builder
  [x] Create return null when null is passed
  [x] Create throw exception when argument is invalid
-
-Alcys\Core\Db\Factory\ExpressionFactory
- [x] Join method return correct expression instance
- [x] Condition method return correct expression instance
-
-Alcys\Core\Db\Factory\ReferenceFactory
- [x] Column return correct value
- [x] Order mode enum return correct value
- [x] Sql function return correct value
- [x] Table return correct value
- [x] Value return correct value
- [x] Numeric return correct value
 
 Alcys\Core\Db\QueryBuilder\MySql\DeleteBuilder
  [x] Builder throw exception when statements table method was not invoked
@@ -341,6 +381,12 @@ Alcys\Core\Db\References\MySql\Value
  [x] Get numeric compare value is equivalent to get value
  [x] Value parameter throw exception when incorrect type is passed as argument
 
+Alcys\Core\Db\Service\AlcysDb
+ [x] Select return instance of select facade
+ [x] Update return instance of update facade
+ [x] Insert return instance of insert facade
+ [x] Delete return instance of delete facade
+
 Alcys\Core\Db\Statement\Delete
  [x] Table return object of same instance
  [x] Table throw exception when argument is invalid
@@ -367,6 +413,9 @@ Alcys\Core\Db\Statement\Insert
  [x] Values method return the same instance
  [x] Values method set property correctly
  [x] Values method set property correctly with multiple columns
+ [x] On duplicate key update return same instance
+ [x] On duplicate key update set correct property
+ [x] On duplicate key update property default value is false
  [x] Value throw exception when column was not invoked
  [x] Value throw exception when arrays not have same length
  [x] Value throw exception when passed array is invalid

@@ -37,35 +37,55 @@ use Alcys\Core\Types\Numeric;
 interface DeleteInterface
 {
 	/**
-	 * @param TableInterface $table
+	 * Add a validated table to the statement.
 	 *
-	 * @return $this
+	 * The method fill the table property and multiple calls override the old value.
+	 *
+	 * @param TableInterface $table The validated table value.
+	 *
+	 * @return $this The same instance to concatenate methods.
 	 */
 	public function table(TableInterface $table);
 
 
 	/**
-	 * @param ConditionInterface $condition
+	 * Add a where expression to the statement.
 	 *
-	 * @return $this
+	 * The query builder have the functionality to build a valid
+	 * formatted condition, but at least one condition method must
+	 * be invoked. Otherwise, no condition will added.
+	 *
+	 * @param ConditionInterface $condition Condition value object in which the condition expressions are buffered.
+	 *
+	 * @return $this The same instance to concatenate methods.
 	 */
 	public function where(ConditionInterface $condition);
 
 
 	/**
-	 * @param ColumnInterface        $column
-	 * @param OrderModeEnumInterface $orderMode
+	 * Add an order by expression to the statement.
 	 *
-	 * @return $this
+	 * The method will fill the array in the correct way to be valid for the query builder.
+	 * To avoid errors, the method should only invoked one time! (working at a solution)
+	 *
+	 * @param ColumnInterface        $column    The column which should sorted.
+	 * @param OrderModeEnumInterface $orderMode The expected mode. Whether 'ASC' or 'DESC'.
+	 *
+	 * @return $this The same instance to concatenate methods.
 	 */
 	public function orderBy(ColumnInterface $column, OrderModeEnumInterface $orderMode = null);
 
 
 	/**
-	 * @param Numeric $beginAmount
-	 * @param Numeric $amount
+	 * Add a limit expression to the statement.
 	 *
-	 * @return $this
+	 * The method will fill the array in the correct way to be valid for the query builder.
+	 *
+	 * @param Numeric $beginAmount The first entry that get selected or the amount of
+	 *                             returned entries, when the second argument is null.
+	 * @param Numeric $amount      The amount of entries that should returned.
+	 *
+	 * @return $this The same instance to concatenate methods.
 	 */
 	public function limit(Numeric $beginAmount, Numeric $amount = null);
 }

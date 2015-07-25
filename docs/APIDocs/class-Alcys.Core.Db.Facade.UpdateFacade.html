@@ -192,8 +192,6 @@
 		<b>Namespace:</b> <a href="namespace-Alcys.html">Alcys</a>\<a href="namespace-Alcys.Core.html">Core</a>\<a href="namespace-Alcys.Core.Db.html">Db</a>\<a href="namespace-Alcys.Core.Db.Facade.html">Facade</a><br>
 		<b>Package:</b> Alcys\Core\Db\Facade<br>
 
-				<b>Todo:</b>
-				Type in value method as sec arg, default is value, e.g.: $update->value('column_name', 'column')<br>
 			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#35-250" title="Go to source code">Core/Db/Facade/UpdateFacade.php</a>
 		<br>
 	</div>
@@ -213,7 +211,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#63-81" title="Go to source code">__construct</a>( <span>PDO <var>$pdo</var></span>, <span><code><a href="class-Alcys.Core.Db.Statement.UpdateInterface.html">Alcys\Core\Db\Statement\UpdateInterface</a></code> <var>$update</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$factory</var></span>, <span>string <var>$table</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#62-80" title="Go to source code">__construct</a>( <span>PDO <var>$pdo</var></span>, <span><code><a href="class-Alcys.Core.Db.Statement.UpdateInterface.html">Alcys\Core\Db\Statement\UpdateInterface</a></code> <var>$update</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$factory</var></span>, <span>string <var>$table</var></span> )</code>
 
 			<div class="description short">
 				<p>Initialize the update facade.
@@ -255,7 +253,7 @@ Set all required properties to update entries in the database.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_execute">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#84-97" title="Go to source code">execute</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#83-96" title="Go to source code">execute</a>( )</code>
 
 			<div class="description short">
 				<p>Execute the query and update the expected entries in the database.</p>
@@ -288,7 +286,7 @@ Set all required properties to update entries in the database.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_column">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#100-116" title="Go to source code">column</a>( <span>string <var>$column</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#99-115" title="Go to source code">column</a>( <span>string <var>$column</var></span> )</code>
 
 			<div class="description short">
 				<p>Set a single column to the query which should get an update.
@@ -332,7 +330,7 @@ This process can done multiple times to update more then one column.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_value">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#119-135" title="Go to source code">value</a>( <span>string <var>$value</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.UpdateFacade.html#118-135" title="Go to source code">value</a>( <span>string <var>$value</var></span>, <span> <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Set the value for the column, which is passed as argument in the UpdateFacade::column() method.
@@ -350,6 +348,8 @@ Before calling this method again, the column() has to be invoked.</p>
 					<div class="list"><dl>
 						<dt><var>$value</var></dt>
 						<dd>The value which should set.</dd>
+						<dt><var>$type</var></dt>
+						<dd></dd>
 					</dl></div>
 
 					<h4>Returns</h4>

@@ -191,6 +191,8 @@
 		<b>Package:</b> Alcys\Core\Db\Facade<br>
 
 				<b>Todo:</b>
+				The USING(column_list) clause names a list of columns that must exist in both tables.<br>
+				<b>Todo:</b>
 				<p>$join->on('firstColumnName', 'firstTableRef', 'secondColumnName', 'secondTableRef') and:
            $join->on(
                array('table' => $tableRefOne', 'column' => $columnNameOne),
@@ -198,7 +200,7 @@
            )</p><br>
 				<b>Todo:</b>
 				Implement functionality to add multiple tables to the join expression.<br>
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#31-265" title="Go to source code">Core/Db/Facade/JoinFacade.php</a>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#31-266" title="Go to source code">Core/Db/Facade/JoinFacade.php</a>
 		<br>
 	</div>
 
@@ -217,7 +219,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#54-64" title="Go to source code">__construct</a>( <span><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code> <var>$join</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$factory</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#55-65" title="Go to source code">__construct</a>( <span><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code> <var>$join</var></span>, <span><code><a href="class-Alcys.Core.Db.Factory.DbFactoryInterface.html">Alcys\Core\Db\Factory\DbFactoryInterface</a></code> <var>$factory</var></span> )</code>
 
 			<div class="description short">
 				<p>Initialize the join facade object and set required properties.</p>
@@ -253,7 +255,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_inner">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#67-82" title="Go to source code">inner</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#68-83" title="Go to source code">inner</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Join the expected table with an inner join.
@@ -297,7 +299,7 @@ In the second argument can pass optional tables for the join operation.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_left">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#85-100" title="Go to source code">left</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#86-101" title="Go to source code">left</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Join the expected table with a left join.
@@ -341,7 +343,7 @@ In the second argument can pass optional tables for the join operation.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_right">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#103-118" title="Go to source code">right</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#104-119" title="Go to source code">right</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Join the expected table with a right join.
@@ -385,7 +387,7 @@ In the second argument can pass optional tables for the join operation.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_leftOuter">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#121-136" title="Go to source code">leftOuter</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#122-137" title="Go to source code">leftOuter</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Join the expected table with a left outer join.
@@ -429,7 +431,7 @@ In the second argument can pass optional tables for the join operation.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_rightOuter">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#139-154" title="Go to source code">rightOuter</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#140-155" title="Go to source code">rightOuter</a>( <span>string <var>$table</var></span>, <span>array <var>$optionalTables</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Join the expected table with a right outer join.
@@ -473,7 +475,7 @@ In the second argument can pass optional tables for the join operation.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_natural">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#157-173" title="Go to source code">natural</a>( <span>string <var>$table</var></span>, <span>string|null <var>$way</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#158-174" title="Go to source code">natural</a>( <span>string <var>$table</var></span>, <span>string|null <var>$way</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Join the expected table with a natural join.
@@ -517,7 +519,7 @@ In the second argument can pass the way, which have to be whether 'inner', 'left
 
 			<td class="name"><div>
 			<a class="anchor" href="#_on">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#176-197" title="Go to source code">on</a>( <span>array <var>$firstColumn</var></span>, <span>array <var>$secondColumn</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#177-198" title="Go to source code">on</a>( <span>array <var>$firstColumn</var></span>, <span>array <var>$secondColumn</var></span> )</code>
 
 			<div class="description short">
 				<p>Set the condition how to join the table[s] with the 'on' keyword.
@@ -563,7 +565,7 @@ An invalid argument exception will thrown when the arrays are invalid.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_using">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#200-214" title="Go to source code">using</a>( <span>string <var>$column</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#201-215" title="Go to source code">using</a>( <span>string <var>$column</var></span> )</code>
 
 			<div class="description short">
 				<p>Set the condition how to join the table[s] with the 'using' keyword.</p>
@@ -603,7 +605,7 @@ An invalid argument exception will thrown when the arrays are invalid.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getJoin">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#217-223" title="Go to source code">getJoin</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.JoinFacade.html#218-224" title="Go to source code">getJoin</a>( )</code>
 
 			<div class="description short">
 				

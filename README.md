@@ -1,32 +1,31 @@
 Alcys-ORM
 =========
-Ein PHP-ORM System, Test Driven Entwickelt, 100% Code-Coverage und inklusive API Dokumentation.
-Momentant wird nur MySql unterstützt!
+A test driven developed PHP-ORM system, 100½ code coverage with API documentation.
+Actually, i only support MySql, but other driver will follow.
 
-Einbindung
-----------
-Man kann einfach den Autoloader bzw. jeden anderen PSR-0 kompatiblen Autoloader benutzen und ihn registrieren.
 
+Installation
+------------
+Download and extract the zip package. Copy the src/ directory to your project and use
+a PSR-0 or PSR-4 autoloader to require the files. In the package root directory exist a
+small and simple PSR-0 autoloader, which also could used.
 ```php
 <?php
 require_once 'Autoloader.php';
 
 spl_autoload_register(
-	array('Autoloader', 'load')
+    array('Autoloader', 'load');
 );
 
 Autoloader::register('src/');
 ```
-Eine etwas genauere Beschreibung folgt wenn ich die Zeit dafür finde. Außerdem bietet sie aktuell 
-(in der ersten Stabilen Version) noch nicht viel Extra-Funktionalitäten. Trotzdem sollte der Funkionsumfang
-schon für die meisten Projekte reichen, sofern nicht zu komplexe MySql-Querys benötigt werden.
 
-Benutzung
----------
-Man kann sich einfach ein Objekt der Klasse Alcys\Core\Db\Service\AlcysDb instantiieren. Es verfügt über Methoden,
-die Objekte zur Ausführung von SELECT, UPDATE, INSERT und DELETE Statements zurückgeben.
+Usage
+-----
+Instantiate an object of the class Alcys\Core\Db\Service\AlcysDb. There are some methods
+to create whether SELECT, INSERT, DELETE or UPDATE statement objects which communicate with the database.
 ```php
-$db = new Alcys\Core\Db\Service\AlcysDb('mysql:host=localhost;dbname=db_name', 'db_user', 'db_password')
+$db = new Alcys\Core\Db\Service\AlcysDb('mysql:host=localhost;dbname=db_name', 'db_user', 'db_password');
 
 $select = $db->select('table_name'); # Object for select statements
 $update = $db->update('table_name'); # Object for update statements
@@ -34,22 +33,14 @@ $insert = $db->insert('table_name'); # Object for insert statements
 $delete = $db->delete('table_name'); # Object for delete statements
 ```
 
-Jedes dieser Objekte verfügt über Methoden um den Query Objekt-Orientiert zu erzeugen. Um den Befehl auszuführen, stehen
-folgende Methoden zur Verfügung:
-```php
-$select->fetch();
-$update->execute();
-$insert->execute();
-$delete->execute();
-```
+The table name is required to pass it as argument through the create method. To add other tables, 
+simple use the table() method which exists in each statement object.
+If the columns method, which only not exist in the delete statement, will not called, a wildcard (\*) will 
+add for the columns.
 
-Es wird immer der Tabellenname genommen, der im Constructor übergeben worden ist. Zusätzliche Tabellen können mithilfe 
-der table() Methode gesetzt werden.
-Bei einem Select Befehl sind, falls nicht anders mit Hilfe der column() Methode gesetzt, alle Spalten (\*) gewählt.
-
-Beispiele
----------
-Simpler Select Befehl:
+Examples
+--------
+Simple select query:
 ```php
 # SELECT `test_column`, `column` AS `clm` FROM `test_table` AS `my_table` ORDER BY `clm` DESC;
 $select = $db->select(`test_table`, `my_table`);
@@ -60,7 +51,7 @@ $resultArray = $select->column('test_column')
 					  ->fetch();
 ```
 
-Simpler Update Befehl:
+Simple update query:
 ```php
 # UPDATE `test_table` SET `column` = "value", `clm` = "val" LIMIT 4, 15;
 $update = $db->update(`test_table`);
@@ -71,7 +62,7 @@ $update->column('column')->value('value')
        ->execute();
 ```
 
-Simpler Insert Befehl:
+Simple insert query:
 ```php
 # INSERT INTO `test_table` (`column`, `clm`) VALUES ("val", "value"), ("any_value", "this_value");
 $insert = $db->insert(`test_table`);
@@ -82,7 +73,7 @@ $insert->columns(array('column', 'clm'))
        ->execute();
 ```
 
-Simpler Delete Befehl:
+Simple delete query:
 ```php
 # DELETE FROM `test_table` ORDER BY `column` ASC LIMIT 0, 5;
 $delete = $db->delete(`test_table`);
@@ -92,97 +83,73 @@ $delete->orderBy('column')
        ->execute();
 ```
 
-Where Bedingungen
------------------
-Alle Statement Objekte, außer das InsertStatement, verfügen über die 'condition' Methode. Sie gibt ein Objekt zurück,
-dass Methoden zur Erstellung einer Bedingung beinhaltet. Das Objekt übergibt man anschließend einfach der 'where' Methode.
+Where-Conditions
+----------------
+All statement objects, instead of the InsertStatement, have a 'condition' method which return an object
+for the creation of conditions. After call some methods of the object to build the condition, pass it to
+the 'where' method.
 ```php
 # WHERE `column_name` != 'value'
 
-$delete->where(
-   $delete->condition()
-	  ->notEqual('column_name', 'value')
-);
+$delete->where($delete->condition()->notEqual('column_name', 'value'));
 ```
 
-Falls man zwei Spalten mit einander vergleichen möchte, übergibt man als dritten Parameter einfach 'column'.
+If you want to compare two columns, pass as third argument the string 'column'.
 ```php
 # WHERE `first_column` >= `second_column`
 
-$update->where(
-   $update->condition()
-	  ->greaterEqual('first_column, 'second_column', 'column')
-);
+$update->where($update->condition()->greaterEqual('first_column, 'second_column', 'column');
 ```
 
-Wenn man mehrere Bedingungen setzen möchte, dann kann man einfach zur Verknüpfung die Methoden 'logicAnd' und 'logicOr' aufrufen.
-Sie müssen zwischen jeder Bedingung stehen, sonst wird eine Exception geworfen.
+To connect multiple conditions, you have to invoke the methods 'logicAnd' and 'logicOr' between
+the other condition methods.
+If they not called between conditions, an exception will thrown.
 ```php
 # WHERE `first_column` = 'a' AND `cl` != `clm` OR `column` < 5
 
 $condition = $select->condition();
-$condition->equal('first_column', 'a')
-	  ->logicAnd()
-	  ->notEqual('cl', 'clm', 'column')
-	  ->logicOr()
-	  ->lower('column', 5);
+$condition->equal('first_column', 'a')->logicAnd()->notEqual('cl', 'clm', 'column')->logicOr()->lower('column', 5);
 
-$select->where($condition)
-       ->fetch();
+$select->where($condition)->fetch();
 ```
 
-Bedingungen mit like folgt ..
-
+Like conditions will follow ..
 
 Joins
 -----
-In der aktuellen Version funktionieren Joins nur bei Select Statement. Die funktionalität für weitere Statements wird aber noch kommen.
+At the current version, joins are only implemented in the select statement. The functionality is implemented for other
+statements in the next version.
 
-Das Select Statement verfügt über die Methode 'joinBuilder', die ein Objekt zur Erstellung des Joins zurückgibt, was der 'join' Methoden
-übergeben wird.
-
+The method 'joinBuilder' returns an object for the creation of the join expression. This have to pass to the statements 
+'join' method.
 ```php
 # LEFT JOIN `table_name` USING `column`
 
-$select->join(
-   $select->joinBuilder()
-	  ->left('table_name')
-	  ->using('column')
-);
+$select->join($select->joinBuilder()->left('table_name')->using('column'));
 ```
 
-Bei der 'on' Methode müssen als Parameter zwei Assoc-Arrays übergeben werden, in denen der key 'table' und 'column' existiert,
-sonst wird eine Exception geworfen.
+The arguments for the 'on' method has to be two assoc arrays with keys 'table' and 'column'.
+If the arrays are invalid, an exception will thrown.
 ```php
 # INNER JOIN `table` ON (`tbl`.`cl`, `table`.`clm`);
 
-$firstColumn = ['table' => 'tbl', 'column' => 'cl'];
-$secondColumn = ['table' => 'table', 'column' => 'clm'];
+$firstColumn = array('table' => 'tbl', 'column' => 'cl');
+$secondColumn = array('table' => 'table', 'column' => 'clm');
 
-$select->join(
-   $select->joinBuilder()
-          ->inner('table')
-          ->on($firstColumn, $secondColumn)
-);
+$select->join($select->joinBuilder()->inner('table')->on($firstColumn, $secondColumn));
 
 ```
 
+Before calling the 'on' or 'using' method, you have to invoke whether the 'inner', 'left[Outer]' or 'right[Outer]' method,
+otherwise an exception will thrown.
 
-Bevor man die Methode 'on' oder 'using' aufruft, muss entweder 'inner', 'left[Outer]' oder 'right[Outer]' aufgerufen
-werden, ansonsten wird eine Exception geworfen!
-
-Wenn man eine Tabelle mit allen equivalenten Spaltennamen joinen möchte, kann man die 'natural' Methode benutzen.
-Als ersten Parameter gibt man den Tabellennamen an, als zweiten kann Optional entweder 'inner', 'left[Outer]' oder 'right[Outer]' gesetzt werden.
+If you want to join a table with all equivalent column names, you can use the 'natural' method.
+The first argument is the table name, the optional second can be whether 'inner', 'left[Outer]' or 'right[Outer].
 ```php
 # NATURAL JOIN `table`
-$select->join(
-   $select->joinBuilder()
-	  ->natural('table')
-);
+$select->join($select->joinBuilder()->natural('table'));
 
 # NATURAL RIGHT JOIN `table`
-$select->join(
-   $select->joinBuilder()
-	  ->natural('table', 'right')
-);
+$select->join($select->joinBuilder()->natural('table', 'right'));
 ```
+

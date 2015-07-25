@@ -191,7 +191,7 @@
 		<b>Namespace:</b> <a href="namespace-Alcys.html">Alcys</a>\<a href="namespace-Alcys.Core.html">Core</a>\<a href="namespace-Alcys.Core.Db.html">Db</a>\<a href="namespace-Alcys.Core.Db.Statement.html">Statement</a><br>
 		<b>Package:</b> Alcys\Core\Db\Statement<br>
 
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.Delete.html#33-169" title="Go to source code">Core/Db/Statement/Delete.php</a>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.Delete.html#33-139" title="Go to source code">Core/Db/Statement/Delete.php</a>
 		<br>
 	</div>
 
@@ -210,16 +210,14 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_table">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#60-74" title="Go to source code">table</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#60-68" title="Go to source code">table</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
 
 			<div class="description short">
-				<p>Add a validated table to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add a validated table to the statement.</p>
-
-<p>The method fill the table property and multiple calls override the old value.</p>
+				
 
 
 					<h4>Parameters</h4>
@@ -234,6 +232,9 @@
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -252,18 +253,14 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_where">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#77-93" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code> <var>$condition</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#71-79" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code> <var>$condition</var></span> )</code>
 
 			<div class="description short">
-				<p>Add a where expression to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add a where expression to the statement.</p>
-
-<p>The query builder have the functionality to build a valid
-formatted condition, but at least one condition method must
-be invoked. Otherwise, no condition will added.</p>
+				
 
 
 					<h4>Parameters</h4>
@@ -278,6 +275,9 @@ be invoked. Otherwise, no condition will added.</p>
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -296,17 +296,14 @@ be invoked. Otherwise, no condition will added.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_orderBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#96-113" title="Go to source code">orderBy</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span>, <span><code><a href="class-Alcys.Core.Db.References.OrderModeEnumInterface.html">Alcys\Core\Db\References\OrderModeEnumInterface</a></code> <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#82-91" title="Go to source code">orderBy</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span>, <span><code><a href="class-Alcys.Core.Db.References.OrderModeEnumInterface.html">Alcys\Core\Db\References\OrderModeEnumInterface</a></code> <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
-				<p>Add an order by expression to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add an order by expression to the statement.</p>
-
-<p>The method will fill the array in the correct way to be valid for the query builder.
-To avoid errors, the method should only invoked one time! (working at a solution)</p>
+				
 
 
 					<h4>Parameters</h4>
@@ -323,6 +320,9 @@ To avoid errors, the method should only invoked one time! (working at a solution
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -341,16 +341,14 @@ To avoid errors, the method should only invoked one time! (working at a solution
 
 			<td class="name"><div>
 			<a class="anchor" href="#_limit">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#116-132" title="Go to source code">limit</a>( <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$beginAmount</var></span>, <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#94-102" title="Go to source code">limit</a>( <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$beginAmount</var></span>, <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
-				<p>Add a limit expression to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add a limit expression to the statement.</p>
-
-<p>The method will fill the array in the correct way to be valid for the query builder.</p>
+				
 
 
 					<h4>Parameters</h4>
@@ -368,6 +366,9 @@ To avoid errors, the method should only invoked one time! (working at a solution
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -386,7 +387,7 @@ To avoid errors, the method should only invoked one time! (working at a solution
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getTable">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#135-141" title="Go to source code">getTable</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#105-111" title="Go to source code">getTable</a>( )</code>
 
 			<div class="description short">
 				
@@ -421,7 +422,7 @@ To avoid errors, the method should only invoked one time! (working at a solution
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getCondition">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#144-150" title="Go to source code">getCondition</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#114-120" title="Go to source code">getCondition</a>( )</code>
 
 			<div class="description short">
 				
@@ -456,7 +457,7 @@ To avoid errors, the method should only invoked one time! (working at a solution
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getOrderBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#153-159" title="Go to source code">getOrderBy</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#123-129" title="Go to source code">getOrderBy</a>( )</code>
 
 			<div class="description short">
 				
@@ -491,7 +492,7 @@ To avoid errors, the method should only invoked one time! (working at a solution
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getLimit">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#162-168" title="Go to source code">getLimit</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Delete.html#132-138" title="Go to source code">getLimit</a>( )</code>
 
 			<div class="description short">
 				

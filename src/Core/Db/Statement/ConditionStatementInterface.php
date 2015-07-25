@@ -38,6 +38,9 @@ interface ConditionStatementInterface
 	/**
 	 * Add an order by expression to the statement.
 	 *
+	 * The method will fill the array in the correct way to be valid for the query builder.
+	 * To avoid errors, the method should only invoked one time! (working at a solution)
+	 *
 	 * @param ColumnInterface        $column    The column which should sorted.
 	 * @param OrderModeEnumInterface $orderMode The expected mode. Whether 'ASC' or 'DESC'.
 	 *
@@ -48,6 +51,8 @@ interface ConditionStatementInterface
 
 	/**
 	 * Add a limit expression to the statement.
+	 *
+	 * The method will fill the array in the correct way to be valid for the query builder.
 	 *
 	 * @param Numeric $beginAmount The first entry that get selected or the amount of
 	 *                             returned entries, when the second argument is null.
@@ -60,6 +65,10 @@ interface ConditionStatementInterface
 
 	/**
 	 * Add a where expression to the statement.
+	 *
+	 * The query builder have the functionality to build a valid
+	 * formatted condition, but at least one condition method must
+	 * be invoked. Otherwise, no condition will added.
 	 *
 	 * @param ConditionInterface $condition Condition value object in which the condition expressions are buffered.
 	 *

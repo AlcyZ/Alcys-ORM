@@ -184,9 +184,7 @@
 		<b>Namespace:</b> <a href="namespace-Alcys.html">Alcys</a>\<a href="namespace-Alcys.Core.html">Core</a>\<a href="namespace-Alcys.Core.Db.html">Db</a>\<a href="namespace-Alcys.Core.Db.Statement.html">Statement</a><br>
 		<b>Package:</b> Alcys\Core\Db\Statement<br>
 
-				<b>Todo:</b>
-				Update Docs.<br>
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.UpdateInterface.html#30-57" title="Go to source code">Core/Db/Statement/UpdateInterface.php</a>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.UpdateInterface.html#30-62" title="Go to source code">Core/Db/Statement/UpdateInterface.php</a>
 		<br>
 	</div>
 
@@ -205,20 +203,22 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_column">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.UpdateInterface.html#37-42" title="Go to source code">column</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.UpdateInterface.html#36-44" title="Go to source code">column</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Add a column that should updated to the query.
+Afterwards, you should call the value method.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Add a column that should updated to the query.
+Afterwards, you should call the value method.</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$column</var></dt>
-						<dd></dd>
+						<dd>Object of type ColumnInterface.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
@@ -243,20 +243,20 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_value">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.UpdateInterface.html#45-50" title="Go to source code">value</a>( <span><code><a href="class-Alcys.Core.Db.References.MySql.ReferencesInterface.html">Alcys\Core\Db\References\MySql\ReferencesInterface</a></code> <var>$value</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.UpdateInterface.html#47-55" title="Go to source code">value</a>( <span><code><a href="class-Alcys.Core.Db.References.MySql.ReferencesInterface.html">Alcys\Core\Db\References\MySql\ReferencesInterface</a></code> <var>$value</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Add a value to the column which was set before.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Add a value to the column which was set before.</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$value</var></dt>
-						<dd></dd>
+						<dd>The expected value as object of type ReferenceInterface.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
@@ -264,6 +264,10 @@
 						<br>$this The same instance to concatenate methods.
 					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						Exception<br>When column method was not invoked before.
+					</div>
 
 
 
@@ -281,7 +285,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getValues">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.UpdateInterface.html#53-56" title="Go to source code">getValues</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.UpdateInterface.html#58-61" title="Go to source code">getValues</a>( )</code>
 
 			<div class="description short">
 				

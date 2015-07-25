@@ -55,6 +55,7 @@ use Alcys\Core\Db\Statement\Update;
 
 /**
  * Class DbFactory
+ * @Todo    Refactor factory, split it down!
  * @Todo    Specify db type (actually only mysql, but should be more).
  * @package Alcys\Core\Db\Factory
  */

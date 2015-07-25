@@ -265,6 +265,65 @@ class ConditionFacade implements ConditionFacadeInterface
 
 
 	/**
+	 * Compare in the following style in the where condition:
+	 * $column LIKE $compareValue.
+	 *
+	 * @param string $column       The column name which should compare.
+	 * @param string $compareValue The value for the comparison.
+	 * @param int    $level        (Optional) Set the percent sign. Default (non) is zero, before value
+	 *                             is 1, after 2 and both 3. If the $compareValue is passed with the %
+	 *                             sign, this argument is unnecessary.
+	 *
+	 * @return $this Same instance to concatenate methods.
+	 */
+	public function like($column, $compareValue, $level = 0)
+	{
+		/** @var ColumnInterface $columnObj */
+		$columnObj   = $this->factory->references('Column', $column);
+		$valueObject = $this->factory->references('Value', $compareValue);
+		$this->condition->like($columnObj, $valueObject, $level);
+
+		return $this;
+	}
+
+
+	/**
+	 * Compare in the following style in the where condition:
+	 * $column IS NULL.
+	 *
+	 * @param string $column Column name for the comparison.
+	 *
+	 * @return $this The same instance to concatenate methods.
+	 */
+	public function isNull($column)
+	{
+		/** @var ColumnInterface $columnObj */
+		$columnObj = $this->factory->references('Column', $column);
+		$this->condition->isNull($columnObj);
+
+		return $this;
+	}
+
+
+	/**
+	 * Compare in the following style in the where condition:
+	 * $column IS NOT NULL.
+	 *
+	 * @param string $column Column name for the comparison.
+	 *
+	 * @return $this The same instance to concatenate methods.
+	 */
+	public function notNull($column)
+	{
+		/** @var ColumnInterface $columnObj */
+		$columnObj = $this->factory->references('Column', $column);
+		$this->condition->notNull($columnObj);
+
+		return $this;
+	}
+
+
+	/**
 	 * Use this method to set another comparison in connection with a logical and to the condition.
 	 *
 	 * @return $this The same instance to concatenate methods.

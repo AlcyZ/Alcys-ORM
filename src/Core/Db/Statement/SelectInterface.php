@@ -36,7 +36,10 @@ use Alcys\Core\Db\Expression\JoinInterface;
 interface SelectInterface
 {
 	/**
-	 * Add validated columns to the statement.
+	 * Add columns to the statement.
+	 *
+	 * The method fill the columns array in the correct format for the query builder.
+	 * The columns will sorted in the same order like the calls.
 	 *
 	 * @param ColumnInterface $column The validated columns value.
 	 *
@@ -48,6 +51,9 @@ interface SelectInterface
 	/**
 	 * Add an group by expression to the statement.
 	 *
+	 * The method will fill the array in the correct way to be valid for the query builder.
+	 * To avoid errors, the method should only invoked one time! (working at a solution)
+	 *
 	 * @param ColumnInterface        $column    The column which should grouped.
 	 * @param OrderModeEnumInterface $orderMode The expected mode. Whether 'ASC', 'DESC' or null(optional).
 	 *
@@ -58,6 +64,8 @@ interface SelectInterface
 
 	/**
 	 * Add a distinct expression to the statement.
+	 *
+	 * The property distinct will set to true and the builder place a distinct expression in the query.
 	 *
 	 * @return $this The same instance to concatenate methods.
 	 */
@@ -76,6 +84,10 @@ interface SelectInterface
 
 	/**
 	 * Add a join expression to the statement.
+	 *
+	 * The query builder have the functionality to build a valid
+	 * formatted join statement, but at least one join method
+	 * be invoked. Otherwise, no expression will added.
 	 *
 	 * @param JoinInterface $join Join value object in which the condition expressions are buffered.
 	 *

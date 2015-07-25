@@ -191,9 +191,7 @@
 		<b>Namespace:</b> <a href="namespace-Alcys.html">Alcys</a>\<a href="namespace-Alcys.Core.html">Core</a>\<a href="namespace-Alcys.Core.Db.html">Db</a>\<a href="namespace-Alcys.Core.Db.Statement.html">Statement</a><br>
 		<b>Package:</b> Alcys\Core\Db\Statement<br>
 
-				<b>Todo:</b>
-				for where and having method condition interface<br>
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.Select.html#35-341" title="Go to source code">Core/Db/Statement/Select.php</a>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.Select.html#35-274" title="Go to source code">Core/Db/Statement/Select.php</a>
 		<br>
 	</div>
 
@@ -212,17 +210,14 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_table">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#88-103" title="Go to source code">table</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#87-95" title="Go to source code">table</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
 
 			<div class="description short">
-				<p>Add validated tables to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add validated tables to the statement.</p>
-
-<p>The method fill the table array in the correct format for the query builder.
-For each call of the method, the tables will sorted in the same order like the invokes.</p>
+				
 
 
 					<h4>Parameters</h4>
@@ -237,6 +232,9 @@ For each call of the method, the tables will sorted in the same order like the i
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -255,17 +253,14 @@ For each call of the method, the tables will sorted in the same order like the i
 
 			<td class="name"><div>
 			<a class="anchor" href="#_column">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#106-121" title="Go to source code">column</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#98-106" title="Go to source code">column</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span> )</code>
 
 			<div class="description short">
-				<p>Add validated columns to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add validated columns to the statement.</p>
-
-<p>The method fill the columns array in the correct format for the query builder.
-For each call of the method, the columns will sorted in the same order like the invokes.</p>
+				
 
 
 					<h4>Parameters</h4>
@@ -280,6 +275,9 @@ For each call of the method, the columns will sorted in the same order like the 
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -298,17 +296,14 @@ For each call of the method, the columns will sorted in the same order like the 
 
 			<td class="name"><div>
 			<a class="anchor" href="#_orderBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#124-141" title="Go to source code">orderBy</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span>, <span><code><a href="class-Alcys.Core.Db.References.OrderModeEnumInterface.html">Alcys\Core\Db\References\OrderModeEnumInterface</a></code> <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#109-118" title="Go to source code">orderBy</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span>, <span><code><a href="class-Alcys.Core.Db.References.OrderModeEnumInterface.html">Alcys\Core\Db\References\OrderModeEnumInterface</a></code> <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
-				<p>Add an order by expression to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add an order by expression to the statement.</p>
-
-<p>The method will fill the array in the correct way to be valid for the query builder.
-To avoid errors, the method should only invoked one time! (working at a solution)</p>
+				
 
 
 					<h4>Parameters</h4>
@@ -325,6 +320,9 @@ To avoid errors, the method should only invoked one time! (working at a solution
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -343,16 +341,14 @@ To avoid errors, the method should only invoked one time! (working at a solution
 
 			<td class="name"><div>
 			<a class="anchor" href="#_limit">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#144-160" title="Go to source code">limit</a>( <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$beginAmount</var></span>, <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#121-129" title="Go to source code">limit</a>( <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$beginAmount</var></span>, <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
-				<p>Add a limit expression to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add a limit expression to the statement.</p>
-
-<p>The method will fill the array in the correct way to be valid for the query builder.</p>
+				
 
 
 					<h4>Parameters</h4>
@@ -370,6 +366,9 @@ To avoid errors, the method should only invoked one time! (working at a solution
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -388,17 +387,14 @@ To avoid errors, the method should only invoked one time! (working at a solution
 
 			<td class="name"><div>
 			<a class="anchor" href="#_groupBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#163-187" title="Go to source code">groupBy</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span>, <span><code><a href="class-Alcys.Core.Db.References.OrderModeEnumInterface.html">Alcys\Core\Db\References\OrderModeEnumInterface</a></code> <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#132-148" title="Go to source code">groupBy</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span>, <span><code><a href="class-Alcys.Core.Db.References.OrderModeEnumInterface.html">Alcys\Core\Db\References\OrderModeEnumInterface</a></code> <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
-				<p>Add an group by expression to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add an group by expression to the statement.</p>
-
-<p>The method will fill the array in the correct way to be valid for the query builder.
-To avoid errors, the method should only invoked one time! (working at a solution)</p>
+				
 
 
 					<h4>Parameters</h4>
@@ -415,6 +411,9 @@ To avoid errors, the method should only invoked one time! (working at a solution
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -433,16 +432,14 @@ To avoid errors, the method should only invoked one time! (working at a solution
 
 			<td class="name"><div>
 			<a class="anchor" href="#_distinct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#190-202" title="Go to source code">distinct</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#151-159" title="Go to source code">distinct</a>( )</code>
 
 			<div class="description short">
-				<p>Add a distinct expression to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add a distinct expression to the statement.</p>
-
-<p>The property distinct will set to true and the builder place a distinct expression in the query.</p>
+				
 
 
 
@@ -452,6 +449,9 @@ To avoid errors, the method should only invoked one time! (working at a solution
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -470,18 +470,14 @@ To avoid errors, the method should only invoked one time! (working at a solution
 
 			<td class="name"><div>
 			<a class="anchor" href="#_having">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#205-221" title="Go to source code">having</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ExpressionInterface.html">Alcys\Core\Db\Expression\ExpressionInterface</a></code> <var>$condition</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#162-170" title="Go to source code">having</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ExpressionInterface.html">Alcys\Core\Db\Expression\ExpressionInterface</a></code> <var>$condition</var></span> )</code>
 
 			<div class="description short">
-				<p>Add a having expression to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add a having expression to the statement.</p>
-
-<p>The query builder have the functionality to build a valid
-formatted condition, but at least one condition method must
-be invoked. Otherwise, no having condition will added.</p>
+				
 
 
 					<h4>Parameters</h4>
@@ -496,6 +492,9 @@ be invoked. Otherwise, no having condition will added.</p>
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -514,18 +513,14 @@ be invoked. Otherwise, no having condition will added.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_where">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#224-240" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code> <var>$condition</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#173-181" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code> <var>$condition</var></span> )</code>
 
 			<div class="description short">
-				<p>Add a where expression to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add a where expression to the statement.</p>
-
-<p>The query builder have the functionality to build a valid
-formatted condition, but at least one condition method must
-be invoked. Otherwise, no condition will added.</p>
+				
 
 
 					<h4>Parameters</h4>
@@ -540,6 +535,9 @@ be invoked. Otherwise, no condition will added.</p>
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -558,18 +556,14 @@ be invoked. Otherwise, no condition will added.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_join">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#243-259" title="Go to source code">join</a>( <span><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code> <var>$join</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#184-192" title="Go to source code">join</a>( <span><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code> <var>$join</var></span> )</code>
 
 			<div class="description short">
-				<p>Add a join expression to the statement.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add a join expression to the statement.</p>
-
-<p>The query builder have the functionality to build a valid
-formatted join statement, but at least one join method
-be invoked. Otherwise, no expression will added.</p>
+				
 
 
 					<h4>Parameters</h4>
@@ -584,6 +578,9 @@ be invoked. Otherwise, no expression will added.</p>
 					</div>
 
 
+					<h4>Inheritdoc</h4>
+					<div class="list">
+					</div>
 
 
 					<h4>Implementation of</h4>
@@ -602,7 +599,7 @@ be invoked. Otherwise, no expression will added.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getTable">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#262-268" title="Go to source code">getTable</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#195-201" title="Go to source code">getTable</a>( )</code>
 
 			<div class="description short">
 				
@@ -637,7 +634,7 @@ be invoked. Otherwise, no expression will added.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getColumns">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#271-277" title="Go to source code">getColumns</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#204-210" title="Go to source code">getColumns</a>( )</code>
 
 			<div class="description short">
 				
@@ -672,7 +669,7 @@ be invoked. Otherwise, no expression will added.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getOrderBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#280-286" title="Go to source code">getOrderBy</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#213-219" title="Go to source code">getOrderBy</a>( )</code>
 
 			<div class="description short">
 				
@@ -707,7 +704,7 @@ be invoked. Otherwise, no expression will added.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getLimit">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#289-295" title="Go to source code">getLimit</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#222-228" title="Go to source code">getLimit</a>( )</code>
 
 			<div class="description short">
 				
@@ -742,7 +739,7 @@ be invoked. Otherwise, no expression will added.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getGroupBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#298-304" title="Go to source code">getGroupBy</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#231-237" title="Go to source code">getGroupBy</a>( )</code>
 
 			<div class="description short">
 				
@@ -777,7 +774,7 @@ be invoked. Otherwise, no expression will added.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_isDistinct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#307-313" title="Go to source code">isDistinct</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#240-246" title="Go to source code">isDistinct</a>( )</code>
 
 			<div class="description short">
 				
@@ -812,7 +809,7 @@ be invoked. Otherwise, no expression will added.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getHaving">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#316-322" title="Go to source code">getHaving</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#249-255" title="Go to source code">getHaving</a>( )</code>
 
 			<div class="description short">
 				
@@ -847,7 +844,7 @@ be invoked. Otherwise, no expression will added.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getCondition">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#325-331" title="Go to source code">getCondition</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#258-264" title="Go to source code">getCondition</a>( )</code>
 
 			<div class="description short">
 				
@@ -882,7 +879,7 @@ be invoked. Otherwise, no expression will added.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getJoin">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#334-340" title="Go to source code">getJoin</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.Select.html#267-273" title="Go to source code">getJoin</a>( )</code>
 
 			<div class="description short">
 				

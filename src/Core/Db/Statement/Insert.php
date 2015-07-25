@@ -50,6 +50,8 @@ class Insert implements StatementInterface, InsertInterface
 	 */
 	private $values = array();
 
+	private $onDuplicateKeyUpdate = false;
+
 
 	/**
 	 * Add a table object to the statement.
@@ -103,6 +105,20 @@ class Insert implements StatementInterface, InsertInterface
 	{
 		$this->_checkColumnsArrayIsset()->_checkArraysForSameLength($valuesArray)->_checkValuesArrayType($valuesArray);
 		$this->values[] = $valuesArray;
+
+		return $this;
+	}
+
+
+	/**
+	 * Add an on duplicate key update expression to the query.
+	 * The internal property will set to true, the builder realize it and build the expression.
+	 *
+	 * @return $this Same instance to concatenate methods.
+	 */
+	public function onDuplicateKeyUpdate()
+	{
+		$this->onDuplicateKeyUpdate = true;
 
 		return $this;
 	}
@@ -187,5 +203,14 @@ class Insert implements StatementInterface, InsertInterface
 	public function getValues()
 	{
 		return $this->values;
+	}
+
+
+	/**
+	 * @return boolean
+	 */
+	public function isOnDuplicateKeyUpdate()
+	{
+		return $this->onDuplicateKeyUpdate;
 	}
 }

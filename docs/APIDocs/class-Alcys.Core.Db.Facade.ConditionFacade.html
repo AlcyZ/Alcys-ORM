@@ -190,7 +190,7 @@
 		<b>Namespace:</b> <a href="namespace-Alcys.html">Alcys</a>\<a href="namespace-Alcys.Core.html">Core</a>\<a href="namespace-Alcys.Core.Db.html">Db</a>\<a href="namespace-Alcys.Core.Db.Facade.html">Facade</a><br>
 		<b>Package:</b> Alcys\Core\Db\Facade<br>
 
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#34-330" title="Go to source code">Core/Db/Facade/ConditionFacade.php</a>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#34-389" title="Go to source code">Core/Db/Facade/ConditionFacade.php</a>
 		<br>
 	</div>
 
@@ -640,6 +640,132 @@ Otherwise it is like a string or value comparison.</p>
 			</div>
 			</div></td>
 		</tr>
+		<tr data-order="like" id="_like">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_like">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#267-287" title="Go to source code">like</a>( <span>string <var>$column</var></span>, <span>string <var>$compareValue</var></span>, <span>integer <var>$level</var> = <span class="php-num">0</span></span> )</code>
+
+			<div class="description short">
+				<p>Compare in the following style in the where condition:
+$column LIKE $compareValue.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Compare in the following style in the where condition:
+$column LIKE $compareValue.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$column</var></dt>
+						<dd>The column name which should compare.</dd>
+						<dt><var>$compareValue</var></dt>
+						<dd>The value for the comparison.</dd>
+						<dt><var>$level</var></dt>
+						<dd><p>(Optional) Set the percent sign. Default (non) is zero, before value
+                            is 1, after 2 and both 3. If the $compareValue is passed with the %
+                            sign, this argument is unnecessary.</p></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this Same instance to concatenate methods.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isNull" id="_isNull">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isNull">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#290-305" title="Go to source code">isNull</a>( <span>string <var>$column</var></span> )</code>
+
+			<div class="description short">
+				<p>Compare in the following style in the where condition:
+$column IS NULL.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Compare in the following style in the where condition:
+$column IS NULL.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$column</var></dt>
+						<dd>Column name for the comparison.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="notNull" id="_notNull">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_notNull">#</a>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#308-323" title="Go to source code">notNull</a>( <span>string <var>$column</var></span> )</code>
+
+			<div class="description short">
+				<p>Compare in the following style in the where condition:
+$column IS NOT NULL.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Compare in the following style in the where condition:
+$column IS NOT NULL.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$column</var></dt>
+						<dd>Column name for the comparison.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this The same instance to concatenate methods.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
 		<tr data-order="logicAnd" id="_logicAnd">
 
 			<td class="attributes"><code>
@@ -651,7 +777,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_logicAnd">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#267-277" title="Go to source code">logicAnd</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#326-336" title="Go to source code">logicAnd</a>( )</code>
 
 			<div class="description short">
 				<p>Use this method to set another comparison in connection with a logical and to the condition.</p>
@@ -686,7 +812,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_logicOr">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#280-290" title="Go to source code">logicOr</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#339-349" title="Go to source code">logicOr</a>( )</code>
 
 			<div class="description short">
 				<p>Use this method to set another comparison in connection with a logical and to the condition.</p>
@@ -721,7 +847,7 @@ Otherwise it is like a string or value comparison.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getCondition">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#293-299" title="Go to source code">getCondition</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Facade.ConditionFacade.html#352-358" title="Go to source code">getCondition</a>( )</code>
 
 			<div class="description short">
 				

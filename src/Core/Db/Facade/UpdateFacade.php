@@ -34,7 +34,6 @@ use Alcys\Core\Types\Numeric;
 
 /**
  * Class UpdateFacade
- * @Todo    Type in value method as sec arg, default is value, e.g.: $update->value('column_name', 'column')
  * @package Alcys\Core\Db\Facade
  */
 class UpdateFacade implements UpdateFacadeInterface, WhereConditionFacadeInterface
@@ -126,9 +125,10 @@ class UpdateFacade implements UpdateFacadeInterface, WhereConditionFacadeInterfa
 	 * @return $this The same instance to concatenate methods.
 	 * @throws \Exception When UpdateFacade::column() was not called before.
 	 */
-	public function value($value)
+	public function value($value, $type = null)
 	{
-		$valueObj = $this->factory->references('Value', $value);
+		$refType  = ($type === 'column') ? 'Column' : 'Value';
+		$valueObj = $this->factory->references($refType, $value);
 		$this->update->value($valueObj);
 
 		return $this;

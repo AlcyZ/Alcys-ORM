@@ -184,7 +184,7 @@
 		<b>Namespace:</b> <a href="namespace-Alcys.html">Alcys</a>\<a href="namespace-Alcys.Core.html">Core</a>\<a href="namespace-Alcys.Core.Db.html">Db</a>\<a href="namespace-Alcys.Core.Db.Statement.html">Statement</a><br>
 		<b>Package:</b> Alcys\Core\Db\Statement<br>
 
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#32-115" title="Go to source code">Core/Db/Statement/SelectInterface.php</a>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#32-127" title="Go to source code">Core/Db/Statement/SelectInterface.php</a>
 		<br>
 	</div>
 
@@ -203,14 +203,17 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_column">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#38-45" title="Go to source code">column</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#38-48" title="Go to source code">column</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span> )</code>
 
 			<div class="description short">
-				<p>Add validated columns to the statement.</p>
+				<p>Add columns to the statement.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Add validated columns to the statement.</p>
+				<p>Add columns to the statement.</p>
+
+<p>The method fill the columns array in the correct format for the query builder.
+The columns will sorted in the same order like the calls.</p>
 
 
 					<h4>Parameters</h4>
@@ -241,7 +244,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_groupBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#48-56" title="Go to source code">groupBy</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span>, <span><code><a href="class-Alcys.Core.Db.References.OrderModeEnumInterface.html">Alcys\Core\Db\References\OrderModeEnumInterface</a></code> <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#51-62" title="Go to source code">groupBy</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span>, <span><code><a href="class-Alcys.Core.Db.References.OrderModeEnumInterface.html">Alcys\Core\Db\References\OrderModeEnumInterface</a></code> <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Add an group by expression to the statement.</p>
@@ -249,6 +252,9 @@
 
 			<div class="description detailed hidden">
 				<p>Add an group by expression to the statement.</p>
+
+<p>The method will fill the array in the correct way to be valid for the query builder.
+To avoid errors, the method should only invoked one time! (working at a solution)</p>
 
 
 					<h4>Parameters</h4>
@@ -281,7 +287,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_distinct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#59-64" title="Go to source code">distinct</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#65-72" title="Go to source code">distinct</a>( )</code>
 
 			<div class="description short">
 				<p>Add a distinct expression to the statement.</p>
@@ -289,6 +295,8 @@
 
 			<div class="description detailed hidden">
 				<p>Add a distinct expression to the statement.</p>
+
+<p>The property distinct will set to true and the builder place a distinct expression in the query.</p>
 
 
 
@@ -314,7 +322,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_having">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#67-74" title="Go to source code">having</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ExpressionInterface.html">Alcys\Core\Db\Expression\ExpressionInterface</a></code> <var>$condition</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#75-82" title="Go to source code">having</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ExpressionInterface.html">Alcys\Core\Db\Expression\ExpressionInterface</a></code> <var>$condition</var></span> )</code>
 
 			<div class="description short">
 				<p>Add a having expression to the statement.</p>
@@ -352,7 +360,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_join">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#77-84" title="Go to source code">join</a>( <span><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code> <var>$join</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#85-96" title="Go to source code">join</a>( <span><code><a href="class-Alcys.Core.Db.Expression.JoinInterface.html">Alcys\Core\Db\Expression\JoinInterface</a></code> <var>$join</var></span> )</code>
 
 			<div class="description short">
 				<p>Add a join expression to the statement.</p>
@@ -360,6 +368,10 @@
 
 			<div class="description detailed hidden">
 				<p>Add a join expression to the statement.</p>
+
+<p>The query builder have the functionality to build a valid
+formatted join statement, but at least one join method
+be invoked. Otherwise, no expression will added.</p>
 
 
 					<h4>Parameters</h4>
@@ -390,7 +402,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getColumns">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#87-90" title="Go to source code">getColumns</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#99-102" title="Go to source code">getColumns</a>( )</code>
 
 			<div class="description short">
 				
@@ -423,7 +435,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getGroupBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#93-96" title="Go to source code">getGroupBy</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#105-108" title="Go to source code">getGroupBy</a>( )</code>
 
 			<div class="description short">
 				
@@ -456,7 +468,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_isDistinct">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#99-102" title="Go to source code">isDistinct</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#111-114" title="Go to source code">isDistinct</a>( )</code>
 
 			<div class="description short">
 				
@@ -489,7 +501,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getHaving">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#105-108" title="Go to source code">getHaving</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#117-120" title="Go to source code">getHaving</a>( )</code>
 
 			<div class="description short">
 				
@@ -522,7 +534,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getJoin">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#111-114" title="Go to source code">getJoin</a>( )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.SelectInterface.html#123-126" title="Go to source code">getJoin</a>( )</code>
 
 			<div class="description short">
 				

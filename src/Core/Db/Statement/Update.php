@@ -61,17 +61,14 @@ class Update implements StatementInterface, UpdateInterface, ConditionStatementI
 	 */
 	private $limit = array();
 
+	/**
+	 * @var ColumnInterface|null
+	 */
 	private $column;
 
 
 	/**
-	 * Add a table object to the statement.
-	 *
-	 * The method fill the table property and multiple calls override the old value.
-	 *
-	 * @param TableInterface $table The validated table value.
-	 *
-	 * @return $this The same instance to concatenate methods.
+	 * @inheritdoc
 	 */
 	public function table(TableInterface $table)
 	{
@@ -82,12 +79,7 @@ class Update implements StatementInterface, UpdateInterface, ConditionStatementI
 
 
 	/**
-	 * Add a column that should updated to the query.
-	 * Afterwards, you should call the value method.
-	 *
-	 * @param ColumnInterface $column Object of type ColumnInterface.
-	 *
-	 * @return $this The same instance to concatenate methods.
+	 * @inheritdoc
 	 */
 	public function column(ColumnInterface $column)
 	{
@@ -98,12 +90,7 @@ class Update implements StatementInterface, UpdateInterface, ConditionStatementI
 
 
 	/**
-	 * Add a value to the column which was set before.
-	 *
-	 * @param ReferencesInterface $value The expected value as object of type ReferenceInterface.
-	 *
-	 * @return $this The same instance to concatenate methods.
-	 * @throws \Exception When column method was not invoked before.
+	 * @inheritdoc
 	 */
 	public function value(ReferencesInterface $value)
 	{
@@ -119,15 +106,7 @@ class Update implements StatementInterface, UpdateInterface, ConditionStatementI
 
 
 	/**
-	 * Add a where expression to the statement.
-	 *
-	 * The query builder have the functionality to build a valid
-	 * formatted condition, but at least one condition method must
-	 * be invoked. Otherwise, no condition will added.
-	 *
-	 * @param ConditionInterface $condition Condition value object in which the condition expressions are buffered.
-	 *
-	 * @return $this The same instance to concatenate methods.
+	 * @inheritdoc
 	 */
 	public function where(ConditionInterface $condition)
 	{
@@ -138,15 +117,7 @@ class Update implements StatementInterface, UpdateInterface, ConditionStatementI
 
 
 	/**
-	 * Add an order by expression to the statement.
-	 *
-	 * The method will fill the array in the correct way to be valid for the query builder.
-	 * To avoid errors, the method should only invoked one time! (working at a solution)
-	 *
-	 * @param ColumnInterface        $column    The column which should sorted.
-	 * @param OrderModeEnumInterface $orderMode The expected mode. Whether 'ASC' or 'DESC'.
-	 *
-	 * @return $this The same instance to concatenate methods.
+	 * @inheritdoc
 	 */
 	public function orderBy(ColumnInterface $column, OrderModeEnumInterface $orderMode = null)
 	{
@@ -158,15 +129,7 @@ class Update implements StatementInterface, UpdateInterface, ConditionStatementI
 
 
 	/**
-	 * Add a limit expression to the statement.
-	 *
-	 * The method will fill the array in the correct way to be valid for the query builder.
-	 *
-	 * @param Numeric $beginAmount The first entry that get selected or the amount of
-	 *                             returned entries, when the second argument is null.
-	 * @param Numeric $amount      The amount of entries that should returned.
-	 *
-	 * @return $this The same instance to concatenate methods.
+	 * @inheritdoc
 	 */
 	public function limit(Numeric $beginAmount, Numeric $amount = null)
 	{

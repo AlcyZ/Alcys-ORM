@@ -186,7 +186,7 @@
 
 				<b>Todo:</b>
 				Add PHPDocs.<br>
-			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.DeleteInterface.html#32-71" title="Go to source code">Core/Db/Statement/DeleteInterface.php</a>
+			<b>Located at</b> <a href="source-class-Alcys.Core.Db.Statement.DeleteInterface.html#32-91" title="Go to source code">Core/Db/Statement/DeleteInterface.php</a>
 		<br>
 	</div>
 
@@ -205,25 +205,27 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_table">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.DeleteInterface.html#39-44" title="Go to source code">table</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.DeleteInterface.html#39-48" title="Go to source code">table</a>( <span><code><a href="class-Alcys.Core.Db.References.TableInterface.html">Alcys\Core\Db\References\TableInterface</a></code> <var>$table</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Add a validated table to the statement.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Add a validated table to the statement.</p>
+
+<p>The method fill the table property and multiple calls override the old value.</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$table</var></dt>
-						<dd></dd>
+						<dd>The validated table value.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<br>$this
+						<br>$this The same instance to concatenate methods.
 					</div>
 
 
@@ -243,25 +245,29 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_where">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.DeleteInterface.html#47-52" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code> <var>$condition</var></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.DeleteInterface.html#51-62" title="Go to source code">where</a>( <span><code><a href="class-Alcys.Core.Db.Expression.ConditionInterface.html">Alcys\Core\Db\Expression\ConditionInterface</a></code> <var>$condition</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Add a where expression to the statement.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Add a where expression to the statement.</p>
+
+<p>The query builder have the functionality to build a valid
+formatted condition, but at least one condition method must
+be invoked. Otherwise, no condition will added.</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$condition</var></dt>
-						<dd></dd>
+						<dd>Condition value object in which the condition expressions are buffered.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<br>$this
+						<br>$this The same instance to concatenate methods.
 					</div>
 
 
@@ -281,27 +287,30 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_orderBy">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.DeleteInterface.html#55-61" title="Go to source code">orderBy</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span>, <span><code><a href="class-Alcys.Core.Db.References.OrderModeEnumInterface.html">Alcys\Core\Db\References\OrderModeEnumInterface</a></code> <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.DeleteInterface.html#65-76" title="Go to source code">orderBy</a>( <span><code><a href="class-Alcys.Core.Db.References.ColumnInterface.html">Alcys\Core\Db\References\ColumnInterface</a></code> <var>$column</var></span>, <span><code><a href="class-Alcys.Core.Db.References.OrderModeEnumInterface.html">Alcys\Core\Db\References\OrderModeEnumInterface</a></code> <var>$orderMode</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
-				
+				<p>Add an order by expression to the statement.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Add an order by expression to the statement.</p>
+
+<p>The method will fill the array in the correct way to be valid for the query builder.
+To avoid errors, the method should only invoked one time! (working at a solution)</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$column</var></dt>
-						<dd></dd>
+						<dd>The column which should sorted.</dd>
 						<dt><var>$orderMode</var></dt>
-						<dd></dd>
+						<dd>The expected mode. Whether 'ASC' or 'DESC'.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<br>$this
+						<br>$this The same instance to concatenate methods.
 					</div>
 
 
@@ -321,27 +330,30 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_limit">#</a>
-			<code><a href="source-class-Alcys.Core.Db.Statement.DeleteInterface.html#64-70" title="Go to source code">limit</a>( <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$beginAmount</var></span>, <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Alcys.Core.Db.Statement.DeleteInterface.html#79-90" title="Go to source code">limit</a>( <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$beginAmount</var></span>, <span><code><a href="class-Alcys.Core.Types.Numeric.html">Alcys\Core\Types\Numeric</a></code> <var>$amount</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
-				
+				<p>Add a limit expression to the statement.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Add a limit expression to the statement.</p>
+
+<p>The method will fill the array in the correct way to be valid for the query builder.</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$beginAmount</var></dt>
-						<dd></dd>
+						<dd><p>The first entry that get selected or the amount of
+                            returned entries, when the second argument is null.</p></dd>
 						<dt><var>$amount</var></dt>
-						<dd></dd>
+						<dd>The amount of entries that should returned.</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<br>$this
+						<br>$this The same instance to concatenate methods.
 					</div>
 
 

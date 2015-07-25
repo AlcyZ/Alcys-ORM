@@ -31,7 +31,6 @@ use Alcys\Core\Db\References\MySql\WhereNumericCompareInterface;
 
 /**
  * Class Condition
- * @Todo    Add comparison "isNull".
  * @package Alcys\Core\Db\Condition
  */
 class Condition implements ConditionInterface, ComparisonInterface, LogicConnectorInterface, ExpressionInterface
@@ -70,7 +69,7 @@ class Condition implements ConditionInterface, ComparisonInterface, LogicConnect
 	 * The order of the method call is important, in which way the condition string will
 	 * concatenate.
 	 *
-	 * @param ColumnInterface     $column Name of the column.
+	 * @param ColumnInterface       $column Name of the column.
 	 * @param WhereCompareInterface $value  Value for the expression.
 	 *
 	 * @return $this The current condition instance to concatenate method invokes.
@@ -78,7 +77,7 @@ class Condition implements ConditionInterface, ComparisonInterface, LogicConnect
 	 */
 	public function equal(ColumnInterface $column, WhereCompareInterface $value)
 	{
-		$columnName = ($column->getAlias()) ? $column->getAlias() : $column->getColumnName();
+		$columnName = ($column->getAlias()) ?: $column->getColumnName();
 		$condition  = $columnName . ' = ' . $value->getCompareValue();
 		$this->_addCondition($condition);
 
@@ -91,7 +90,7 @@ class Condition implements ConditionInterface, ComparisonInterface, LogicConnect
 	 * The order of the method call is important, in which way the condition string will
 	 * concatenate.
 	 *
-	 * @param ColumnInterface     $column Name of the column.
+	 * @param ColumnInterface       $column Name of the column.
 	 * @param WhereCompareInterface $value  Value for the expression.
 	 *
 	 * @return $this The current condition instance to concatenate method invokes.
@@ -99,7 +98,8 @@ class Condition implements ConditionInterface, ComparisonInterface, LogicConnect
 	 */
 	public function notEqual(ColumnInterface $column, WhereCompareInterface $value)
 	{
-		$condition = $column->getColumnName() . ' != ' . $value->getCompareValue();
+		$columnName = ($column->getAlias()) ?: $column->getColumnName();
+		$condition  = $columnName . ' != ' . $value->getCompareValue();
 		$this->_addCondition($condition);
 
 		return $this;
@@ -119,7 +119,8 @@ class Condition implements ConditionInterface, ComparisonInterface, LogicConnect
 	 */
 	public function greater(ColumnInterface $column, WhereNumericCompareInterface $value)
 	{
-		$condition = $column->getColumnName() . ' > ' . $value->getNumericCompareValue();
+		$columnName = ($column->getAlias()) ?: $column->getColumnName();
+		$condition  = $columnName . ' > ' . $value->getNumericCompareValue();
 		$this->_addCondition($condition);
 
 		return $this;
@@ -139,7 +140,8 @@ class Condition implements ConditionInterface, ComparisonInterface, LogicConnect
 	 */
 	public function greaterEqual(ColumnInterface $column, WhereNumericCompareInterface $value)
 	{
-		$condition = $column->getColumnName() . ' >= ' . $value->getNumericCompareValue();
+		$columnName = ($column->getAlias()) ?: $column->getColumnName();
+		$condition  = $columnName . ' >= ' . $value->getNumericCompareValue();
 		$this->_addCondition($condition);
 
 		return $this;
@@ -159,7 +161,8 @@ class Condition implements ConditionInterface, ComparisonInterface, LogicConnect
 	 */
 	public function lower(ColumnInterface $column, WhereNumericCompareInterface $value)
 	{
-		$condition = $column->getColumnName() . ' < ' . $value->getNumericCompareValue();
+		$columnName = ($column->getAlias()) ?: $column->getColumnName();
+		$condition  = $columnName . ' < ' . $value->getNumericCompareValue();
 		$this->_addCondition($condition);
 
 		return $this;
@@ -179,7 +182,8 @@ class Condition implements ConditionInterface, ComparisonInterface, LogicConnect
 	 */
 	public function lowerEqual(ColumnInterface $column, WhereNumericCompareInterface $value)
 	{
-		$condition = $column->getColumnName() . ' <= ' . $value->getNumericCompareValue();
+		$columnName = ($column->getAlias()) ?: $column->getColumnName();
+		$condition  = $columnName . ' <= ' . $value->getNumericCompareValue();
 		$this->_addCondition($condition);
 
 		return $this;
@@ -191,19 +195,19 @@ class Condition implements ConditionInterface, ComparisonInterface, LogicConnect
 	 * The order of the method call is important, in which way the condition string will
 	 * concatenate.
 	 *
-	 * @param ColumnInterface     $column       Name of the column.
+	 * @param ColumnInterface              $column       Name of the column.
 	 * @param WhereNumericCompareInterface $lowerValue   The lower value of the expression.
 	 * @param WhereNumericCompareInterface $greaterValue The higher value of the expression.
 	 *
 	 * @return $this The current condition instance to concatenate method invokes.
 	 * @throws \Exception
 	 */
-	public function between(ColumnInterface $column,
-	                        WhereNumericCompareInterface $lowerValue,
-	                        WhereNumericCompareInterface $greaterValue)
+	public function between(ColumnInterface $column, WhereNumericCompareInterface $lowerValue,
+							WhereNumericCompareInterface $greaterValue)
 	{
-		$condition = $column->getColumnName() . ' BETWEEN ' . $lowerValue->getNumericCompareValue() . ' AND '
-		             . $greaterValue->getNumericCompareValue();
+		$columnName = ($column->getAlias()) ?: $column->getColumnName();
+		$condition  = $columnName . ' BETWEEN ' . $lowerValue->getNumericCompareValue() . ' AND ' .
+					  $greaterValue->getNumericCompareValue();
 		$this->_addCondition($condition);
 
 		return $this;
@@ -222,12 +226,12 @@ class Condition implements ConditionInterface, ComparisonInterface, LogicConnect
 	 * @return $this The current condition instance to concatenate method invokes.
 	 * @throws \Exception
 	 */
-	public function notBetween(ColumnInterface $column,
-	                           WhereNumericCompareInterface $lowerValue,
-	                           WhereNumericCompareInterface $greaterValue)
+	public function notBetween(ColumnInterface $column, WhereNumericCompareInterface $lowerValue,
+							   WhereNumericCompareInterface $greaterValue)
 	{
-		$condition = $column->getColumnName() . ' NOT BETWEEN ' . $lowerValue->getNumericCompareValue() . ' AND '
-		             . $greaterValue->getNumericCompareValue();
+		$columnName = ($column->getAlias()) ?: $column->getColumnName();
+		$condition  = $columnName . ' NOT BETWEEN ' . $lowerValue->getNumericCompareValue() . ' AND ' .
+					  $greaterValue->getNumericCompareValue();
 		$this->_addCondition($condition);
 
 		return $this;
@@ -252,26 +256,65 @@ class Condition implements ConditionInterface, ComparisonInterface, LogicConnect
 	 */
 	public function like(ColumnInterface $column, ReferencesInterface $value, $level = 0)
 	{
+		$columnName = ($column->getAlias()) ?: $column->getColumnName();
 		if($level === 0)
 		{
-			$condition = $column->getColumnName() . ' LIKE ' . $value->getValue();
+			$condition = $columnName . ' LIKE ' . $value->getValue();
 		}
 		elseif($level === 1)
 		{
-			$condition = $column->getColumnName() . ' LIKE ' . $this->_likeLevelOne($value);
+			$condition = $columnName . ' LIKE ' . $this->_likeLevelOne($value);
 		}
 		elseif($level === 2)
 		{
-			$condition = $column->getColumnName() . ' LIKE ' . $this->_likeLevelTwo($value);
+			$condition = $columnName . ' LIKE ' . $this->_likeLevelTwo($value);
 		}
 		elseif($level === 3)
 		{
-			$condition = $column->getColumnName() . ' LIKE ' . $this->_likeLevelThree($value);
+			$condition = $columnName . ' LIKE ' . $this->_likeLevelThree($value);
 		}
 		else
 		{
 			throw new \Exception('invalid level argument');
 		}
+		$this->_addCondition($condition);
+
+		return $this;
+	}
+
+
+	/**
+	 * Add an is null condition to the condition array.
+	 * The order of the method call is important, in which way the condition string will
+	 * concatenate.
+	 *
+	 * @param ColumnInterface $column Name of the column to compare.
+	 *
+	 * @return $this The same instance to concatenate methods.
+	 */
+	public function isNull(ColumnInterface $column)
+	{
+		$columnName = ($column->getAlias()) ?: $column->getColumnName();
+		$condition  = $columnName . ' IS NULL';
+		$this->_addCondition($condition);
+
+		return $this;
+	}
+
+
+	/**
+	 * Add a not null condition to the condition array.
+	 * The order of the method call is important, in which way the condition string will
+	 * concatenate.
+	 *
+	 * @param ColumnInterface $column Name of the column to compare.
+	 *
+	 * @return $this The same instance to concatenate methods.
+	 */
+	public function notNull(ColumnInterface $column)
+	{
+		$columnName = ($column->getAlias()) ?: $column->getColumnName();
+		$condition  = $columnName . ' IS NOT NULL';
 		$this->_addCondition($condition);
 
 		return $this;

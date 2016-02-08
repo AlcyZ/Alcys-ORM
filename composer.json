@@ -8,7 +8,7 @@
     },
   "autoload": {
     "psr-4": {
-      "Alcys\\": "alcys-orm/src/"
+      "Alcys\\": "src/"
     }
   }
 }

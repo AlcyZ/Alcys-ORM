@@ -83,6 +83,8 @@ class InsertFacade implements InsertFacadeInterface
 		{
 			throw new \Exception('An error is while the insertion occurred!');
 		}
+
+		return $this->pdo->lastInsertId();
 	}
 
 

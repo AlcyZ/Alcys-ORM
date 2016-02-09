@@ -1,5 +1,5 @@
 {
-    "name": "alcyZ/alcys-orm",
+    "name": "AlcyZ/alcys-orm",
     "description": "AlcysDB Database adapter so that you can use the database object within external applications.",
 	"version": "1.0",
     "license": "MIT",

@@ -81,7 +81,7 @@ class InsertFacade implements InsertFacadeInterface
 		$result = $this->pdo->query($query);
 		if(!$result)
 		{
-			throw new \Exception('An error is while the insertion occurred!');
+			throw new \Exception('An error is while the insertion occurred! (query: " . $query . ")');
 		}
 
 		return $this->pdo->lastInsertId();

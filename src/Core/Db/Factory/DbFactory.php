@@ -430,7 +430,7 @@ class DbFactory implements DbFactoryInterface
 	 */
 	private function _checkSecondArgument(array $args)
 	{
-		if(is_null($args[1]) || !is_string($args[1]))
+		if(is_null($args[1]) || (!is_string($args[1]) && !is_numeric($args[1])))
 		{
 			throw new \Exception('the second argument must be set!');
 		}
